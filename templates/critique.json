@@ -1,0 +1,26 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": {
+      "score": 5,
+      "notes": "首页主标题已回到明确定位，轮换效果下放到次标题，首屏表达更清楚。"
+    },
+    "hierarchy": {
+      "score": 5,
+      "notes": "Hero 标题现在更横向展开，强调词和轮播尾句仍保留，但整体阅读路径更贯穿。"
+    },
+    "typography": {
+      "score": 4,
+      "notes": "Display 与 body 分工清楚，标题 tracking 和全大写标签控制在合理范围。"
+    },
+    "brand": {
+      "score": 4,
+      "notes": "暖白底、深墨蓝、橙红按钮和硬边排版仍保持参考气质，同时首页文案已完全中文化。"
+    },
+    "restraint": {
+      "score": 5,
+      "notes": "学习路径已去掉“第一步/第二步”类标签，改用更轻的图形标记，信息负担更低。"
+    }
+  }
+}

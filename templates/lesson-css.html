@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS 第一课 · 后端同学的前端战术手册</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header" data-od-id="css-header">
+    <div class="container site-header-inner">
+      <a class="brand-mark" href="./index.html" data-od-id="css-brand-link"><span>Backend Frontend Hub</span><span class="brand-pill">Guide</span></a>
+      <nav class="nav-links" data-od-id="css-nav">
+        <a href="./lesson-html.html">HTML</a>
+        <a href="./lesson-js.html">JavaScript</a>
+        <a href="./prompts.html">Prompts</a>
+      </nav>
+      <a class="button" href="./lesson-js.html" data-od-id="css-next-header">Next: JavaScript →</a>
+    </div>
+  </header>
+  <main class="container" data-od-id="css-main">
+    <section class="page-hero" data-od-id="css-hero">
+      <div class="breadcrumb">Hub / Guides / CSS for Backend Engineers</div>
+      <h1 class="page-title" data-od-id="css-title">CSS 不是调颜色，是控制页面长相。</h1>
+      <p class="lede">如果 HTML 是结构化响应，CSS 就像展示层配置。它决定字号、间距、边框、布局和 hover 状态，决定“浏览器看起来像不像产品”。</p>
+      <div class="meta-row">
+        <span class="meta-chip">分类：CSS</span>
+        <span class="meta-chip">难度：Beginner</span>
+        <span class="meta-chip">预计阅读：14 min</span>
+        <span class="meta-chip">产物：静态网页</span>
+      </div>
+    </section>
+    <section class="lesson-layout" data-od-id="css-layout">
+      <article class="lesson-prose" data-od-id="css-article">
+        <section class="lesson-section" id="css-thinking" data-od-id="css-thinking">
+          <h2>先建立“样式旋钮”思维</h2>
+          <p>后端同学常把 CSS 看成杂乱的属性列表。更有效的方法是把它看成一组旋钮：文字大小、区块间距、边框强弱、布局方向、状态反馈。页面丑，通常不是缺少代码，而是这些旋钮没有被系统地拧过。</p>
+        </section>
+        <section class="lesson-section" id="css-core" data-od-id="css-core">
+          <h2>第一批必须会的属性</h2>
+          <ul class="bullet-list">
+            <li><strong>color / background / border</strong>：文字和区块的视觉基础</li>
+            <li><strong>font-size / line-height / font-weight</strong>：可读性和层级</li>
+            <li><strong>margin / padding</strong>：外部距离与内部留白</li>
+            <li><strong>display / flex / grid</strong>：模块如何排</li>
+            <li><strong>hover / transition</strong>：最轻量的交互反馈</li>
+          </ul>
+        </section>
+        <section class="lesson-section" id="css-layouts" data-od-id="css-layouts">
+          <h2>布局的本质：让模块站对位置</h2>
+          <p>大多数业务页面不需要复杂动画，但一定需要清楚布局。你可以先从 Flex 排一维，再用 Grid 处理卡片区和后台模块。</p>
+          <div class="comparison-card" data-od-id="css-layout-card">
+            <div>
+              <span class="micro-label">Flex 适合</span>
+              <div class="code-block">导航栏
+按钮组
+表单行
+卡片头部</div>
+            </div>
+            <div>
+              <span class="micro-label">Grid 适合</span>
+              <div class="code-block">首页章节卡片
+后台仪表盘
+多列知识卡
+Prompt Library</div>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section" id="css-responsive" data-od-id="css-responsive">
+          <h2>响应式不是缩小页面，而是重排页面</h2>
+          <p>移动端不是把桌面卡片缩窄，而是重新决定内容优先级、按钮宽度和信息折行方式。后端同学和 AI 协作时，要明确写出移动端规则。</p>
+          <div class="callout-card" data-od-id="css-responsive-callout">
+            <strong>本节练习：</strong>
+            <p>给 HTML 第一课的文章页加样式，让它从“结构文档”变成“像样网页”，并补一个移动端单列布局。</p>
+          </div>
+        </section>
+        <section class="lesson-section" id="css-prompt" data-od-id="css-prompt">
+          <h2>直接可用的样式修改提示词</h2>
+          <div class="prompt-block" id="css-prompt-block">请修改下面的 HTML + CSS 页面。
+目标：
+1. 让标题更醒目
+2. 让卡片之间的间距更大
+3. 按钮增加 hover 效果
+4. 移动端下卡片改成单列布局
+
+请只改样式，不改页面结构。</div>
+          <button class="copy-button" type="button" data-copy-target="css-prompt-block" data-od-id="css-copy-prompt">Copy Prompt</button>
+        </section>
+      </article>
+      <aside class="sidebar-card" data-od-id="css-sidebar">
+        <span class="micro-label">章节目录</span>
+        <ul class="toc-list">
+          <li><a href="#css-thinking">样式旋钮</a></li>
+          <li><a href="#css-core">核心属性</a></li>
+          <li><a href="#css-layouts">布局理解</a></li>
+          <li><a href="#css-responsive">响应式</a></li>
+          <li><a href="#css-prompt">Prompt</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
