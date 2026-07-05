@@ -3,95 +3,203 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>React 第一课 · 后端同学的前端战术手册</title>
+  <title>见多识广 · 后端同学的前端战术手册</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header class="site-header" data-od-id="react-header">
+  <header class="site-header" data-od-id="atlas-header">
     <div class="container site-header-inner">
-      <a class="brand-mark" href="./index.html" data-od-id="react-brand-link"><span>Backend Frontend Hub</span><span class="brand-pill">Guide</span></a>
-      <nav class="nav-links" data-od-id="react-nav">
+      <a class="brand-mark" href="./index.html" data-od-id="atlas-brand-link"><span>后端前端中心</span><span class="brand-pill">指南</span></a>
+      <nav class="nav-links" data-od-id="atlas-nav">
         <a href="./lesson-js.html">JavaScript</a>
-        <a href="./components.html">Components</a>
-        <a href="./prompts.html">Prompts</a>
+        <a href="./components.html">组件</a>
+        <a href="./prompts.html">提示词</a>
       </nav>
-      <a class="button" href="./components.html" data-od-id="react-next-header">Next: Components →</a>
+      <a class="button" href="./components.html" data-od-id="atlas-next-header">下一页：组件词典 →</a>
     </div>
   </header>
-  <main class="container" data-od-id="react-main">
-    <section class="page-hero" data-od-id="react-hero">
-      <div class="breadcrumb">Hub / Guides / React for Backend Engineers</div>
-      <h1 class="page-title" data-od-id="react-title">React 不是新语言，是组织前端代码的方法。</h1>
-      <p class="lede">当页面从一个文件长成很多模块时，React 的价值就出来了。它帮你把 UI 看成组件，把组件看成函数，把页面看成状态驱动的结果。</p>
+  <main class="container" data-od-id="atlas-main">
+    <section class="page-hero" data-od-id="atlas-hero">
+      <div class="breadcrumb">首页 / HTML 课 / CSS 课 / JavaScript 课 / 见多识广</div>
+      <h1 class="page-title" data-od-id="atlas-title">见多识广：先认组件，再会写提示词。</h1>
+      <p class="lede">这章不讲框架，也不讲实现细节。目标只有一个：让后端程序员看到一个界面块时，知道它叫什么、常用来干嘛、写提示词时该怎么叫它。</p>
       <div class="meta-row">
-        <span class="meta-chip">分类：React</span>
+        <span class="meta-chip">分类：组件认知</span>
         <span class="meta-chip">难度：Beginner</span>
-        <span class="meta-chip">预计阅读：15 min</span>
-        <span class="meta-chip">产物：React Todo 页面</span>
+        <span class="meta-chip">预计阅读：10 min</span>
+        <span class="meta-chip">产物：组件词汇表</span>
       </div>
     </section>
-    <section class="lesson-layout" data-od-id="react-layout">
-      <article class="lesson-prose" data-od-id="react-article">
-        <section class="lesson-section" id="react-mental-model" data-od-id="react-mental-model">
-          <h2>先别背 API，先建立心智模型</h2>
-          <p>React 最核心的事情只有三件：把页面拆成组件、让数据通过 props 流动、让局部状态通过 state 更新。理解这三件，你再看 useState 就不会像背咒语。</p>
+    <section class="lesson-layout" data-od-id="atlas-layout">
+      <article class="lesson-prose" data-od-id="atlas-article">
+        <section class="lesson-section" id="atlas-why" data-od-id="atlas-why">
+          <h2>这章讲什么</h2>
+          <p>很多后端同学不是不会提需求，而是不知道前端那个东西叫什么。你说“右边滑出来那层”，前端叫 Drawer；你说“中间弹出来确认那层”，前端叫 Modal；你说“上面能切换几个页签”，前端叫 Tabs。把这些词补上，提示词质量会立刻提高。</p>
         </section>
-        <section class="lesson-section" id="react-vocab" data-od-id="react-vocab">
-          <h2>后端同学需要先搞懂的词汇表</h2>
-          <ul class="bullet-list">
-            <li><strong>npm / package.json</strong>：依赖管理与项目描述</li>
-            <li><strong>Vite / Next</strong>：开发与构建框架</li>
-            <li><strong>JSX</strong>：把 UI 结构写进 JavaScript 的方式</li>
-            <li><strong>props</strong>：组件参数</li>
-            <li><strong>state</strong>：组件内部会变化的数据</li>
-            <li><strong>useState</strong>：最基础的状态钩子</li>
-          </ul>
+
+        <section class="lesson-section" id="atlas-gallery" data-od-id="atlas-gallery">
+          <h2>组件长相</h2>
+          <p>这一页的读法很简单：先看长相，再记名字，最后记住它一般在什么场景下出现。你以后写提示词，直接用这些词。</p>
         </section>
-        <section class="lesson-section" id="react-split" data-od-id="react-split">
-          <h2>组件拆分按职责切，别按视觉切</h2>
-          <p>如果一个页面同时负责展示标题、处理输入、渲染列表、弹出详情、控制加载状态，它就包含多个职责了。React 的第一步是按职责分块，别按视觉区块乱切。</p>
-          <div class="comparison-card" data-od-id="react-comparison">
-            <div>
-              <span class="micro-label">Todo Page</span>
-              <div class="code-block">TodoPage
-├─ TodoForm
-├─ TodoList
-└─ EmptyState</div>
-            </div>
-            <div>
-              <span class="micro-label">后台页</span>
-              <div class="code-block">DashboardPage
-├─ Navbar
-├─ Sidebar
-├─ UserTable
-└─ UserDrawer</div>
-            </div>
+        <section class="lesson-section atlas-item" id="atlas-navbar" data-od-id="atlas-navbar">
+          <span class="micro-label">Navigation</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-navbar-demo"><strong class="atlas-navbar-brand">Acme Admin</strong><nav class="atlas-navbar-links"><span>控制台</span><span>用户</span><span>订单</span></nav><button class="atlas-btn" type="button">登录</button></div></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-navbar">页面顶部放一个 Navbar，左侧是 Logo，中间是主导航，右侧是搜索或登录入口。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-navbar">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Navbar</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 顶部导航栏。通常横着放在页面最上面。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 顶部导航、主导航、品牌区、右侧操作区。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 放 Logo、一级菜单、搜索、登录入口、头像菜单。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 页面顶部放一个 Navbar，左侧是 Logo，中间是导航，右侧是搜索和用户头像。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-sidebar-comp" data-od-id="atlas-sidebar-comp">
+          <span class="micro-label">Navigation</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-sidebar-demo"><strong class="atlas-sidebar-title">管理后台</strong><div class="atlas-sidebar-item is-active">概览</div><div class="atlas-sidebar-item">用户管理</div><div class="atlas-sidebar-item">订单管理</div><div class="atlas-sidebar-item">系统设置</div></div></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-sidebar">页面左侧放一个 Sidebar，包含分组标题、当前高亮菜单和折叠态。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-sidebar">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Sidebar</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 侧边栏。通常竖着放在页面左边，用来切换主功能区。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 侧边导航、菜单组、当前高亮项、折叠态。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 管理后台导航、工作台入口、系统菜单切换。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 左侧放一个 Sidebar，支持当前菜单高亮，适合后台系统。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-button" data-od-id="atlas-button">
+          <span class="micro-label">Action</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-button-row"><button class="atlas-btn atlas-btn-primary" type="button" data-demo-button="save">保存</button><button class="atlas-btn" type="button" data-demo-button="cancel">取消</button><button class="atlas-btn atlas-btn-danger" type="button" data-demo-button="delete">删除</button></div><p class="atlas-feedback" data-button-feedback>点击一个按钮试试。</p></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-button">右上角放一个主按钮“新建用户”，旁边放次按钮“导出”，危险按钮用来删除。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-button">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Button</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 按钮。页面里最常见的动作触发器。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 主按钮、次按钮、危险按钮。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 提交表单、保存修改、删除数据、打开弹窗。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 右上角放一个主按钮“新建用户”，旁边放次按钮“导出”。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-input" data-od-id="atlas-input">
+          <span class="micro-label">Input</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><label class="atlas-field"><span>用户名</span><input class="atlas-input" value="zhangsan@example.com" data-demo-input></label><p class="atlas-feedback">当前输入：<span data-input-value>zhangsan@example.com</span></p></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-input">顶部放一个搜索输入框，placeholder 是“搜索用户名 / 手机号”，输入时实时过滤列表。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-input">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Input</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 输入框。用户往里面填文字。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 输入框、占位文案、错误态、禁用态。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 搜索、录入名称、输入邮箱、填写参数。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 顶部放一个搜索输入框，placeholder 是“搜索用户名 / 手机号”。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-select" data-od-id="atlas-select">
+          <span class="micro-label">Select</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-select-demo" data-select-demo><button class="atlas-select" type="button" data-select-trigger><span data-select-value>全部角色</span><span>▾</span></button><div class="atlas-menu" data-select-menu hidden><button class="atlas-menu-item" type="button" data-select-option="管理员">管理员</button><button class="atlas-menu-item" type="button" data-select-option="普通用户">普通用户</button><button class="atlas-menu-item" type="button" data-select-option="访客">访客</button></div></div></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-select">表格上方放一个角色 Select，可选“全部 / 管理员 / 普通用户 / 访客”。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-select">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Select</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 选择器。点一下展开选项，再选一个值。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 下拉选择器、单选、多选、默认项。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 筛选角色、切换状态、选时间范围、选部门。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 表格上方放一个角色 Select，可选“全部 / 管理员 / 普通用户”。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-tabs" data-od-id="atlas-tabs">
+          <span class="micro-label">Navigation</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-tabs" data-tabs-demo><button class="atlas-tab is-active" type="button" data-tabs-option="全部">全部</button><button class="atlas-tab" type="button" data-tabs-option="已发布">已发布</button><button class="atlas-tab" type="button" data-tabs-option="草稿">草稿</button></div><p class="atlas-feedback">当前面板：<span data-tabs-value>全部</span></p></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-tabs">列表上方加 Tabs，支持“全部 / 进行中 / 已完成”切换。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-tabs">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Tabs</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 标签页。几块内容之间的平级切换。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 标签页、当前激活项、切换面板。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 切换分类、切换状态、切换不同内容视图。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 列表上方加 Tabs，支持“全部 / 进行中 / 已完成”切换。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-table" data-od-id="atlas-table">
+          <span class="micro-label">Data</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><table class="atlas-table"><thead><tr><th>姓名</th><th>角色</th><th>状态</th></tr></thead><tbody><tr><td>张三</td><td>管理员</td><td>启用</td></tr><tr><td>李四</td><td>访客</td><td>禁用</td></tr></tbody></table></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-table">主内容区放一个用户 Table，列有姓名、角色、状态、创建时间、操作。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-table">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Table</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 表格。后台系统里最常见的数据展示方式。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 列、行、操作列、表头、分页、筛选。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 用户列表、订单列表、任务列表、日志列表。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 主内容区放一个用户 Table，列有姓名、角色、状态、创建时间、操作。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-modal" data-od-id="atlas-modal">
+          <span class="micro-label">Feedback</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface atlas-overlay-demo" data-modal-demo><button class="atlas-btn atlas-btn-primary" type="button" data-modal-open>打开确认框</button><div class="atlas-modal" data-modal-panel hidden><strong>确认删除？</strong><p>删除后不可恢复。</p><div class="atlas-button-row"><button class="atlas-btn" type="button" data-modal-close>取消</button><button class="atlas-btn atlas-btn-danger" type="button" data-modal-close>确认</button></div></div></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-modal">点击删除按钮后弹出确认 Modal，包含标题、说明、取消和确认按钮。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-modal">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Modal</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 弹窗。内容浮在页面中间，通常要先处理它。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 弹窗、确认框、遮罩层、关闭按钮。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 删除确认、二次确认、关键设置、补充说明。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 点击删除按钮后弹出确认 Modal，包含标题、说明、取消和确认按钮。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-drawer" data-od-id="atlas-drawer">
+          <span class="micro-label">Overlay</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface atlas-overlay-demo" data-drawer-demo><button class="atlas-btn atlas-btn-primary" type="button" data-drawer-open>打开详情</button><div class="atlas-drawer" data-drawer-panel hidden><strong>用户详情</strong><p>手机号、角色、最后登录时间</p><div class="atlas-line"></div><div class="atlas-line short"></div><button class="atlas-btn" type="button" data-drawer-close>关闭</button></div></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-drawer">点击表格行后，从右侧打开一个 Drawer 展示用户详情。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-drawer">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Drawer</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 抽屉。从侧边滑出来的一层，常见于右侧。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 右侧抽屉、侧滑层、详情面板。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 看详情、改资料、补表单，不想跳页面时很常见。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 点击表格行后，从右侧打开一个 Drawer 展示用户详情。</div>
+        </section>
+        <section class="lesson-section atlas-item" id="atlas-pagination" data-od-id="atlas-pagination">
+          <span class="micro-label">Paging</span>
+          <div class="atlas-stack" data-atlas-demo>
+            <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
+            <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-pagination" data-pagination-demo><button class="atlas-page" type="button" data-page-nav="prev">‹</button><button class="atlas-page is-active" type="button" data-page="1">1</button><button class="atlas-page" type="button" data-page="2">2</button><button class="atlas-page" type="button" data-page="3">3</button><button class="atlas-page" type="button" data-page-nav="next">›</button></div><p class="atlas-feedback">当前页：<span data-page-value>1</span></p></div></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-pagination">表格底部加 Pagination，显示当前页、总条数和上一页下一页。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-pagination">Copy Prompt</button></div></div>
+          </div>
+          <h3 class="atlas-name">Pagination</h3>
+          <p class="atlas-copy"><strong>这是啥？</strong> 分页器。数据太多时，用它切到下一页。</p>
+          <p class="atlas-copy"><strong>前端术语：</strong> 分页器、当前页、上一页、下一页、总条数。</p>
+          <p class="atlas-copy"><strong>常用来干嘛：</strong> 表格翻页、文章列表翻页、搜索结果翻页。</p>
+          <div class="atlas-note"><strong>提示词写法：</strong> 表格底部加 Pagination，显示当前页、总条数和上一页下一页。</div>
+        </section>
+
+        <section class="lesson-section" id="atlas-writing" data-od-id="atlas-writing">
+          <h2>提示词怎么写</h2>
+          <div class="callout-card">
+            <strong>错误写法：</strong>
+            <p>右边出来一个东西，中间弹一个框，上面再放几个切换按钮。</p>
+          </div>
+          <div class="callout-card analogy">
+            <strong>更好的写法：</strong>
+            <p>右侧打开一个 Drawer 展示详情；删除时弹出 Modal 确认；列表上方放 Tabs 切换状态；主内容区用 Table 展示数据，底部带 Pagination。</p>
           </div>
         </section>
-        <section class="lesson-section" id="react-practice" data-od-id="react-practice">
-          <h2>练习：把原生 JS Todo 改写成 React 组件</h2>
-          <p>你会直观看到两个变化：事件处理不再散在 DOM 查询里，状态也不再手工拼接 HTML，而是通过数据映射直接生成 UI。</p>
-        </section>
-        <section class="lesson-section" id="react-prompt" data-od-id="react-prompt">
-          <h2>直接可用的 React 提示词</h2>
-          <div class="prompt-block" id="react-prompt-block">请帮我把一个原生 JavaScript Todo 页面改写成 React 版本。
-要求：
-1. 组件拆分为 TodoPage、TodoForm、TodoList、EmptyState
-2. 使用 useState 管理任务列表和输入框值
-3. 支持添加和删除任务
-4. 当列表为空时显示空状态
-5. 代码结构清楚，适合初学者阅读</div>
-          <button class="copy-button" type="button" data-copy-target="react-prompt-block" data-od-id="react-copy-prompt">Copy Prompt</button>
-        </section>
       </article>
-      <aside class="sidebar-card" data-od-id="react-sidebar">
+      <aside class="sidebar-card" data-od-id="atlas-sidebar">
         <span class="micro-label">章节目录</span>
         <ul class="toc-list">
-          <li><a href="#react-mental-model">心智模型</a></li>
-          <li><a href="#react-vocab">词汇表</a></li>
-          <li><a href="#react-split">组件拆分</a></li>
-          <li><a href="#react-practice">练习</a></li>
-          <li><a href="#react-prompt">Prompt</a></li>
+          <li><a href="#atlas-why">这章讲什么</a></li>
+          <li><a href="#atlas-gallery">组件长相</a></li>
+          <li><a href="#atlas-navbar">Navbar</a></li>
+          <li><a href="#atlas-sidebar-comp">Sidebar</a></li>
+          <li><a href="#atlas-button">Button</a></li>
+          <li><a href="#atlas-input">Input</a></li>
+          <li><a href="#atlas-select">Select</a></li>
+          <li><a href="#atlas-tabs">Tabs</a></li>
+          <li><a href="#atlas-table">Table</a></li>
+          <li><a href="#atlas-modal">Modal</a></li>
+          <li><a href="#atlas-drawer">Drawer</a></li>
+          <li><a href="#atlas-pagination">Pagination</a></li>
+          <li><a href="#atlas-writing">提示词怎么写</a></li>
         </ul>
       </aside>
     </section>

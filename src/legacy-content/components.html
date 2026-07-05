@@ -1,28 +1,19 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>组件认知页 · 后端同学的前端战术手册</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <header class="site-header" data-od-id="components-header">
+<header class="site-header" data-od-id="components-header">
     <div class="container site-header-inner">
-      <a class="brand-mark" href="./index.html" data-od-id="components-brand-link"><span>Backend Frontend Hub</span><span class="brand-pill">Wiki</span></a>
+      <a class="brand-mark" href="/index.html" data-od-id="components-brand-link"><span>后端前端中心</span><span class="brand-pill">组件</span></a>
       <nav class="nav-links" data-od-id="components-nav">
-        <a href="./index.html">Home</a>
-        <a href="./lesson-react.html">见多识广</a>
-        <a href="./prompts.html">Prompts</a>
+        <a href="/index.html">首页</a>
+        <a href="/lesson-react.html">见多识广</a>
+        <a href="/prompts.html">提示词</a>
       </nav>
-      <a class="button" href="./prompts.html" data-od-id="components-header-cta">Open Prompt Library →</a>
+      <a class="button" href="/prompts.html" data-od-id="components-header-cta">打开提示词库 →</a>
     </div>
   </header>
   <main class="container" data-od-id="components-main">
     <section class="page-hero" data-od-id="components-hero">
-      <div class="breadcrumb">Hub / Components / Frontend component wiki</div>
+      <div class="breadcrumb">手册 / 组件 / 前端组件词汇表</div>
       <h1 class="page-title" data-od-id="components-title">先认识组件，再学会和 AI 说前端语言。</h1>
-      <p class="lede">这页是给后端同学的组件词汇表。每个卡片都回答五件事：它是什么、解决什么问题、后端怎么理解、常见场景、怎样描述给 AI。</p>
+      <p class="lede">这页不是组件文档大全，而是给后端同学的组件词汇表。每个卡片都回答五件事：它是什么、解决什么问题、后端怎么理解、常见场景、怎样描述给 AI。</p>
     </section>
     <section class="section" data-od-id="components-grid-section">
       <div class="wiki-grid">
@@ -83,11 +74,9 @@
         <article class="wiki-card" data-od-id="component-loading">
           <span class="micro-label">States</span>
           <h3>Loading / Empty State</h3>
-          <p>它们是页面状态机的一部分。AI 提示词必须明确这些状态。</p>
+          <p>它们不是装饰，而是页面状态机的一部分。AI 提示词必须明确这些状态。</p>
           <div class="prompt-block">表格加载时显示 Loading，空数据时显示 Empty State，错误时显示错误提示条。</div>
         </article>
       </div>
     </section>
   </main>
-</body>
-</html>

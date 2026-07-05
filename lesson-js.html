@@ -4,94 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JavaScript 第一课 · 后端同学的前端战术手册</title>
-  <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body>
-  <header class="site-header" data-od-id="js-header">
-    <div class="lesson-shell site-header-inner">
-      <a class="brand-mark" href="/index.html" data-od-id="js-brand-link"><span>后端前端中心</span><span class="brand-pill">指南</span></a>
-      <nav class="nav-links" data-od-id="js-nav">
-        <a href="/lesson-css.html">CSS</a>
-        <a href="/lesson-react.html">React</a>
-        <a href="/prompts.html">提示词</a>
-      </nav>
-      <a class="button" href="/lesson-react.html" data-od-id="js-next-header">下一课：React →</a>
-    </div>
-  </header>
-  <main class="lesson-shell" data-od-id="js-main">
-    <section class="page-hero" data-od-id="js-hero">
-      <nav class="breadcrumb" data-od-id="js-breadcrumb">
-        <a href="/index.html">首页</a>
-        <span class="breadcrumb-sep">/</span>
-        <a href="/lesson-html.html">HTML 课</a>
-        <span class="breadcrumb-sep">/</span>
-        <a href="/lesson-css.html">CSS 课</a>
-        <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">JavaScript 课</span>
-        <span class="breadcrumb-sep">/</span>
-        <a href="/lesson-react.html">React 课</a>
-      </nav>
-      <h1 class="page-title" data-od-id="js-title">JavaScript 让页面动起来。</h1>
-      <p class="lede">你不需要一开始就钻进复杂语法。先理解两个问题：页面发生了什么事件？数据状态变了以后，界面应该怎样跟着变化？</p>
-      <div class="meta-row">
-        <span class="meta-chip">分类：JavaScript</span>
-        <span class="meta-chip">难度：Beginner</span>
-        <span class="meta-chip">预计阅读：13 min</span>
-        <span class="meta-chip">产物：交互小工具</span>
-      </div>
-    </section>
-    <section class="lesson-layout" data-od-id="js-layout">
-      <article class="lesson-prose" data-od-id="js-article">
-        <section class="lesson-section" id="js-state" data-od-id="js-state">
-          <h2>先从状态变化理解 JavaScript</h2>
-          <p>后端同学更容易把 JS 理解成“页面内的一点点业务逻辑”。这个理解是对的。点击、输入、删除，本质上都是状态更新，然后 UI 根据最新状态重画。</p>
-        </section>
-        <section class="lesson-section" id="js-core" data-od-id="js-core">
-          <h2>第一批概念</h2>
-          <ul class="bullet-list">
-            <li><strong>变量</strong>：保存页面当前状态</li>
-            <li><strong>DOM</strong>：浏览器里的结构树</li>
-            <li><strong>事件</strong>：点击、输入、提交</li>
-            <li><strong>条件渲染</strong>：空状态 vs 有数据</li>
-            <li><strong>列表更新</strong>：新增、删除、排序</li>
-          </ul>
-        </section>
-        <section class="lesson-section" id="js-practice" data-od-id="js-practice">
-          <h2>练习：任务列表是最好的第一块交互面板</h2>
-          <p>Todo 的价值不在功能复杂，而在于它刚好覆盖了输入、事件、列表、状态和空态五件事。做通这个例子，后续做搜索、筛选、弹窗都更容易迁移。</p>
-          <div class="callout-card" data-od-id="js-practice-output">
-            <strong>最终产物：</strong>
-            <p>一个可以输入任务、点击添加、点击删除，并在空数据时显示“暂无任务”的工具页。</p>
-          </div>
-        </section>
-        <section class="lesson-section" id="js-backend" data-od-id="js-backend">
-          <h2>后端类比：State 就像页面内存</h2>
-          <p>后端接口会返回某个时刻的数据快照；前端 State 则是用户操作过程中，页面在浏览器里临时持有的当前值。更新 State，就像修改一份还没持久化但会立刻影响视图的内存对象。</p>
-        </section>
-        <section class="lesson-section" id="js-prompt" data-od-id="js-prompt">
-          <h2>直接可用的交互提示词</h2>
-          <div class="prompt-block" id="js-prompt-block">请帮我写一个原生 JavaScript 的任务列表页面。
-要求：
-1. 有输入框和添加按钮
-2. 点击添加后追加到列表
-3. 每条任务有删除按钮
-4. 当列表为空时显示“暂无任务”
-5. HTML、CSS、JS 分别清晰组织</div>
-          <button class="copy-button" type="button" data-copy-target="js-prompt-block" data-od-id="js-copy-prompt">Copy Prompt</button>
-        </section>
-      </article>
-      <aside class="lesson-aside" data-od-id="js-sidebar">
-        <span class="micro-label">章节目录</span>
-        <ul class="toc-list">
-          <li><a href="#js-state">状态变化</a></li>
-          <li><a href="#js-core">核心概念</a></li>
-          <li><a href="#js-practice">练习</a></li>
-          <li><a href="#js-backend">后端类比</a></li>
-          <li><a href="#js-prompt">Prompt</a></li>
-        </ul>
-      </aside>
-    </section>
-  </main>
-  <script type="module" src="/src/app.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/lesson-js-main.jsx"></script>
 </body>
 </html>

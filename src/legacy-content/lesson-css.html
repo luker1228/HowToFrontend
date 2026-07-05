@@ -1,0 +1,391 @@
+<header class="site-header" data-od-id="css-header">
+    <div class="lesson-shell site-header-inner">
+      <a class="brand-mark" href="/index.html" data-od-id="css-brand-link"><span>后端前端中心</span><span class="brand-pill">指南</span></a>
+      <nav class="nav-links" data-od-id="css-nav">
+        <a href="/lesson-html.html">HTML</a>
+        <a href="/lesson-js.html">JavaScript</a>
+        <a href="/prompts.html">提示词</a>
+      </nav>
+      <a class="button" href="/lesson-js.html" data-od-id="css-next-header">下一课：JavaScript →</a>
+    </div>
+  </header>
+  <main class="lesson-shell" data-od-id="css-main">
+    <section class="page-hero" data-od-id="css-hero">
+      <nav class="breadcrumb" data-od-id="css-breadcrumb">
+        <a href="/index.html">首页</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-html.html">HTML 课</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">CSS 课</span>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-js.html">JavaScript 课</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-react.html">见多识广</a>
+      </nav>
+      <h1 class="page-title" data-od-id="css-title">CSS 控制页面长什么样。</h1>
+      <p class="lede">如果 HTML 是结构化响应，CSS 就像展示层配置。它决定字号、颜色、间距、边框和 hover 状态，决定“浏览器看起来像不像产品”。</p>
+      <div class="meta-row">
+        <span class="meta-chip">分类：CSS</span>
+        <span class="meta-chip">难度：Beginner</span>
+        <span class="meta-chip">预计阅读：14 min</span>
+        <span class="meta-chip">产物：静态网页</span>
+      </div>
+    </section>
+    <section class="lesson-layout" data-od-id="css-layout">
+      <article class="lesson-prose" data-od-id="css-article">
+        <section class="lesson-section" id="css-idea" data-od-id="css-idea">
+          <h2>这章先只看“样子”</h2>
+          <p>这一章先不讲布局，只先建立一个基础认识：CSS 主要是在控制页面看起来怎么样。字大一点还是小一点，颜色深一点还是浅一点，卡片是挤还是松，按钮有没有反馈，这些都归 CSS 管。</p>
+        </section>
+        <section class="lesson-section playground-section" id="pg-font" data-od-id="css-pg-font">
+          <h2>动手 1：控制字号</h2>
+          <p>改 <code>.card-title</code> 的 <code>font-size</code>。比如把 <code>16px</code> 改到 <code>55px</code>，看看标题会不会更显眼。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="1"></textarea>
+                <pre class="guided-css-muted">.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</pre>
+                <div class="playground-toolbar">
+                  <button type="button" class="small-button" data-playground-reset>重置</button>
+                </div>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}</script>
+              <script type="text/plain" data-playground-base-after-css>.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</script>
+              <script type="text/plain" data-playground-css>.card-title { font-size: 16px; margin: 0 0 8px; }</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="font-size preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-padding" data-od-id="css-pg-padding">
+          <h2>动手 2：控制留白</h2>
+          <p>改 <code>.card</code> 的 <code>padding</code>，从 <code>8px</code> 往上调。这个值越大，卡片里的内容看起来越松。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="6"></textarea>
+                <pre class="guided-css-muted">.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</pre>
+                <div class="playground-toolbar">
+                  <button type="button" class="small-button" data-playground-reset>重置</button>
+                </div>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}</script>
+              <script type="text/plain" data-playground-css>.card {
+  padding: 8px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}</script>
+              <script type="text/plain" data-playground-base-after-css>.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="padding preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-flex" data-od-id="css-pg-flex">
+          <h2>动手 3：控制方向</h2>
+          <p>把 <code>.card-actions</code> 的 <code>flex-direction</code> 从 <code>row</code> 改成 <code>column</code>，看按钮从横排变成竖排。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="1"></textarea>
+                <pre class="guided-css-muted">.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}</pre>
+                <div class="playground-toolbar">
+                  <button type="button" class="small-button" data-playground-reset>重置</button>
+                </div>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }</script>
+              <script type="text/plain" data-playground-css>.card-actions { display: flex; flex-direction: row; gap: 10px; }</script>
+              <script type="text/plain" data-playground-base-after-css>.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="flex-direction preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-hover" data-od-id="css-pg-hover">
+          <h2>动手 4：控制 hover</h2>
+          <p>在 CSS 最后加一条 <code>.card-button:hover { ... }</code>，改背景或颜色。把鼠标移到按钮上——状态反馈就是这点东西，缺了页面就“死”。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }
+.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="4"></textarea>
+                <div class="playground-toolbar">
+                  <button type="button" class="small-button" data-playground-reset>重置</button>
+                </div>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }
+.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}</script>
+              <script type="text/plain" data-playground-css>.card-button:hover {
+  background: #1a1a1a;
+  color: #fff;
+}</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="hover preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-color" data-od-id="css-pg-color">
+          <h2>动手 5：控制颜色</h2>
+          <p>这里改的是“编辑”和“删除”两个按钮的颜色，也就是 <code>.card-button</code> 这一块。可以直接试这 5 个色值：<span class="color-chip" style="--chip-color:#1a1a1a"></span><code>#1a1a1a</code>、<span class="color-chip" style="--chip-color:#4b5563"></span><code>#4b5563</code>、<span class="color-chip" style="--chip-color:#0f766e"></span><code>#0f766e</code>、<span class="color-chip" style="--chip-color:#b45309"></span><code>#b45309</code>、<span class="color-chip" style="--chip-color:#b91c1c"></span><code>#b91c1c</code>。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="6"></textarea>
+                <div class="playground-toolbar">
+                  <button type="button" class="small-button" data-playground-reset>重置</button>
+                </div>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }</script>
+              <script type="text/plain" data-playground-css>.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #fff;
+  cursor: pointer;
+}</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">状态：高优先级 · 角色：管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="color preview"></iframe>
+            </div>
+          </div>
+        </section>
+      </article>
+      <aside class="lesson-aside" data-od-id="css-sidebar">
+        <span class="micro-label">章节目录</span>
+        <ul class="toc-list">
+          <li><a href="#css-idea">这章讲什么</a></li>
+          <li><a href="#pg-font">动手1 字号</a></li>
+          <li><a href="#pg-padding">动手2 留白</a></li>
+          <li><a href="#pg-flex">动手3 方向</a></li>
+          <li><a href="#pg-hover">动手4 hover</a></li>
+          <li><a href="#pg-color">动手5 颜色</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script type="module" src="/src/app.js"></script>

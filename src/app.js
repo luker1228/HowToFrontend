@@ -58,11 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterPromptCards();
 
-  const toc = document.querySelector(".lesson-aside .toc-list");
   const proseSections = Array.from(document.querySelectorAll(".lesson-prose .lesson-section[id]"));
-  if (toc && proseSections.length) {
-    const links = Array.from(toc.querySelectorAll("a"));
-    const linkFor = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+  const tocLists = Array.from(document.querySelectorAll(".lesson-sidebar .toc-list, .lesson-aside .toc-list"));
+  if (tocLists.length && proseSections.length) {
+    const links = tocLists.flatMap((list) => Array.from(list.querySelectorAll("a")));
     const visible = new Map();
     const observer = new IntersectionObserver(
       (entries) => {
@@ -78,7 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
         if (bestId) {
-          links.forEach((a) => a.classList.toggle("is-active", a === linkFor.get(bestId)));
+          links.forEach((a) => {
+            const href = a.getAttribute("href")?.slice(1);
+            a.classList.toggle("is-active", href === bestId);
+          });
         }
       },
       { rootMargin: "-96px 0px -55% 0px", threshold: [0, 0.1, 0.5, 1] }
@@ -86,24 +88,144 @@ document.addEventListener("DOMContentLoaded", () => {
     proseSections.forEach((section) => observer.observe(section));
   }
 
+  document.querySelectorAll("[data-atlas-demo]").forEach((root) => {
+    const tabs = Array.from(root.querySelectorAll("[data-atlas-tab]"));
+    const views = Array.from(root.querySelectorAll("[data-atlas-view]"));
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-atlas-tab");
+        tabs.forEach((item) => item.classList.toggle("is-active", item === tab));
+        views.forEach((view) => view.classList.toggle("is-active", view.getAttribute("data-atlas-view") === target));
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-demo-button]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const feedback = button.closest("[data-atlas-demo]")?.querySelector("[data-button-feedback]");
+      if (!feedback) return;
+      const messages = {
+        save: "你点击了主按钮，通常会触发提交或保存。",
+        cancel: "你点击了次按钮，通常会回退当前操作。",
+        delete: "你点击了危险按钮，通常要再弹一次确认。 ",
+      };
+      feedback.textContent = messages[button.getAttribute("data-demo-button")] || "点击一个按钮试试。";
+    });
+  });
+
+  document.querySelectorAll("[data-demo-input]").forEach((input) => {
+    const valueNode = input.closest("[data-atlas-demo]")?.querySelector("[data-input-value]");
+    if (!valueNode) return;
+    input.addEventListener("input", () => {
+      valueNode.textContent = input.value || "(空)";
+    });
+  });
+
+  document.querySelectorAll("[data-select-demo]").forEach((root) => {
+    const trigger = root.querySelector("[data-select-trigger]");
+    const menu = root.querySelector("[data-select-menu]");
+    const value = root.querySelector("[data-select-value]");
+    const options = Array.from(root.querySelectorAll("[data-select-option]"));
+    if (!trigger || !menu || !value) return;
+
+    trigger.addEventListener("click", () => {
+      menu.hidden = !menu.hidden;
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        value.textContent = option.getAttribute("data-select-option") || option.textContent || "";
+        menu.hidden = true;
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-tabs-demo]").forEach((root) => {
+    const buttons = Array.from(root.querySelectorAll("[data-tabs-option]"));
+    const valueNode = root.closest("[data-atlas-demo]")?.querySelector("[data-tabs-value]");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((item) => item.classList.toggle("is-active", item === button));
+        if (valueNode) valueNode.textContent = button.getAttribute("data-tabs-option") || button.textContent || "";
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-modal-demo]").forEach((root) => {
+    const panel = root.querySelector("[data-modal-panel]");
+    root.querySelector("[data-modal-open]")?.addEventListener("click", () => {
+      if (panel) panel.hidden = false;
+    });
+    root.querySelectorAll("[data-modal-close]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (panel) panel.hidden = true;
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-drawer-demo]").forEach((root) => {
+    const panel = root.querySelector("[data-drawer-panel]");
+    root.querySelector("[data-drawer-open]")?.addEventListener("click", () => {
+      if (panel) panel.hidden = false;
+    });
+    root.querySelector("[data-drawer-close]")?.addEventListener("click", () => {
+      if (panel) panel.hidden = true;
+    });
+  });
+
+  document.querySelectorAll("[data-pagination-demo]").forEach((root) => {
+    const pageButtons = Array.from(root.querySelectorAll("[data-page]"));
+    const valueNode = root.closest("[data-atlas-demo]")?.querySelector("[data-page-value]");
+    let page = 1;
+
+    function syncPage() {
+      pageButtons.forEach((button) => {
+        button.classList.toggle("is-active", Number(button.getAttribute("data-page")) === page);
+      });
+      if (valueNode) valueNode.textContent = String(page);
+    }
+
+    root.querySelectorAll("[data-page]").forEach((button) => {
+      button.addEventListener("click", () => {
+        page = Number(button.getAttribute("data-page")) || 1;
+        syncPage();
+      });
+    });
+
+    root.querySelector("[data-page-nav='prev']")?.addEventListener("click", () => {
+      page = Math.max(1, page - 1);
+      syncPage();
+    });
+
+    root.querySelector("[data-page-nav='next']")?.addEventListener("click", () => {
+      page = Math.min(pageButtons.length, page + 1);
+      syncPage();
+    });
+  });
+
   document.querySelectorAll("[data-playground]").forEach((root) => {
     const source = root.querySelector("[data-playground-source]");
     const preview = root.querySelector("[data-playground-preview]");
     const resetBtn = root.querySelector("[data-playground-reset]");
     const cssTemplate = root.querySelector("[data-playground-css]");
+    const jsTemplate = root.querySelector("[data-playground-js]");
     const htmlTemplate = root.querySelector("[data-playground-html]");
-    if (!source || !preview || !cssTemplate || !htmlTemplate) return;
+    if (!source || !preview || !htmlTemplate || (!cssTemplate && !jsTemplate)) return;
 
-    const defaultCss = cssTemplate.textContent.trim();
+    const sourceTemplate = cssTemplate || jsTemplate;
+    const defaultSource = sourceTemplate.textContent.trim();
     const baseCss = root.querySelector("[data-playground-base-css]")?.textContent.trim();
     const baseBeforeCss = root.querySelector("[data-playground-base-before-css]")?.textContent.trim();
     const baseAfterCss = root.querySelector("[data-playground-base-after-css]")?.textContent.trim();
+    const baseBeforeJs = root.querySelector("[data-playground-base-before-js]")?.textContent.trim();
+    const baseAfterJs = root.querySelector("[data-playground-base-after-js]")?.textContent.trim();
     const html = htmlTemplate.textContent.trim();
-    source.value = defaultCss;
+    source.value = defaultSource;
 
     function render() {
-      const css = [baseBeforeCss || baseCss, source.value, baseAfterCss].filter(Boolean).join("\n");
-      const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${css}</style>${html}`;
+      const css = [baseBeforeCss || baseCss, cssTemplate ? source.value : null, baseAfterCss].filter(Boolean).join("\n");
+      const js = [baseBeforeJs, jsTemplate ? source.value : null, baseAfterJs].filter(Boolean).join("\n");
+      const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${css ? `<style>${css}</style>` : ""}${html}${js ? `<script>${js}<\/script>` : ""}`;
       preview.srcdoc = doc;
     }
 
@@ -114,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     resetBtn?.addEventListener("click", () => {
-      source.value = defaultCss;
+      source.value = defaultSource;
       render();
     });
 

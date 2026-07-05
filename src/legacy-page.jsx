@@ -1,0 +1,18 @@
+import React, { useEffect, useRef } from "react";
+import "./styles.css";
+import { initLegacyEnhancements } from "./legacy-enhancements.js";
+
+export function LegacyPage({ title, html }) {
+  const rootRef = useRef(null);
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  useEffect(() => {
+    if (!rootRef.current) return undefined;
+    return initLegacyEnhancements(rootRef.current);
+  }, [html]);
+
+  return <div ref={rootRef} dangerouslySetInnerHTML={{ __html: html }} />;
+}
