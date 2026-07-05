@@ -5,7 +5,8 @@
         <a href="/lesson-html.html" data-perspectives='[{"text":"Markdown 对比","href":"/lesson-html.html","current":true},{"text":"Figma 对比","href":"/lesson-html-2.html"}]'>HTML</a>
         <a href="/lesson-css.html" data-perspectives='[{"text":"CSS 基础","href":"/lesson-css.html"},{"text":"Figma 对比","href":"/lesson-css-2.html"}]'>CSS</a>
         <a href="/lesson-js.html">JavaScript</a>
-        <a href="/components.html" data-perspectives='[{"text":"先认词","href":"/lesson-react.html"},{"text":"组件词典","href":"/components.html"}]'>组件</a>
+        <a href="/lesson-react.html">组件</a>
+        <a href="/lesson-layout.html">布局</a>
       </nav>
       <div class="step-nav">
         <a class="step-nav-btn" aria-disabled="true">← 上一节</a>
@@ -13,26 +14,87 @@
       </div>
     </div>
   </header>
-  <main class="lesson-shell" data-od-id="lesson-html-main">
-    <section class="page-hero" data-od-id="html-page-hero">
-      <h1 class="page-title" data-od-id="html-page-title">HTML 语法详解：从 Markdown 到 HTML</h1>
-    </section>
-    <section class="lesson-layout" data-od-id="html-lesson-layout">
-      <article class="lesson-prose" data-od-id="html-lesson-article">
-        <section class="lesson-section" id="html-intro" data-od-id="html-intro-section">
-          <h2>0 · HTML 和 Markdown 一样，都是标签语言</h2>
-          <div class="hint-strip">
-            <span class="hint-tag">快速理解</span>HTML 就像 JSON 或 Markdown。JSON 是给程序看的结构化数据，HTML 是给浏览器看的结构化文档。Markdown 用 <code>#</code> 表示标题，HTML 用 <code>&lt;h1&gt;</code>；Markdown 用 <code>-</code> 表示列表，HTML 用 <code>&lt;ul&gt;&lt;li&gt;</code>。概念完全一样，只是写法不同。你不需要记住每个标签怎么写，遇到不会的查一下或者问 AI 就行。
+  <header class="html2-hero html-reading-hero" data-od-id="html-page-hero">
+    <div class="lesson-shell">
+      <div class="html2-hero-meta">
+        <span class="html2-pill html2-pill-fill">Markdown 对照 · COMPARE</span>
+        <span class="html2-pill">HTML 第一课 · 语法对照</span>
+        <span class="html2-label">阅读时长 ≈ 12 分钟</span>
+      </div>
+      <div class="html2-hero-grid">
+        <div class="html2-hero-copy">
+          <h1 class="page-title html2-page-title" data-od-id="html-page-title">
+            <span class="html2-title-line">Markdown</span><br>
+            <span class="html2-title-line">怎么翻成 HTML</span><span class="html2-title-line">？</span>
+          </h1>
+          <p class="lede html2-lede">
+            如果你已经会写 Markdown，学 HTML 不是从零开始。<br>
+            这一页做的事很简单：把常见 Markdown 写法，<br>逐个翻成对应的 HTML 标签和页面结构。
+          </p>
+        </div>
+        <div class="html2-hero-side">
+          <div class="html2-hero-row"><span class="html2-hero-k">本页讲什么</span><span class="html2-hero-v">Markdown ↔ HTML</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">内容形式</span><span class="html2-hero-v">语法对照 + 实时渲染</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">适合谁</span><span class="html2-hero-v">后端 / 新手 / 会 Markdown 的人</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">目标</span><span class="html2-hero-v">看见符号就想到标签</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="html-reading-page" data-od-id="lesson-html-main">
+    <aside class="lesson-aside lesson-floating-toc" data-od-id="html-floating-toc">
+      <button type="button" class="toc-toggle" data-toc-toggle aria-expanded="true">目录</button>
+      <div class="toc-body" data-toc-body>
+      <span class="micro-label">章节目录</span>
+      <ul class="toc-list">
+        <li>
+          <a href="#html-intro">01 核心</a>
+        </li>
+        <li>
+          <a href="#html-heading">02 语法项</a>
+          <div class="toc-sub">
+            <a href="#html-heading">标题</a>
+            <a href="#html-paragraph">段落</a>
+            <a href="#html-br">换行</a>
+            <a href="#html-bold">粗体</a>
+            <a href="#html-italic">斜体</a>
+            <a href="#html-blockquote">引用</a>
+            <a href="#html-code-inline">行内代码</a>
+            <a href="#html-code-block">代码块</a>
+            <a href="#html-hr">分隔线</a>
+            <a href="#html-ul">无序列表</a>
+            <a href="#html-ol">有序列表</a>
+            <a href="#html-link">链接</a>
+            <a href="#html-image">图片</a>
+            <a href="#html-table">表格</a>
+            <a href="#html-form">表单</a>
           </div>
-          <p class="interaction-hint"><span class="hint-icon">→</span> 下面两章把所有标签按"文本类 / 结构与交互类"分组。每组对照：左 Markdown、右 HTML，下方实时渲染。改一个符号看右边变化。</p>
-        </section>
+        </li>
+        <li>
+          <a href="#html-summary">03 总结</a>
+        </li>
+      </ul>
+      </div>
+    </aside>
+    <section class="html2-body-section" id="html-intro" data-od-id="html-intro-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-num"><strong>01</strong> / 核心</div>
+            <h2 class="section-title">HTML 和 Markdown<br>本质上是同一类东西</h2>
+          </div>
+        </div>
+        <div class="html2-inline-note">
+          <span class="html2-inline-note-tag">核心</span>
+          <p>HTML 就像 JSON 或 Markdown。JSON 是给程序看的结构化数据，HTML 是给浏览器看的结构化文档。Markdown 用 <code>#</code> 表示标题，HTML 用 <code>&lt;h1&gt;</code>；Markdown 用 <code>-</code> 表示列表，HTML 用 <code>&lt;ul&gt;&lt;li&gt;</code>。概念完全一样，只是写法不同。你不需要记住每个标签怎么写，遇到不会的查一下或者问 AI 就行。</p>
+        </div>
+      </div>
+    </section>
 
-        <section class="lesson-section" id="html-text" data-od-id="html-text-section">
-          <h2>1 · 文本类标签</h2>
-          <p>这一组都是 Markdown 也能写的——语义一一对应，只是写法从符号换成了标签。读完这节，你已经覆盖了 Markdown 80% 的能力。</p>
-
-          <div class="tag-item" id="html-heading" data-od-id="html-heading-item">
-            <h3 class="item-title"><span class="item-title-name">标题</span><span class="item-title-sep">·</span><span class="item-title-md">#</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;h1&gt; ~ &lt;h6&gt;</span></h3>
+    <section class="html2-body-section" id="html-heading" data-od-id="html-heading-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">标题</span>。</h4>
             <p>Markdown 用 <code>#</code> 数量表示标题层级，HTML 用 <code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code> 标签。一个页面通常只有一个 <code>h1</code>，其他用 <code>h2</code>、<code>h3</code> 组织层级。</p>
             <div class="comparison-card" data-od-id="html-heading-comparison">
               <div>
@@ -48,7 +110,7 @@
 &lt;h3&gt;三级标题&lt;/h3&gt;</div>
               </div>
             </div>
-            <div class="preview-section">
+          <div class="preview-section">
               <span class="preview-label">渲染结果</span>
               <div class="preview-content">
                 <h1>一级标题</h1>
@@ -57,9 +119,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-paragraph" data-od-id="html-paragraph-item">
-            <h3 class="item-title"><span class="item-title-name">段落</span><span class="item-title-sep">·</span><span class="item-title-md">空行</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;p&gt;</span></h3>
+    <section class="html2-body-section" id="html-paragraph" data-od-id="html-paragraph-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">段落</span>。</h4>
             <p>Markdown 里空行分隔段落，HTML 需要用 <code>&lt;p&gt;</code> 标签显式包裹每个段落。这是 HTML 比 Markdown "啰嗦"的地方，但也更明确。</p>
             <div class="comparison-card" data-od-id="html-paragraph-comparison">
               <div>
@@ -86,9 +152,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-br" data-od-id="html-br-item">
-            <h3 class="item-title"><span class="item-title-name">换行</span><span class="item-title-sep">·</span><span class="item-title-md">行末两空格</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;br&gt;</span></h3>
+    <section class="html2-body-section" id="html-br" data-od-id="html-br-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">换行</span>。</h4>
             <p>Markdown 段落用空行分隔。同一段内想换行有两种写法：行末加 <strong>两个空格</strong>再回车，或直接插入 <code>&lt;br&gt;</code> 标签。</p>
             <p>HTML 不一样。浏览器把源码里的所有空白（空格、回车、连续空行）折叠成一个空格，<strong>源码敲多少回车都没用</strong>。要换行必须用 <code>&lt;br&gt;</code> 自闭合标签，没有第二种写法。</p>
             <div class="comparison-card" data-od-id="html-br-comparison">
@@ -125,9 +195,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-bold" data-od-id="html-bold-item">
-            <h3 class="item-title"><span class="item-title-name">粗体</span><span class="item-title-sep">·</span><span class="item-title-md">**文字**</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;strong&gt;</span></h3>
+    <section class="html2-body-section" id="html-bold" data-od-id="html-bold-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">粗体</span>。</h4>
             <p>Markdown 用双星号 <code>**文字**</code>，HTML 用 <code>&lt;strong&gt;</code> 标签。<code>&lt;strong&gt;</code> 不只是视觉加粗，还语义上表示"这段内容很重要"。</p>
             <div class="comparison-card" data-od-id="html-bold-comparison">
               <div>
@@ -146,9 +220,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-italic" data-od-id="html-italic-item">
-            <h3 class="item-title"><span class="item-title-name">斜体</span><span class="item-title-sep">·</span><span class="item-title-md">*文字*</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;em&gt;</span></h3>
+    <section class="html2-body-section" id="html-italic" data-od-id="html-italic-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">斜体</span>。</h4>
             <p>Markdown 用单星号 <code>*文字*</code>，HTML 用 <code>&lt;em&gt;</code> 标签。<code>&lt;em&gt;</code> 表示"强调"，浏览器默认渲染为斜体。</p>
             <div class="comparison-card" data-od-id="html-italic-comparison">
               <div>
@@ -167,9 +245,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-blockquote" data-od-id="html-blockquote-item">
-            <h3 class="item-title"><span class="item-title-name">引用</span><span class="item-title-sep">·</span><span class="item-title-md">&gt;</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;blockquote&gt;</span></h3>
+    <section class="html2-body-section" id="html-blockquote" data-od-id="html-blockquote-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">引用</span>。</h4>
             <p>Markdown 用 <code>&gt;</code> 开头，HTML 用 <code>&lt;blockquote&gt;</code> 标签。引用块通常会有视觉上的缩进或左边框。</p>
             <div class="comparison-card" data-od-id="html-blockquote-comparison">
               <div>
@@ -195,9 +277,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-code-inline" data-od-id="html-code-inline-item">
-            <h3 class="item-title"><span class="item-title-name">行内代码</span><span class="item-title-sep">·</span><span class="item-title-md">`code`</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;code&gt;</span></h3>
+    <section class="html2-body-section" id="html-code-inline" data-od-id="html-code-inline-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">行内代码</span>。</h4>
             <p>Markdown 用反引号 <code>`code`</code>，HTML 用 <code>&lt;code&gt;</code> 标签。行内代码通常会有等宽字体和浅色背景。</p>
             <div class="comparison-card" data-od-id="html-code-inline-comparison">
               <div>
@@ -216,9 +302,13 @@
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-code-block" data-od-id="html-code-block-item">
-            <h3 class="item-title"><span class="item-title-name">代码块</span><span class="item-title-sep">·</span><span class="item-title-md">``` ```</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;pre&gt;&lt;code&gt;</span></h3>
+    <section class="html2-body-section" id="html-code-block" data-od-id="html-code-block-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">代码块</span>。</h4>
             <p>Markdown 用三个反引号包裹多行代码，HTML 用 <code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code>。<code>&lt;pre&gt;</code> 保留空格和换行，<code>&lt;code&gt;</code> 表示这是代码内容。</p>
             <div class="comparison-card" data-od-id="html-code-block-comparison">
               <div>
@@ -245,14 +335,18 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-hr" data-od-id="html-hr-item">
-            <h3 class="item-title"><span class="item-title-name">分隔线</span><span class="item-title-sep">·</span><span class="item-title-md">---</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;hr&gt;</span></h3>
+    <section class="html2-body-section" id="html-hr" data-od-id="html-hr-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">分隔线</span>。</h4>
             <p>Markdown 用 <code>---</code>，HTML 用 <code>&lt;hr&gt;</code> 标签。<code>&lt;hr&gt;</code> 是自闭合标签，表示主题分隔。</p>
-            <div class="comparison-card" data-od-id="html-hr-comparison">
-              <div>
-                <span class="micro-label">Markdown</span>
-                <div class="code-block">上面的内容
+          <div class="comparison-card" data-od-id="html-hr-comparison">
+            <div>
+              <span class="micro-label">Markdown</span>
+              <div class="code-block">上面的内容
 
 ---
 
@@ -263,9 +357,9 @@ function hello() {
                 <div class="code-block">&lt;p&gt;上面的内容&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;下面的内容&lt;/p&gt;</div>
-              </div>
             </div>
-            <div class="preview-section">
+          </div>
+          <div class="preview-section">
               <span class="preview-label">渲染结果</span>
               <div class="preview-content">
                 <p>上面的内容</p>
@@ -274,14 +368,13 @@ function hello() {
               </div>
             </div>
           </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="lesson-section" id="html-structure" data-od-id="html-structure-section">
-          <h2>2 · 结构与交互标签</h2>
-          <p class="interaction-hint"><span class="hint-icon">→</span> 这一节是 HTML 独有的——Markdown 根本没有对应语法。列表、链接、图片、表格、表单：你能开始写出"会响应"的页面了。</p>
-
-          <div class="tag-item" id="html-ul" data-od-id="html-ul-item">
-            <h3 class="item-title"><span class="item-title-name">无序列表</span><span class="item-title-sep">·</span><span class="item-title-md">-</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;ul&gt;&lt;li&gt;</span></h3>
+    <section class="html2-body-section" id="html-ul" data-od-id="html-ul-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">无序列表</span>。</h4>
             <p>Markdown 用 <code>-</code> 或 <code>*</code> 开头，HTML 用 <code>&lt;ul&gt;</code> 包裹 <code>&lt;li&gt;</code>。HTML 的结构更清晰：外层是列表容器，内层是列表项。</p>
             <div class="comparison-card" data-od-id="html-ul-comparison">
               <div>
@@ -310,9 +403,13 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-ol" data-od-id="html-ol-item">
-            <h3 class="item-title"><span class="item-title-name">有序列表</span><span class="item-title-sep">·</span><span class="item-title-md">1.</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;ol&gt;&lt;li&gt;</span></h3>
+    <section class="html2-body-section" id="html-ol" data-od-id="html-ol-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">有序列表</span>。</h4>
             <p>Markdown 用数字加点 <code>1.</code>，HTML 用 <code>&lt;ol&gt;</code> 包裹 <code>&lt;li&gt;</code>。浏览器会自动给 <code>&lt;ol&gt;</code> 里的项加上序号。</p>
             <div class="comparison-card" data-od-id="html-ol-comparison">
               <div>
@@ -341,9 +438,13 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-link" data-od-id="html-link-item">
-            <h3 class="item-title"><span class="item-title-name">链接</span><span class="item-title-sep">·</span><span class="item-title-md">[文字](URL)</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;a href&gt;</span></h3>
+    <section class="html2-body-section" id="html-link" data-od-id="html-link-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">链接</span>。</h4>
             <p>Markdown 用 <code>[文字](URL)</code>，HTML 用 <code>&lt;a href="URL"&gt;文字&lt;/a&gt;</code>。<code>href</code> 是属性，指定链接目标。</p>
             <div class="comparison-card" data-od-id="html-link-comparison">
               <div>
@@ -362,9 +463,13 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-image" data-od-id="html-image-item">
-            <h3 class="item-title"><span class="item-title-name">图片</span><span class="item-title-sep">·</span><span class="item-title-md">![alt](src)</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;img&gt;</span></h3>
+    <section class="html2-body-section" id="html-image" data-od-id="html-image-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">图片</span>。</h4>
             <p>Markdown 用 <code>![alt](src)</code>，HTML 用 <code>&lt;img src="..." alt="..."&gt;</code>。注意 <code>&lt;img&gt;</code> 是自闭合标签，不需要结束标签。<code>alt</code> 属性对无障碍访问很重要。</p>
             <div class="comparison-card" data-od-id="html-image-comparison">
               <div>
@@ -383,9 +488,13 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-table" data-od-id="html-table-item">
-            <h3 class="item-title"><span class="item-title-name">表格</span><span class="item-title-sep">·</span><span class="item-title-md">| ... |</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;table&gt;</span></h3>
+    <section class="html2-body-section" id="html-table" data-od-id="html-table-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">表格</span>。</h4>
             <p>Markdown 表格语法简单但功能有限，HTML 表格用 <code>&lt;table&gt;</code>、<code>&lt;tr&gt;</code>（行）、<code>&lt;th&gt;</code>（表头）、<code>&lt;td&gt;</code>（单元格）组合，更灵活。</p>
             <div class="comparison-card" data-od-id="html-table-comparison">
               <div>
@@ -433,9 +542,13 @@ function hello() {
               </div>
             </div>
           </div>
+      </div>
+    </section>
 
-          <div class="tag-item" id="html-form" data-od-id="html-form-item">
-            <h3 class="item-title"><span class="item-title-name">表单</span><span class="item-title-sep">·</span><span class="item-title-tag">&lt;form&gt;</span></h3>
+    <section class="html2-body-section" id="html-form" data-od-id="html-form-item">
+      <div class="wrap">
+          <div class="tag-item">
+            <h4 class="item-title">这是<span class="item-title-accent">表单</span>。</h4>
             <p>Markdown 没有表单概念，这是 HTML 独有的交互元素。表单用 <code>&lt;form&gt;</code> 包裹，内部有 <code>&lt;label&gt;</code>（标签）、<code>&lt;input&gt;</code>（输入框）、<code>&lt;button&gt;</code>（按钮）等。</p>
             <div class="comparison-card" data-od-id="html-form-comparison">
               <div>
@@ -462,11 +575,21 @@ function hello() {
               </div>
             </div>
           </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="lesson-section" id="html-summary" data-od-id="html-summary-section">
-          <h2>3 · 总结</h2>
-          <p>HTML 比 Markdown "啰嗦"，但每个标签都有明确的语义。后端同学学 HTML，重点不是记住所有标签，而是理解：</p>
+    <section class="html2-body-section" id="html-summary" data-od-id="html-summary-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-num"><strong>04</strong> / 总结</div>
+            <h2 class="section-title">最后记住的不是语法表<br>而是结构判断</h2>
+          </div>
+        </div>
+        <div class="html2-inline-note">
+          <span class="html2-inline-note-tag">带走</span>
+          <p>HTML 比 Markdown “啰嗦”，但每个标签都有明确语义。后端同学学 HTML，重点不是记住所有标签，而是形成稳定的结构判断。</p>
+        </div>
           <ul class="bullet-list">
             <li><strong>结构优先</strong>：先想清楚页面有哪些区块，再选标签</li>
             <li><strong>语义重要</strong>：用 <code>&lt;strong&gt;</code> 而不是 <code>&lt;b&gt;</code>，用 <code>&lt;em&gt;</code> 而不是 <code>&lt;i&gt;</code></li>
@@ -474,41 +597,7 @@ function hello() {
             <li><strong>闭合规范</strong>：标签必须正确闭合，属性用引号包裹</li>
           </ul>
           <p>掌握这些原则，你就能写出结构清晰、语义明确的 HTML，为后续学习 CSS 和 JavaScript 打好基础。</p>
-        </section>
-
-      </article>
-      <aside class="lesson-aside" data-od-id="html-sidebar">
-        <span class="micro-label">章节目录</span>
-        <ul class="toc-list">
-          <li><a href="#html-intro">0 · HTML 就是标签语言</a></li>
-          <li>
-            <a href="#html-text">1 · 文本类标签</a>
-            <ul class="toc-sub">
-              <li><a href="#html-heading">标题</a></li>
-              <li><a href="#html-paragraph">段落</a></li>
-              <li><a href="#html-br">换行</a></li>
-              <li><a href="#html-bold">粗体</a></li>
-              <li><a href="#html-italic">斜体</a></li>
-              <li><a href="#html-blockquote">引用</a></li>
-              <li><a href="#html-code-inline">行内代码</a></li>
-              <li><a href="#html-code-block">代码块</a></li>
-              <li><a href="#html-hr">分隔线</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#html-structure">2 · 结构与交互标签</a>
-            <ul class="toc-sub">
-              <li><a href="#html-ul">无序列表</a></li>
-              <li><a href="#html-ol">有序列表</a></li>
-              <li><a href="#html-link">链接</a></li>
-              <li><a href="#html-image">图片</a></li>
-              <li><a href="#html-table">表格</a></li>
-              <li><a href="#html-form">表单</a></li>
-            </ul>
-          </li>
-          <li><a href="#html-summary">3 · 总结</a></li>
-        </ul>
-      </aside>
+      </div>
     </section>
   </main>
   <script type="module" src="/src/app.js"></script>

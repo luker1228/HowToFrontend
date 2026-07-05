@@ -5,31 +5,67 @@
         <a href="/lesson-html.html" data-perspectives='[{"text":"Markdown 对比","href":"/lesson-html.html"},{"text":"Figma 对比","href":"/lesson-html-2.html"}]'>HTML</a>
         <a href="/lesson-css.html" data-perspectives='[{"text":"CSS 基础","href":"/lesson-css.html"},{"text":"Figma 对比","href":"/lesson-css-2.html"}]'>CSS</a>
         <a href="/lesson-js.html">JavaScript</a>
-        <a href="/components.html" data-perspectives='[{"text":"先认词","href":"/lesson-react.html"},{"text":"组件词典","href":"/components.html"}]'>组件</a>
+        <a href="/lesson-react.html">组件</a>
+        <a href="/lesson-layout.html">布局</a>
       </nav>
       <div class="step-nav">
         <a class="step-nav-btn" href="/lesson-css-2.html" title="CSS · Figma 对比">← 上一节</a>
-        <a class="step-nav-btn is-next" href="/components.html" title="组件">下一节 →</a>
+        <a class="step-nav-btn is-next" href="/lesson-react.html" title="组件">下一节 →</a>
       </div>
     </div>
   </header>
-  <main class="lesson-shell" data-od-id="js-main">
-    <section class="page-hero" data-od-id="js-hero">
-      <h1 class="page-title" data-od-id="js-title">JavaScript 让页面动起来。</h1>
-      <p class="lede">这一章不讲大段语法，只让你直接碰 4 个最常见的交互：点击、输入、添加、删除。左边改 JS，右边立刻看结果。</p>
-      <div class="meta-row">
-        <span class="meta-chip">分类：JavaScript</span>
-        <span class="meta-chip">难度：Beginner</span>
-        <span class="meta-chip">预计阅读：12 min</span>
-        <span class="meta-chip">产物：交互小面板</span>
+  <header class="html2-hero" data-od-id="js-hero">
+    <div class="lesson-shell">
+      <div class="html2-hero-meta">
+        <span class="html2-pill html2-pill-fill">动手练习 · PRACTICE</span>
+        <span class="html2-pill">JavaScript 第一课 · 交互入门</span>
+        <span class="html2-label">阅读时长 ≈ 12 分钟</span>
+      </div>
+      <div class="html2-hero-grid">
+        <div class="html2-hero-copy">
+          <h1 class="page-title html2-page-title" data-od-id="js-title">
+            <span class="html2-title-line">JavaScript</span><br>
+            <span class="html2-title-line">让页面动起来</span>
+          </h1>
+          <p class="lede html2-lede">这一章不讲大段语法，只让你直接碰 4 个最常见的交互：点击、输入、添加、删除。左边改 JS，右边立刻看结果。</p>
+        </div>
+        <div class="html2-hero-side">
+          <div class="html2-hero-row"><span class="html2-hero-k">本页讲什么</span><span class="html2-hero-v">事件 → 状态 → 界面变化</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">内容形式</span><span class="html2-hero-v">4 个交互 playground</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">适合谁</span><span class="html2-hero-v">完全新手</span></div>
+          <div class="html2-hero-row"><span class="html2-hero-k">目标</span><span class="html2-hero-v">知道 JS 在管什么</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main data-od-id="js-main">
+    <section class="html2-body-section" id="js-idea" data-od-id="js-idea">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-num"><strong>01</strong> / 核心</div>
+            <h2 class="section-title">先理解一件事<br>用户一动，页面就跟着变</h2>
+          </div>
+        </div>
+        <div class="html2-inline-note">
+          <span class="html2-inline-note-tag">核心</span>
+          <p>JavaScript 的本质很简单：用户做了一个动作，页面收到事件，然后你改一点状态或内容，界面马上跟着变。先把这个过程看懂，再学框架会顺很多。</p>
+        </div>
       </div>
     </section>
-    <section class="lesson-layout" data-od-id="js-layout">
-      <article class="lesson-prose" data-od-id="js-article">
-        <section class="lesson-section" id="js-idea" data-od-id="js-idea">
-          <h2>这章讲什么</h2>
-          <p>JavaScript 的本质很简单：用户做了一个动作，页面收到事件，然后你改一点状态或内容，界面马上跟着变。先把这个过程看懂，再学框架会顺很多。</p>
-        </section>
+
+    <section class="html2-body-section" id="js-click" data-od-id="js-click-wrap">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-num"><strong>02</strong> / 练习</div>
+            <h2 class="section-title">动手练最常见的四种交互<br>从点击开始</h2>
+          </div>
+        </div>
+        <div class="html2-inline-note">
+          <span class="html2-inline-note-tag">方式</span>
+          <p>下面几段都是直接改 JS 看结果，不需要先背语法。你只要观察：监听了什么动作，改了什么内容，页面怎么跟着变。</p>
+        </div>
 
         <section class="lesson-section playground-section" id="js-click" data-od-id="js-click">
           <h2>动手 1：控制点击</h2>
@@ -329,17 +365,7 @@ syncEmptyState();</script>
             </div>
           </div>
         </section>
-      </article>
-      <aside class="lesson-aside" data-od-id="js-sidebar">
-        <span class="micro-label">章节目录</span>
-        <ul class="toc-list">
-          <li><a href="#js-idea">这章讲什么</a></li>
-          <li><a href="#js-click">动手1 点击</a></li>
-          <li><a href="#js-input">动手2 输入</a></li>
-          <li><a href="#js-add">动手3 添加</a></li>
-          <li><a href="#js-delete">动手4 删除</a></li>
-        </ul>
-      </aside>
+      </div>
     </section>
   </main>
   <script type="module" src="/src/app.js"></script>

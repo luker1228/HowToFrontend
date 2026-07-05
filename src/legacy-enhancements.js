@@ -118,8 +118,19 @@ export function initLegacyEnhancements(root = document) {
 
   filterPromptCards();
 
+  root.querySelectorAll(".lesson-floating-toc").forEach((toc) => {
+    const toggle = toc.querySelector("[data-toc-toggle]");
+    if (!toggle) return;
+    const handler = () => {
+      const collapsed = toc.classList.toggle("is-collapsed");
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+    };
+    toggle.addEventListener("click", handler);
+    cleanups.push(() => toggle.removeEventListener("click", handler));
+  });
+
   const proseTargets = Array.from(
-    root.querySelectorAll(".lesson-prose .lesson-section[id], .lesson-prose .tag-item[id]")
+    root.querySelectorAll(".lesson-prose .lesson-section[id], .lesson-prose .playground-section[id], .lesson-prose .tag-item[id]")
   );
   const tocLists = Array.from(root.querySelectorAll(".lesson-sidebar .toc-list, .lesson-aside .toc-list"));
   if (tocLists.length && proseTargets.length) {

@@ -46,14 +46,8 @@ const COURSES = [
     ],
   },
   { label: "JavaScript", href: "/lesson-js.html" },
-  {
-    label: "组件",
-    href: "/components.html",
-    perspectives: [
-      { text: "先认词", href: "/lesson-react.html" },
-      { text: "组件词典", href: "/components.html" },
-    ],
-  },
+  { label: "组件", href: "/lesson-react.html" },
+  { label: "布局", href: "/lesson-layout.html" },
 ];
 
 function NavDropdown({ course, currentPath }) {

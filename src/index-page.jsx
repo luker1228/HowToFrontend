@@ -27,8 +27,14 @@ const guides = [
   {
     label: "组件",
     title: "组件：负责复用。",
-    href: "/components.html",
-    cta: "打开组件词典 →",
+    href: "/lesson-react.html",
+    cta: "进入组件课 →",
+  },
+  {
+    label: "布局",
+    title: "布局：负责排列。",
+    href: "/lesson-layout.html",
+    cta: "进入布局课 →",
   },
 ];
 
@@ -39,13 +45,6 @@ const resources = [
     copy: "把登录页、后台页、文章页理解成固定构成块，而不是每次从空白页开始想。",
     href: "/lesson-html.html",
     cta: "从课程里拆模板 →",
-  },
-  {
-    label: "组件词典",
-    title: "组件认知页",
-    copy: "遇到“这个界面块该怎么叫”时，直接回到组件页补词汇，不再模糊描述。",
-    href: "/components.html",
-    cta: "打开组件页 →",
   },
   {
     label: "提示词库",
@@ -98,7 +97,7 @@ export function IndexPage() {
               <div className="hero-copy-block">
                 <h1 className="hero-title-structured">非前端人的<span className="accent-text">前端战术手册</span></h1>
                 <p className="hero-subtitle-structured">
-                  默认你已经有一点互联网基础。从 HTML、CSS、JavaScript 到 React，用 AI 写出看得见的页面，适合
+                  默认你已经有一点互联网基础。从 HTML、CSS、JavaScript、组件到布局，用 AI 写出看得见的页面，适合
                   <CycleText items={["设计师", "产品", "运营", "后端"]} />
                   同学一起看。
                 </p>
@@ -107,7 +106,7 @@ export function IndexPage() {
                 </div>
                 <div className="hero-search-card bare">
                   <div className="hero-tags">
-                    {["结构与标签", "布局与样式", "状态与事件", "组件化基础", "组件描述", "后端转前端"].map((tag) => (
+                    {["结构与标签", "布局与样式", "状态与事件", "组件化基础", "排列与分列", "后端转前端"].map((tag) => (
                       <span key={tag} className="tag">{tag}</span>
                     ))}
                   </div>
@@ -213,10 +212,11 @@ export function IndexPage() {
               <a href="/lesson-css.html">样式课</a>
               <a href="/lesson-js.html">交互课</a>
               <a href="/lesson-react.html">先认词</a>
+              <a href="/lesson-layout.html">布局课</a>
             </div>
             <div className="footer-col">
               <span className="footer-caption">资料库</span>
-              <a href="/components.html">组件页</a>
+              <a href="/lesson-react.html">组件课</a>
               <a href="/prompts.html">提示词页</a>
             </div>
             <div className="footer-col">

@@ -58,7 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterPromptCards();
 
-  const proseSections = Array.from(document.querySelectorAll(".lesson-prose .lesson-section[id]"));
+  document.querySelectorAll(".lesson-floating-toc").forEach((toc) => {
+    const toggle = toc.querySelector("[data-toc-toggle]");
+    if (!toggle) return;
+    toggle.addEventListener("click", () => {
+      const collapsed = toc.classList.toggle("is-collapsed");
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+    });
+  });
+
+  const proseSections = Array.from(
+    document.querySelectorAll(".lesson-prose .lesson-section[id], .lesson-prose .playground-section[id], .html2-body-section[id]")
+  );
   const tocLists = Array.from(document.querySelectorAll(".lesson-sidebar .toc-list, .lesson-aside .toc-list"));
   if (tocLists.length && proseSections.length) {
     const links = tocLists.flatMap((list) => Array.from(list.querySelectorAll("a")));

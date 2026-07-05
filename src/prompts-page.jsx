@@ -175,7 +175,7 @@ export function PromptsPage() {
           <div className="container site-header-inner">
             <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
             <SiteNav />
-            <StepNav prev={{ href: "/components.html", title: "组件词典" }} />
+            <StepNav prev={{ href: "/lesson-layout.html", title: "布局" }} />
           </div>
         </header>
         <main className="container">

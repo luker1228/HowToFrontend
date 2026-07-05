@@ -347,7 +347,7 @@ export function LessonReactApp() {
           <div className="lesson-shell site-header-inner">
             <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
             <SiteNav currentPath="/lesson-react.html" />
-            <StepNav prev={{ href: "/lesson-js.html", title: "JavaScript" }} next={{ href: "/components.html", title: "组件词典" }} />
+            <StepNav prev={{ href: "/lesson-js.html", title: "JavaScript" }} next={{ href: "/lesson-layout.html", title: "布局" }} />
           </div>
         </header>
         <main className="lesson-shell">
