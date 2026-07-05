@@ -744,6 +744,246 @@ textarea {
   display: none;
 }
 
+.playground-tasks {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  max-width: 65ch;
+  color: var(--muted);
+}
+
+.playground-tasks li {
+  margin: 0;
+}
+
+.playground-tasks code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: color-mix(in oklab, var(--surface-2) 80%, var(--accent));
+  color: var(--fg);
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 16px;
+}
+
+.playground-editor,
+.playground-preview {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.playground-textarea {
+  width: 100%;
+  min-height: 360px;
+  resize: vertical;
+  padding: 14px;
+  border: 1.5px solid var(--fg);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--surface) 65%, white);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.playground-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.playground-iframe {
+  width: 100%;
+  min-height: 360px;
+  border: 1.5px solid var(--fg);
+  border-radius: 12px;
+  background: white;
+}
+
+.playground-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.playground-hint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.task-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.task-card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1.5px solid var(--fg);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 16px;
+}
+
+.task-head {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.task-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1.5px solid var(--fg);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background: var(--accent);
+  color: white;
+  flex-shrink: 0;
+}
+
+.task-text h3 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.task-text p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.task-text code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: color-mix(in oklab, var(--surface-2) 80%, var(--accent));
+  color: var(--fg);
+}
+
+.task-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.task-code,
+.task-preview {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.task-rules {
+  margin: 0;
+  padding: 14px;
+  border: 1.5px solid var(--fg);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--surface) 70%, white);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre;
+  overflow-x: auto;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.rule-selector {
+  display: block;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.rule-row {
+  display: block;
+  color: var(--muted);
+}
+
+.rule-row.hi {
+  background: color-mix(in oklab, var(--warn) 55%, transparent);
+  color: var(--fg);
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 1px 6px;
+  margin: 0 -6px;
+}
+
+.rule-input {
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  background: white;
+  border: 1px solid var(--fg);
+  border-radius: 5px;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.rule-range {
+  width: 110px;
+  padding: 0;
+  height: 18px;
+}
+
+.rule-select {
+  padding: 1px 4px;
+}
+
+.rule-color {
+  width: 34px;
+  height: 22px;
+  padding: 0;
+}
+
+.rule-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.rule-value {
+  margin-left: 6px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  color: var(--accent-strong);
+  font-size: 11px;
+}
+
+.task-preview-iframe {
+  width: 100%;
+  min-height: 340px;
+  border: 1.5px solid var(--fg);
+  border-radius: 12px;
+  background: white;
+}
+
+.task-preview.is-mobile .task-preview-iframe {
+  max-width: 380px;
+  margin: 0 auto;
+  border-style: dashed;
+}
+
 @media (max-width: 1100px) {
   .hero-grid,
   .lesson-layout,
@@ -751,6 +991,11 @@ textarea {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .task-body {
+    grid-template-columns: 1fr;
+  }
+}
 
   .card-grid,
   .resource-grid {

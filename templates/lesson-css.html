@@ -34,7 +34,7 @@
       <article class="lesson-prose" data-od-id="css-article">
         <section class="lesson-section" id="css-thinking" data-od-id="css-thinking">
           <h2>先建立“样式旋钮”思维</h2>
-          <p>后端同学常把 CSS 看成杂乱的属性列表。更有效的方法是把它看成一组旋钮：文字大小、区块间距、边框强弱、布局方向、状态反馈。页面丑，通常不是缺少代码，而是这些旋钮没有被系统地拧过。</p>
+          <p>后端同学常把 CSS 看成杂乱的属性列表。更有效的方法是把它看成一组旋钮：文字大小、区块间距、边框强弱、布局方向、状态反馈。页面丑，通常是这些旋钮没有被系统地拧过。</p>
         </section>
         <section class="lesson-section" id="css-core" data-od-id="css-core">
           <h2>第一批必须会的属性</h2>
@@ -67,12 +67,18 @@ Prompt Library</div>
           </div>
         </section>
         <section class="lesson-section" id="css-responsive" data-od-id="css-responsive">
-          <h2>响应式不是缩小页面，而是重排页面</h2>
-          <p>移动端不是把桌面卡片缩窄，而是重新决定内容优先级、按钮宽度和信息折行方式。后端同学和 AI 协作时，要明确写出移动端规则。</p>
+          <h2>响应式是重排页面，不是缩小页面</h2>
+          <p>移动端要重新决定内容优先级、按钮宽度和信息折行方式，单纯把桌面卡片缩窄是不够的。后端同学和 AI 协作时，要明确写出移动端规则。</p>
           <div class="callout-card" data-od-id="css-responsive-callout">
             <strong>本节练习：</strong>
             <p>给 HTML 第一课的文章页加样式，让它从“结构文档”变成“像样网页”，并补一个移动端单列布局。</p>
           </div>
+        </section>
+        <section class="lesson-section" id="css-playground" data-od-id="css-playground">
+          <h2>动手试：拧这些旋钮，看页面长相怎么变</h2>
+          <p>每张卡片只放开一个旋钮——被高亮的属性行可以直接改，其余样式锁定只读，让你专注在「这一个属性到底改了什么」。右边是只属于这一张卡片的实时预览。</p>
+          <div class="task-grid" id="css-task-grid" data-od-id="css-playground-tasks"></div>
+          <p class="playground-hint">要点：每个属性就是一个旋钮。你改的值，决定“浏览器看起来像不像产品”。</p>
         </section>
         <section class="lesson-section" id="css-prompt" data-od-id="css-prompt">
           <h2>直接可用的样式修改提示词</h2>
@@ -94,11 +100,32 @@ Prompt Library</div>
           <li><a href="#css-core">核心属性</a></li>
           <li><a href="#css-layouts">布局理解</a></li>
           <li><a href="#css-responsive">响应式</a></li>
+          <li><a href="#css-playground">动手试</a></li>
           <li><a href="#css-prompt">Prompt</a></li>
         </ul>
       </aside>
     </section>
   </main>
+  <script type="text/plain" id="css-playground-html"><section class="card-grid">
+  <article class="card">
+    <h2 class="card-title">用户资料</h2>
+    <p class="card-meta">姓名·张三 角色·管理员</p>
+    <p class="card-body">这是卡片的正文内容，用来展示 CSS 控制字号、间距、边框和布局的方式。</p>
+    <div class="card-actions">
+      <button class="card-button">编辑</button>
+      <button class="card-button">删除</button>
+    </div>
+  </article>
+  <article class="card">
+    <h2 class="card-title">订单概览</h2>
+    <p class="card-meta">本周·12 单</p>
+    <p class="card-body">第二张卡片用来观察布局：两列时并排，窄屏单列时上下堆叠。</p>
+    <div class="card-actions">
+      <button class="card-button">查看</button>
+      <button class="card-button">导出</button>
+    </div>
+  </article>
+</section></script>
   <script src="./app.js"></script>
 </body>
 </html>

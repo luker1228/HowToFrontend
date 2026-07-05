@@ -8,20 +8,30 @@
 </head>
 <body>
   <header class="site-header" data-od-id="css-header">
-    <div class="container site-header-inner">
-      <a class="brand-mark" href="/index.html" data-od-id="css-brand-link"><span>Backend Frontend Hub</span><span class="brand-pill">Guide</span></a>
+    <div class="lesson-shell site-header-inner">
+      <a class="brand-mark" href="/index.html" data-od-id="css-brand-link"><span>后端前端中心</span><span class="brand-pill">指南</span></a>
       <nav class="nav-links" data-od-id="css-nav">
         <a href="/lesson-html.html">HTML</a>
         <a href="/lesson-js.html">JavaScript</a>
-        <a href="/prompts.html">Prompts</a>
+        <a href="/prompts.html">提示词</a>
       </nav>
-      <a class="button" href="/lesson-js.html" data-od-id="css-next-header">Next: JavaScript →</a>
+      <a class="button" href="/lesson-js.html" data-od-id="css-next-header">下一课：JavaScript →</a>
     </div>
   </header>
-  <main class="container" data-od-id="css-main">
+  <main class="lesson-shell" data-od-id="css-main">
     <section class="page-hero" data-od-id="css-hero">
-      <div class="breadcrumb">Hub / Guides / CSS for Backend Engineers</div>
-      <h1 class="page-title" data-od-id="css-title">CSS 不是调颜色，是控制页面长相。</h1>
+      <nav class="breadcrumb" data-od-id="css-breadcrumb">
+        <a href="/index.html">首页</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-html.html">HTML 课</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">CSS 课</span>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-js.html">JavaScript 课</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/lesson-react.html">React 课</a>
+      </nav>
+      <h1 class="page-title" data-od-id="css-title">CSS 控制页面长什么样。</h1>
       <p class="lede">如果 HTML 是结构化响应，CSS 就像展示层配置。它决定字号、间距、边框、布局和 hover 状态，决定“浏览器看起来像不像产品”。</p>
       <div class="meta-row">
         <span class="meta-chip">分类：CSS</span>
@@ -34,7 +44,7 @@
       <article class="lesson-prose" data-od-id="css-article">
         <section class="lesson-section" id="css-thinking" data-od-id="css-thinking">
           <h2>先建立“样式旋钮”思维</h2>
-          <p>后端同学常把 CSS 看成杂乱的属性列表。更有效的方法是把它看成一组旋钮：文字大小、区块间距、边框强弱、布局方向、状态反馈。页面丑，通常不是缺少代码，而是这些旋钮没有被系统地拧过。</p>
+          <p>后端同学常把 CSS 看成杂乱的属性列表。更有效的方法是把它看成一组旋钮：文字大小、区块间距、边框强弱、布局方向、状态反馈。页面丑，通常是这些旋钮没有被系统地拧过。</p>
         </section>
         <section class="lesson-section" id="css-core" data-od-id="css-core">
           <h2>第一批必须会的属性</h2>
@@ -67,11 +77,279 @@ Prompt Library</div>
           </div>
         </section>
         <section class="lesson-section" id="css-responsive" data-od-id="css-responsive">
-          <h2>响应式不是缩小页面，而是重排页面</h2>
-          <p>移动端不是把桌面卡片缩窄，而是重新决定内容优先级、按钮宽度和信息折行方式。后端同学和 AI 协作时，要明确写出移动端规则。</p>
+          <h2>响应式是重排页面，不是缩小页面</h2>
+          <p>移动端要重新决定内容优先级、按钮宽度和信息折行方式，单纯把桌面卡片缩窄是不够的。后端同学和 AI 协作时，要明确写出移动端规则。</p>
           <div class="callout-card" data-od-id="css-responsive-callout">
             <strong>本节练习：</strong>
             <p>给 HTML 第一课的文章页加样式，让它从“结构文档”变成“像样网页”，并补一个移动端单列布局。</p>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-font" data-od-id="css-pg-font">
+          <h2>动手 1：拧字号，看层级</h2>
+          <p>只改下面这一行里的 <code>font-size</code>，比如把 <code>16px</code> 试到 <code>55px</code>，看右边标题在卡片里的存在感怎么变。字号是建立层级最直接的旋钮。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <div class="guided-css-editor">
+                <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}</pre>
+                <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="1"></textarea>
+                <pre class="guided-css-muted">.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</pre>
+              </div>
+              <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}</script>
+              <script type="text/plain" data-playground-base-after-css>.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</script>
+              <script type="text/plain" data-playground-css>.card-title { font-size: 16px; margin: 0 0 8px; }</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="font-size preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-padding" data-od-id="css-pg-padding">
+          <h2>动手 2：拧 padding，看留白</h2>
+          <p>改 <code>.card</code> 的 <code>padding</code>，从 <code>8px</code> 往上调。留白决定内容是挤在一起还是呼吸顺畅，这往往比加边框更影响“像不像产品”。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <textarea data-playground-source class="playground-textarea" spellcheck="false"></textarea>
+              <script type="text/plain" data-playground-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 8px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0; line-height: 1.6; }</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="padding preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-flex" data-od-id="css-pg-flex">
+          <h2>动手 3：拧 flex-direction，看方向</h2>
+          <p>把 <code>.card-actions</code> 的 <code>flex-direction</code> 从 <code>row</code> 改成 <code>column</code>。一个属性就决定模块是横排还是竖排，这是布局的最小开关。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <textarea data-playground-source class="playground-textarea" spellcheck="false"></textarea>
+              <script type="text/plain" data-playground-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; flex-direction: row; gap: 10px; }
+.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="flex-direction preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-hover" data-od-id="css-pg-hover">
+          <h2>动手 4：拧 :hover，看反馈</h2>
+          <p>在 CSS 最后加一条 <code>.card-button:hover { ... }</code>，改背景或颜色。把鼠标移到按钮上——状态反馈就是这点东西，缺了页面就“死”。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <textarea data-playground-source class="playground-textarea" spellcheck="false"></textarea>
+              <script type="text/plain" data-playground-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  max-width: 360px;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }
+.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+/* 在下面加 :hover 规则 */</script>
+              <script type="text/plain" data-playground-html><article class="card">
+  <h2 class="card-title">用户资料</h2>
+  <p class="card-meta">姓名·张三 角色·管理员</p>
+  <p class="card-body">这是卡片的正文内容，用来展示 CSS 怎么控制页面长相。</p>
+  <div class="card-actions">
+    <button class="card-button">编辑</button>
+    <button class="card-button">删除</button>
+  </div>
+</article></script>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview</span>
+              <iframe data-playground-preview class="playground-iframe" title="hover preview"></iframe>
+            </div>
+          </div>
+        </section>
+        <section class="lesson-section playground-section" id="pg-media" data-od-id="css-pg-media">
+          <h2>动手 5：拧 @media，看响应式</h2>
+          <p>下面这版 CSS 在窄屏下卡片会挤成一坨。在末尾加一条 <code>@media (max-width: 480px)</code>，让 <code>.card-grid</code> 变成 <code>grid-template-columns: 1fr</code>。然后把预览窗口拉窄，看它重排。</p>
+          <div class="playground" data-playground>
+            <div class="playground-editor">
+              <span class="micro-label">CSS</span>
+              <textarea data-playground-source class="playground-textarea" spellcheck="false"></textarea>
+              <script type="text/plain" data-playground-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card {
+  padding: 16px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}
+.card-title { font-size: 22px; margin: 0 0 8px; }
+.card-meta { margin: 0 0 12px; color: #6b6b6b; }
+.card-body { margin: 0 0 16px; line-height: 1.6; }
+.card-actions { display: flex; gap: 10px; }
+.card-button {
+  padding: 8px 14px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+/* 在下面加 @media (max-width: 480px) */</script>
+              <script type="text/plain" data-playground-html><section class="card-grid">
+  <article class="card">
+    <h2 class="card-title">用户 A</h2>
+    <p class="card-meta">姓名·张三 角色·管理员</p>
+    <p class="card-body">卡片一，窄屏下应该单列。</p>
+    <div class="card-actions">
+      <button class="card-button">编辑</button>
+      <button class="card-button">删除</button>
+    </div>
+  </article>
+  <article class="card">
+    <h2 class="card-title">用户 B</h2>
+    <p class="card-meta">姓名·李四 角色·访客</p>
+    <p class="card-body">卡片二，窄屏下应该单列。</p>
+    <div class="card-actions">
+      <button class="card-button">编辑</button>
+      <button class="card-button">删除</button>
+    </div>
+  </article>
+</section></script>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <div class="playground-preview">
+              <span class="micro-label">Preview（拉窄窗口）</span>
+              <iframe data-playground-preview class="playground-iframe" title="media preview"></iframe>
+            </div>
           </div>
         </section>
         <section class="lesson-section" id="css-prompt" data-od-id="css-prompt">
@@ -87,13 +365,18 @@ Prompt Library</div>
           <button class="copy-button" type="button" data-copy-target="css-prompt-block" data-od-id="css-copy-prompt">Copy Prompt</button>
         </section>
       </article>
-      <aside class="sidebar-card" data-od-id="css-sidebar">
+      <aside class="lesson-aside" data-od-id="css-sidebar">
         <span class="micro-label">章节目录</span>
         <ul class="toc-list">
           <li><a href="#css-thinking">样式旋钮</a></li>
           <li><a href="#css-core">核心属性</a></li>
           <li><a href="#css-layouts">布局理解</a></li>
           <li><a href="#css-responsive">响应式</a></li>
+          <li><a href="#pg-font">动手1 字号</a></li>
+          <li><a href="#pg-padding">动手2 留白</a></li>
+          <li><a href="#pg-flex">动手3 方向</a></li>
+          <li><a href="#pg-hover">动手4 反馈</a></li>
+          <li><a href="#pg-media">动手5 响应式</a></li>
           <li><a href="#css-prompt">Prompt</a></li>
         </ul>
       </aside>
