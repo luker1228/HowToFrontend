@@ -1,7 +1,10 @@
-import html from "./legacy-content/lesson-html.html?raw";
-import { mountLegacyPage } from "./mount-legacy-page.jsx";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { LessonHtmlPage } from "./lesson-html-page.jsx";
+import "./styles.css";
 
-mountLegacyPage({
-  title: "HTML 第一课 · 后端同学的前端战术手册",
-  html,
-});
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <LessonHtmlPage />
+  </React.StrictMode>
+);

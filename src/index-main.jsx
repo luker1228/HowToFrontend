@@ -1,7 +1,10 @@
-import html from "./legacy-content/index.html?raw";
-import { mountLegacyPage } from "./mount-legacy-page.jsx";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { IndexPage } from "./index-page.jsx";
+import "./styles.css";
 
-mountLegacyPage({
-  title: "后端同学的前端战术手册",
-  html,
-});
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <IndexPage />
+  </React.StrictMode>
+);

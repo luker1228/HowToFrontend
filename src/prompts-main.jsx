@@ -1,7 +1,10 @@
-import html from "./legacy-content/prompts.html?raw";
-import { mountLegacyPage } from "./mount-legacy-page.jsx";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { PromptsPage } from "./prompts-page.jsx";
+import "./styles.css";
 
-mountLegacyPage({
-  title: "Prompt Library · 后端同学的前端战术手册",
-  html,
-});
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <PromptsPage />
+  </React.StrictMode>
+);
