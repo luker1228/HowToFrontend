@@ -1,36 +1,34 @@
 import React from "react";
-import { CycleText, PageFrame } from "./site-components.jsx";
+import { CycleText, PageFrame, SiteNav } from "./site-components.jsx";
 
 const guides = [
   {
-    title: "先把页面看成结构，不要先看成代码。",
-    copy: "第一阶段只解决一件事：你能不能把浏览器要看到的结构说清楚。",
-    href: "/lesson-html.html",
-    cta: "从结构第一课开始 →",
+    label: "HTML",
+    title: "HTML：负责结构。",
+    perspectives: [
+      { text: "HTML vs Markdown", href: "/lesson-html.html" },
+      { text: "HTML vs Figma：图层树就是标签树", href: "/lesson-html-2.html" },
+    ],
   },
   {
-    title: "再学会控制样式和布局。",
-    copy: "让页面从“文档”变成“网页”，靠的是间距、排版、边框和响应式规则。",
-    href: "/lesson-css.html",
-    cta: "进入样式课 →",
+    label: "CSS",
+    title: "CSS：负责样式。",
+    perspectives: [
+      { text: "CSS 基础", href: "/lesson-css.html" },
+      { text: "CSS vs Figma：属性面板就是 CSS", href: "/lesson-css-2.html" },
+    ],
   },
   {
-    title: "然后理解状态、事件和界面变化。",
-    copy: "待办清单这种最小交互案例，足够帮你建立前端交互逻辑的第一层心智模型。",
+    label: "JavaScript",
+    title: "JavaScript：负责交互。",
     href: "/lesson-js.html",
-    cta: "进入交互课 →",
+    cta: "进入 JavaScript 课 →",
   },
   {
-    title: "最后补齐前端组件词汇，做到见多识广。",
-    copy: "先认出 Button、Table、Modal、Drawer、Tabs 这些常见组件，后面写提示词才不会卡壳。",
-    href: "/lesson-react.html",
-    cta: "进入见多识广课 →",
-  },
-  {
-    title: "补上组件词汇，才能真正把需求讲给智能助手。",
-    copy: "卡片、抽屉、表格、加载状态、空状态，是你描述页面的最小语义单元。",
+    label: "组件",
+    title: "组件：负责复用。",
     href: "/components.html",
-    cta: "查看组件词汇 →",
+    cta: "打开组件词典 →",
   },
 ];
 
@@ -54,7 +52,7 @@ const resources = [
     title: "智能助手提示词库",
     copy: "页面生成、页面修改、组件拆分、接口对接四类提示词，够你开始真实协作。",
     href: "/prompts.html",
-    cta: "查看提示词 →",
+    cta: "打开提示词库 →",
   },
 ];
 
@@ -76,7 +74,7 @@ const faqs = [
 
 export function IndexPage() {
   return (
-    <PageFrame title="后端同学的前端战术手册">
+    <PageFrame title="非前端人的前端战术手册">
       <div className="site-shell">
         <header className="site-header">
           <div className="container site-header-inner">
@@ -84,13 +82,7 @@ export function IndexPage() {
               <span>后端前端中心</span>
               <span className="brand-pill">手册</span>
             </a>
-            <nav className="nav-links">
-              <a href="#guides">教程</a>
-              <a href="/components.html">组件</a>
-              <a href="#resources">资源</a>
-              <a href="/prompts.html">提示词</a>
-              <a href="#faq">常见问题</a>
-            </nav>
+            <SiteNav />
             <div className="header-actions">
               <div className="header-search">
                 <input className="search-input" type="search" placeholder="搜索前端战术手册..." aria-label="搜索前端战术手册" />
@@ -104,15 +96,14 @@ export function IndexPage() {
           <section className="hero">
             <div className="hero-grid">
               <div className="hero-copy-block">
-                <h1 className="hero-title-structured">后端同学的<span className="accent-text">前端战术手册</span></h1>
+                <h1 className="hero-title-structured">非前端人的<span className="accent-text">前端战术手册</span></h1>
                 <p className="hero-subtitle-structured">
-                  从页面结构、样式规则、交互逻辑到组件化组织，帮你把前端需求讲清楚，哪怕你正在
-                  <CycleText items={["写接口", "调数据", "赶进度"]} />
-                  ，也能让智能助手改对页面。
+                  默认你已经有一点互联网基础。从 HTML、CSS、JavaScript 到 React，用 AI 写出看得见的页面，适合
+                  <CycleText items={["设计师", "产品", "运营", "后端"]} />
+                  同学一起看。
                 </p>
                 <div className="hero-actions">
                   <a className="button" href="/lesson-html.html">开始学习 →</a>
-                  <a className="ghost-button" href="/prompts.html">查看提示词</a>
                 </div>
                 <div className="hero-search-card bare">
                   <div className="hero-tags">
@@ -124,7 +115,7 @@ export function IndexPage() {
               </div>
               <aside className="hero-note">
                 <span className="micro-label">这份手册解决什么</span>
-                <p className="hero-note-copy">不是系统培养前端工程师，而是帮你快速获得“能看懂页面、能拆组件、能让智能助手改对前端”的表达能力。</p>
+                <p className="hero-note-copy">不是系统培养前端工程师，而是帮设计师、产品、运营和后端快速获得“能看懂页面、能拆组件、能让智能助手改对前端”的表达能力。</p>
               </aside>
             </div>
           </section>
@@ -139,9 +130,23 @@ export function IndexPage() {
               {guides.map((guide) => (
                 <article key={guide.title} className="path-item">
                   <span className="path-icon" aria-hidden="true">◆</span>
-                  <h3>{guide.title}</h3>
-                  <p>{guide.copy}</p>
-                  <a className="row-link" href={guide.href}>{guide.cta}</a>
+                  <div className="path-head">
+                    <span className="path-label">{guide.label}</span>
+                    <h3>{guide.title}</h3>
+                  </div>
+                  {guide.copy && <p>{guide.copy}</p>}
+                  {guide.perspectives && (
+                    <ul className="path-sub path-perspectives">
+                      {guide.perspectives.map((p) => (
+                        <li key={p.text}>
+                          <a href={p.href}>
+                            <span>{p.text}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {guide.cta && <a className="row-link" href={guide.href}>{guide.cta}</a>}
                 </article>
               ))}
             </div>
@@ -200,14 +205,14 @@ export function IndexPage() {
                 <span>后端前端中心</span>
                 <span className="brand-pill">手册</span>
               </a>
-              <p className="card-copy">给后端工程师的前端战术手册：理解结构、样式、交互与组件语言。</p>
+              <p className="card-copy">给设计师、产品、运营和后端的前端战术手册：理解结构、样式、交互与组件语言。</p>
             </div>
             <div className="footer-col">
               <span className="footer-caption">课程</span>
               <a href="/lesson-html.html">结构课</a>
               <a href="/lesson-css.html">样式课</a>
               <a href="/lesson-js.html">交互课</a>
-              <a href="/lesson-react.html">见多识广</a>
+              <a href="/lesson-react.html">先认词</a>
             </div>
             <div className="footer-col">
               <span className="footer-caption">资料库</span>

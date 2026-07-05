@@ -1,5 +1,5 @@
 import React from "react";
-import { PageFrame, PromptLibrary } from "./site-components.jsx";
+import { PageFrame, PromptLibrary, SiteNav, StepNav } from "./site-components.jsx";
 
 const filters = [
   { value: "all", label: "All" },
@@ -173,19 +173,14 @@ export function PromptsPage() {
       <>
         <header className="site-header">
           <div className="container site-header-inner">
-            <a className="brand-mark" href="/index.html"><span>Backend Frontend Hub</span><span className="brand-pill">Prompts</span></a>
-            <nav className="nav-links">
-              <a href="/index.html">Home</a>
-              <a href="/components.html">Components</a>
-              <a href="/lesson-react.html">见多识广</a>
-            </nav>
-            <a className="button" href="/index.html">Back to Hub →</a>
+            <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
+            <SiteNav />
+            <StepNav prev={{ href: "/components.html", title: "组件词典" }} />
           </div>
         </header>
         <main className="container">
           <section className="page-hero">
-            <div className="breadcrumb">Hub / Prompt Library / AI-native frontend prompts</div>
-            <h1 className="page-title">Prompt Library：把需求讲到 AI 真能执行。</h1>
+            <h1 className="page-title">提示词库：把需求讲到 AI 真能执行。</h1>
             <p className="lede">按页面生成、页面修改、组件拆分、接口对接四类任务组织。搜索词可以直接搜 “table”、“drawer”、“登录页”、“loading”。</p>
           </section>
           <section className="section">

@@ -1,0 +1,152 @@
+<header class="site-header" data-od-id="css2-header">
+    <div class="lesson-shell site-header-inner">
+      <a class="brand-mark" href="/index.html" data-od-id="css2-brand-link"><span>后端前端中心</span><span class="brand-pill">手册</span></a>
+      <nav class="nav-links" data-od-id="css2-nav">
+        <a href="/lesson-html.html" data-perspectives='[{"text":"Markdown 对比","href":"/lesson-html.html"},{"text":"Figma 对比","href":"/lesson-html-2.html"}]'>HTML</a>
+        <a href="/lesson-css.html" data-perspectives='[{"text":"CSS 基础","href":"/lesson-css.html"},{"text":"Figma 对比","href":"/lesson-css-2.html","current":true}]'>CSS</a>
+        <a href="/lesson-js.html">JavaScript</a>
+        <a href="/components.html" data-perspectives='[{"text":"先认词","href":"/lesson-react.html"},{"text":"组件词典","href":"/components.html"}]'>组件</a>
+      </nav>
+      <div class="step-nav">
+        <a class="step-nav-btn" href="/lesson-css.html" title="CSS · 基础">← 上一节</a>
+        <a class="step-nav-btn is-next" href="/lesson-js.html" title="JavaScript">下一节 →</a>
+      </div>
+    </div>
+  </header>
+  <main class="lesson-shell" data-od-id="css2-main">
+    <section class="page-hero" data-od-id="css2-page-hero">
+      <h1 class="page-title" data-od-id="css2-page-title">Figma 右侧属性面板，就是一行行 CSS。</h1>
+      <p class="lede">你已经在 Figma 右侧面板填过 padding、改过圆角、调过字色。CSS 做的是同一件事，只不过把"面板字段"写成了"属性: 值"的文本。这一节用一个按钮，把两边对齐看清楚。</p>
+      <div class="meta-row">
+        <span class="meta-chip">课程：CSS · Figma 视角</span>
+        <span class="meta-chip">对比：Figma 属性 ↔ CSS</span>
+        <span class="meta-chip">目标：看到属性名就知道写哪条 CSS</span>
+      </div>
+    </section>
+
+    <section class="lesson-layout" data-od-id="css2-lesson-layout">
+      <article class="lesson-prose" data-od-id="css2-lesson-article">
+
+        <section class="lesson-section" id="css2-why" data-od-id="css2-why-section">
+          <h2>一句话核心</h2>
+          <div class="hint-strip">
+            <span class="hint-tag">核心</span>选中一个 Figma 图层，右侧那块属性面板，就是它"长什么样"的全部信息。CSS 把同一块信息写成了文本：一行一个属性，冒号后面跟值。字段名几乎一模一样。
+          </div>
+        </section>
+
+        <section class="lesson-section" id="css-pair" data-od-id="css2-pair-section">
+          <h2>一个按钮，两种描述</h2>
+          <p>同一个按钮，左边是 Figma 属性面板，右边是浏览器看到的 CSS。鼠标移到任意一行，两边会同时高亮——它们是同一个东西。</p>
+
+          <div class="layer-card" id="cssPair">
+      <div class="props-mock">
+        <div class="pm-section">
+          <div class="pm-section-title">Layout · 布局</div>
+          <div class="pm-row" data-key="padding">
+            <span class="pm-prefix">P</span>
+            <input class="pm-input" value="20" readonly="">
+            <span class="pm-hint">内边距</span>
+          </div>
+          <div class="pm-row" data-key="radius">
+            <span class="pm-prefix">⌒</span>
+            <input class="pm-input" value="8" readonly="">
+            <span class="pm-hint">圆角</span>
+          </div>
+        </div>
+
+        <div class="pm-section">
+          <div class="pm-section-title">Fill · 填充</div>
+          <div class="pm-row" data-key="bg">
+            <span class="pm-color-chip" style="background:#EF7627"></span>
+            <span class="pm-color-input">FF4D2E</span>
+            <span class="pm-hint">100%</span>
+          </div>
+        </div>
+
+        <div class="pm-section">
+          <div class="pm-section-title">Text · 文字</div>
+          <div class="pm-row" data-key="font-size">
+            <span class="pm-prefix">Aa</span>
+            <input class="pm-input" value="14" readonly="">
+            <span class="pm-hint">字号</span>
+          </div>
+          <div class="pm-row" data-key="color">
+            <span class="pm-color-chip" style="background:#ffffff;border:1px solid #555"></span>
+            <span class="pm-color-input">FFFFFF</span>
+            <span class="pm-hint">字色</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pair-divider">=</div>
+
+      <div class="code-mock">
+        <div class="code-head"><span class="dot"></span><span class="code-fname">style.css</span></div>
+<pre><span class="csel">.button</span> {
+<span class="cline is-flash" data-key="bg">  <span class="ckey">background</span>: <span class="cstr">#EF7627</span>;</span>
+<span class="cline" data-key="color">  <span class="ckey">color</span>: <span class="cstr">#ffffff</span>;</span>
+<span class="cline is-flash" data-key="padding">  <span class="ckey">padding</span>: <span class="cnum">20</span><span class="cstr">px</span>;</span>
+<span class="cline is-flash" data-key="radius">  <span class="ckey">border-radius</span>: <span class="cnum">8</span><span class="cstr">px</span>;</span>
+<span class="cline" data-key="font-size">  <span class="ckey">font-size</span>: <span class="cnum">14</span><span class="cstr">px</span>;</span>
+}</pre>
+      </div>
+
+      <div class="pair-caption pair-caption-2col">
+        <div>
+          <div class="cap-k">Figma 视角</div>
+          选中一个图层，<strong>右侧属性面板</strong>就是它"长什么样"的全部信息。
+        </div>
+        <div>
+          <div class="cap-k">代码视角</div>
+          一组 <code>属性: 值</code>。属性名几乎跟 Figma 一样：<code>padding</code> = 内边距、<code>border-radius</code> = 圆角。
+        </div>
+      </div>
+    </div>
+        </section>
+
+        <section class="lesson-section" id="css2-rules" data-od-id="css2-rules-section">
+          <h2>把字段对上 CSS</h2>
+          <ul class="bullet-list">
+            <li><strong>Layout → 盒模型</strong>。Figma 的 padding、margin 区域，对应 CSS 的 <code>padding</code>、<code>margin</code>，单位也是 px。</li>
+            <li><strong>Fill → 背景色</strong>。Figma 的 Fill，对应 <code>background</code> 或 <code>background-color</code>，颜色值直接抄十六进制。</li>
+            <li><strong>Corner → 圆角</strong>。Figma 的 Corner radius，对应 <code>border-radius</code>。</li>
+            <li><strong>Text → 文字</strong>。字号对应 <code>font-size</code>，字色对应 <code>color</code>。</li>
+            <li><strong>每个字段一行 CSS</strong>。Figma 把字段排成一块面板，CSS 把字段排成一段文本，本质是同一份清单。</li>
+          </ul>
+        </section>
+
+        <section class="lesson-section" id="css2-dom" data-od-id="css2-dom-section">
+          <h2>属性面板和 CSS 都是"清单"</h2>
+          <p>你去 Figma 右侧看一个图层，它写的是"这个图层有哪些字段、每个字段填了什么"。CSS 写的是同一件事，只是用文本列出来：<code>background: #EF7627;</code> 等于在 Fill 字段填了那个颜色。</p>
+          <p>所以读 CSS 的方式，跟读 Figma 属性面板一样：先认字段名，再看值。字段名你早就熟了——padding、radius、font-size——按钮这些都对应得上。</p>
+          <div class="hint-strip">
+            <span class="hint-tag">提示</span>写 prompt 时与其说"按钮好看一点"，不如照着属性面板的清单说：<code>按钮 padding 20px、圆角 8px、背景 #EF7627、字号 14px</code>。给 AI 字段名，它不会乱猜。
+          </div>
+        </section>
+
+        <section class="lesson-section" id="css2-summary" data-od-id="css2-summary-section">
+          <h2>小结</h2>
+          <ul class="bullet-list">
+            <li>Figma 右侧属性面板和 CSS 是同一份清单，只是形态不同。</li>
+            <li>Layout → <code>padding/margin</code>，Fill → <code>background</code>，Corner → <code>border-radius</code>，Text → <code>font-size/color</code>。</li>
+            <li>每个 Figma 字段对应一行 CSS，字段名几乎不用记新的。</li>
+            <li>和 AI 协作时，照属性面板的清单写需求，比"好看一点"准得多。</li>
+          </ul>
+          <a class="row-link" href="/lesson-js.html">接下来学 JavaScript，让按钮能点 →</a>
+        </section>
+
+      </article>
+
+      <aside class="lesson-aside" data-od-id="css2-sidebar">
+        <span class="micro-label">章节目录</span>
+        <ul class="toc-list">
+          <li><a href="#css2-why">一句话核心</a></li>
+          <li><a href="#css-pair">一个按钮，两种描述</a></li>
+          <li><a href="#css2-rules">把字段对上 CSS</a></li>
+          <li><a href="#css2-dom">属性面板和 CSS 都是"清单"</a></li>
+          <li><a href="#css2-summary">小结</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script type="module" src="/src/app.js"></script>

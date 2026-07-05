@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-05T00:00:00+08:00",
+  "title": "Design System: 非前端人的前端战术手册",
+  "extensions": {
+    "northStar": "The Warm Workshop Manual",
+    "voice": [
+      "calm",
+      "direct",
+      "practical"
+    ],
+    "colorMeta": {
+      "paper-warm": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(96.8% 0.007 84)",
+        "tonalRamp": [
+          "oklch(94% 0.008 84)",
+          "oklch(96.8% 0.007 84)",
+          "oklch(98.3% 0.005 84)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Soft Surface",
+        "canonical": "oklch(99.2% 0.003 85)",
+        "tonalRamp": [
+          "oklch(97.5% 0.004 85)",
+          "oklch(99.2% 0.003 85)",
+          "oklch(100% 0.002 85)"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Surface",
+        "canonical": "oklch(97.6% 0.004 85)",
+        "tonalRamp": [
+          "oklch(95.5% 0.005 85)",
+          "oklch(97.6% 0.004 85)",
+          "oklch(99% 0.003 85)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(22% 0.03 259)",
+        "tonalRamp": [
+          "oklch(16% 0.03 259)",
+          "oklch(22% 0.03 259)",
+          "oklch(28% 0.028 259)"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "oklch(54% 0.016 255)",
+        "tonalRamp": [
+          "oklch(46% 0.018 255)",
+          "oklch(54% 0.016 255)",
+          "oklch(64% 0.014 255)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "canonical": "oklch(76% 0.015 252)",
+        "tonalRamp": [
+          "oklch(68% 0.016 252)",
+          "oklch(76% 0.015 252)",
+          "oklch(84% 0.012 252)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Ember Accent",
+        "canonical": "oklch(66% 0.205 38)",
+        "tonalRamp": [
+          "oklch(58% 0.215 38)",
+          "oklch(66% 0.205 38)",
+          "oklch(74% 0.17 38)"
+        ]
+      },
+      "accent-strong": {
+        "role": "primary",
+        "displayName": "Ember Strong",
+        "canonical": "oklch(60% 0.22 35)",
+        "tonalRamp": [
+          "oklch(52% 0.23 35)",
+          "oklch(60% 0.22 35)",
+          "oklch(68% 0.18 35)"
+        ]
+      },
+      "warning": {
+        "role": "secondary",
+        "displayName": "Signal Warmth",
+        "canonical": "oklch(88% 0.18 96)",
+        "tonalRamp": [
+          "oklch(82% 0.18 96)",
+          "oklch(88% 0.18 96)",
+          "oklch(93% 0.12 96)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Success",
+        "canonical": "oklch(74% 0.12 150)",
+        "tonalRamp": [
+          "oklch(67% 0.13 150)",
+          "oklch(74% 0.12 150)",
+          "oklch(81% 0.09 150)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines and the strongest statements.",
+        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and major page headings.",
+        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Component names and subsection titles.",
+        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable explanation text and longer teaching blocks.",
+        "fontFamily": "Instrument Sans, Inter, system-ui, sans-serif"
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, chips, tabs, and structural metadata.",
+        "fontFamily": "IBM Plex Mono, JetBrains Mono, ui-monospace, monospace"
+      }
+    },
+    "shadowMeta": {
+      "hoverLift": {
+        "value": "0 14px 30px color-mix(in oklab, var(--fg) 10%, transparent)",
+        "purpose": "Used only on hover for interactive controls."
+      },
+      "noneAtRest": {
+        "value": "none",
+        "purpose": "Resting surfaces stay flat."
+      }
+    },
+    "breakpoints": {
+      "mobile": "560px",
+      "tablet": "820px",
+      "desktopSidebar": "1320px"
+    },
+    "motion": {
+      "hover": "160ms ease",
+      "cycle": "220ms ease",
+      "default": "160ms ease"
+    },
+    "layout": {
+      "measure": "1080px",
+      "lessonMeasure": "1100px",
+      "heroMaxWidth": "1100px",
+      "contentRhythm": "Generous separations between sections, tighter grouping within modules."
+    },
+    "componentMeta": {
+      "button": {
+        "shape": "12px radius",
+        "padding": "13px 18px",
+        "defaultRole": "Primary actions use ember accent; secondary actions stay neutral."
+      },
+      "card": {
+        "shape": "16px radius",
+        "padding": "26px",
+        "defaultRole": "Distinct content blocks, not generic wrappers."
+      },
+      "input": {
+        "shape": "12px radius",
+        "padding": "13px 14px",
+        "defaultRole": "Plain, legible form fields with visible focus."
+      },
+      "navigation": {
+        "shape": "Sticky header with thin borders and uppercase labels.",
+        "padding": "12px gaps",
+        "defaultRole": "Support scanning without taking over the page."
+      }
+    },
+    "narrative": {
+      "creativeNorthStar": "The Warm Workshop Manual",
+      "overviewVoice": "Quiet, direct, and useful. The page should feel like a working surface with enough air to think.",
+      "componentPhilosophy": "Practical and confident, with clear states and very little decorative noise.",
+      "do": [
+        "Keep the page readable at a glance.",
+        "Use accent color for actions and active states only.",
+        "Let examples and interactive surfaces carry the teaching."
+      ],
+      "dont": [
+        "Do not compress everything into a dense document-zip layout.",
+        "Do not build identical card walls everywhere.",
+        "Do not center every section and make the site feel generic.",
+        "Do not use colored border-left or border-right stripes as the main emphasis device.",
+        "Do not drift into classroom tone for front-end engineers."
+      ]
+    }
+  }
+}

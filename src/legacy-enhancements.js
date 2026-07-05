@@ -1,6 +1,58 @@
 export function initLegacyEnhancements(root = document) {
   const cleanups = [];
 
+  root.querySelectorAll(".nav-links a[data-perspectives]").forEach((link) => {
+    let perspectives = [];
+    try {
+      perspectives = JSON.parse(link.getAttribute("data-perspectives") || "[]");
+    } catch {
+      perspectives = [];
+    }
+    if (!perspectives.length) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "nav-dropdown";
+    link.parentNode.insertBefore(wrapper, link);
+    wrapper.appendChild(link);
+
+    const trigger = document.createElement("button");
+    trigger.type = "button";
+    trigger.className = "nav-dropdown-trigger";
+    trigger.textContent = link.textContent;
+    link.parentNode.replaceChild(trigger, link);
+
+    const menu = document.createElement("div");
+    menu.className = "nav-dropdown-menu";
+    perspectives.forEach((p) => {
+      const item = document.createElement("a");
+      item.href = p.href;
+      item.textContent = p.text;
+      if (p.current) item.classList.add("is-current");
+      menu.appendChild(item);
+    });
+    wrapper.appendChild(menu);
+
+    const toggle = (open) => {
+      wrapper.classList.toggle("is-open", open);
+    };
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggle(!wrapper.classList.contains("is-open"));
+    });
+    const onDocClick = (e) => {
+      if (!wrapper.contains(e.target)) toggle(false);
+    };
+    document.addEventListener("click", onDocClick);
+    const onEsc = (e) => {
+      if (e.key === "Escape") toggle(false);
+    };
+    document.addEventListener("keydown", onEsc);
+    cleanups.push(() => {
+      document.removeEventListener("click", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    });
+  });
+
   root.querySelectorAll("[data-cycle]").forEach((container) => {
     const items = Array.from(container.querySelectorAll(".cycle-item"));
     if (items.length < 2) return;
@@ -66,9 +118,11 @@ export function initLegacyEnhancements(root = document) {
 
   filterPromptCards();
 
-  const proseSections = Array.from(root.querySelectorAll(".lesson-prose .lesson-section[id]"));
+  const proseTargets = Array.from(
+    root.querySelectorAll(".lesson-prose .lesson-section[id], .lesson-prose .tag-item[id]")
+  );
   const tocLists = Array.from(root.querySelectorAll(".lesson-sidebar .toc-list, .lesson-aside .toc-list"));
-  if (tocLists.length && proseSections.length) {
+  if (tocLists.length && proseTargets.length) {
     const links = tocLists.flatMap((list) => Array.from(list.querySelectorAll("a")));
     const visible = new Map();
     const observer = new IntersectionObserver(
@@ -85,15 +139,19 @@ export function initLegacyEnhancements(root = document) {
           }
         }
         if (bestId) {
+          const parent = bestId
+            ? root.getElementById(bestId)?.closest(".lesson-section[id]")
+            : null;
+          const parentId = parent ? parent.id : null;
           links.forEach((a) => {
             const href = a.getAttribute("href")?.slice(1);
-            a.classList.toggle("is-active", href === bestId);
+            a.classList.toggle("is-active", href === bestId || href === parentId);
           });
         }
       },
       { rootMargin: "-96px 0px -55% 0px", threshold: [0, 0.1, 0.5, 1] }
     );
-    proseSections.forEach((section) => observer.observe(section));
+    proseTargets.forEach((target) => observer.observe(target));
     cleanups.push(() => observer.disconnect());
   }
 
@@ -141,6 +199,31 @@ export function initLegacyEnhancements(root = document) {
     }
 
     render();
+  });
+
+  root.querySelectorAll(".layer-card").forEach((card) => {
+    const items = Array.from(card.querySelectorAll("[data-key]"));
+    const byKey = new Map();
+    items.forEach((el) => {
+      const key = el.getAttribute("data-key");
+      if (key) {
+        if (!byKey.has(key)) byKey.set(key, []);
+        byKey.get(key).push(el);
+      }
+    });
+    const pairs = Array.from(byKey.values());
+    pairs.forEach((group) => {
+      const enter = () => group.forEach((el) => el.classList.add("is-flash"));
+      const leave = () => group.forEach((el) => el.classList.remove("is-flash"));
+      group.forEach((el) => {
+        el.addEventListener("mouseenter", enter);
+        el.addEventListener("mouseleave", leave);
+        cleanups.push(() => {
+          el.removeEventListener("mouseenter", enter);
+          el.removeEventListener("mouseleave", leave);
+        });
+      });
+    });
   });
 
   return () => {

@@ -1,0 +1,149 @@
+<header class="site-header" data-od-id="lesson2-header">
+    <div class="lesson-shell site-header-inner">
+      <a class="brand-mark" href="/index.html" data-od-id="lesson2-brand-link"><span>后端前端中心</span><span class="brand-pill">手册</span></a>
+      <nav class="nav-links" data-od-id="lesson2-nav">
+        <a href="/lesson-html.html" data-perspectives='[{"text":"Markdown 对比","href":"/lesson-html.html"},{"text":"Figma 对比","href":"/lesson-html-2.html","current":true}]'>HTML</a>
+        <a href="/lesson-css.html" data-perspectives='[{"text":"CSS 基础","href":"/lesson-css.html"},{"text":"Figma 对比","href":"/lesson-css-2.html"}]'>CSS</a>
+        <a href="/lesson-js.html">JavaScript</a>
+        <a href="/components.html" data-perspectives='[{"text":"先认词","href":"/lesson-react.html"},{"text":"组件词典","href":"/components.html"}]'>组件</a>
+      </nav>
+      <div class="step-nav">
+        <a class="step-nav-btn" href="/lesson-html.html" title="HTML · Markdown 对比">← 上一节</a>
+        <a class="step-nav-btn is-next" href="/lesson-css.html" title="CSS · 基础">下一节 →</a>
+      </div>
+    </div>
+  </header>
+  <main class="lesson-shell" data-od-id="lesson2-main">
+    <section class="page-hero" data-od-id="html2-page-hero">
+      <h1 class="page-title" data-od-id="html2-page-title">Figma 图层树，就是 HTML 标签树。</h1>
+      <div class="meta-row">
+        <span class="meta-chip">课程：HTML 第二课</span>
+        <span class="meta-chip">对比：Figma ↔ HTML</span>
+        <span class="meta-chip">目标：会读 DOM 结构</span>
+      </div>
+    </section>
+
+    <section class="lesson-layout" data-od-id="html2-lesson-layout">
+      <article class="lesson-prose" data-od-id="html2-lesson-article">
+
+        <section class="lesson-section" id="html2-why" data-od-id="html2-why-section">
+          <h2>一句话核心</h2>
+          <div class="hint-strip">
+            <span class="hint-tag">核心</span>Figma 左侧的图层面板，和浏览器看到的 HTML，是同一棵树。你在设计稿里怎么嵌套 Frame，HTML 就怎么嵌套标签。记住这一点，看到任何设计稿都能估出大致结构。
+          </div>
+        </section>
+
+        <section class="lesson-section" id="html-figma" data-od-id="html2-pair-section">
+          <h2>一张卡片，两种描述</h2>
+          <p>同一个卡片，左边是 Figma 图层面板，右边是浏览器看到的 HTML。鼠标移到任意一行，两边会同时高亮——它们是同一个东西。</p>
+
+          <div class="layer-card" id="htmlPair" data-od-id="html2-layer-card">
+            <div class="pair-grid">
+              <div class="pair-col pair-figma">
+                <span class="micro-label">Figma · 图层面板</span>
+                <div class="figma-mock">
+                  <div class="fm-title">图层 · LAYERS</div>
+                  <div class="fm-layer" data-key="card">
+                    <span class="fm-ic">▾</span>
+                    <span class="fm-ic fm-ic-box">⬚</span>
+                    <span>Card / Frame</span>
+                  </div>
+                  <div class="fm-layer fm-indent-1" data-key="header">
+                    <span class="fm-ic">▾</span>
+                    <span class="fm-ic fm-ic-box">⬚</span>
+                    <span>Header / Frame</span>
+                  </div>
+                  <div class="fm-layer fm-indent-2" data-key="title">
+                    <span class="fm-ic">·</span>
+                    <span class="fm-ic fm-ic-text">T</span>
+                    <span>Title</span>
+                  </div>
+                  <div class="fm-layer fm-indent-2" data-key="desc">
+                    <span class="fm-ic">·</span>
+                    <span class="fm-ic fm-ic-text">T</span>
+                    <span>Description</span>
+                  </div>
+                  <div class="fm-layer fm-indent-1" data-key="btn">
+                    <span class="fm-ic">·</span>
+                    <span class="fm-ic fm-ic-box">▭</span>
+                    <span>Button</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pair-divider">=</div>
+
+              <div class="pair-col pair-code">
+                <span class="micro-label">浏览器 · HTML</span>
+                <div class="code-mock">
+                  <div class="code-head"><span class="dot"></span><span class="code-fname">card.html</span></div>
+                  <pre><span class="cline" data-key="card"><span class="ctag">&lt;div</span> <span class="cattr">class</span>=<span class="cstr">"card"</span><span class="ctag">&gt;</span></span>
+<span class="cline" data-key="header">  <span class="ctag">&lt;div</span> <span class="cattr">class</span>=<span class="cstr">"header"</span><span class="ctag">&gt;</span></span>
+<span class="cline" data-key="title">    <span class="ctag">&lt;h3&gt;</span>标题<span class="ctag">&lt;/h3&gt;</span></span>
+<span class="cline" data-key="desc">    <span class="ctag">&lt;p&gt;</span>描述文字<span class="ctag">&lt;/p&gt;</span></span>
+<span class="cline" data-key="header">  <span class="ctag">&lt;/div&gt;</span></span>
+<span class="cline" data-key="btn">  <span class="ctag">&lt;button&gt;</span>点击<span class="ctag">&lt;/button&gt;</span></span>
+<span class="cline" data-key="card"><span class="ctag">&lt;/div&gt;</span></span></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="pair-captions">
+              <div class="pair-caption">
+                <div class="cap-k">设计视角</div>
+                一棵<strong>图层树</strong>。Frame 套 Frame，每个图层有名字、有层级、有缩进。
+              </div>
+              <div class="pair-caption">
+                <div class="cap-k">代码视角</div>
+                一棵<strong>标签树</strong>。<code>&lt;div&gt;</code> 套 <code>&lt;div&gt;</code>，每个标签有名字、有层级、有缩进——一模一样的事。
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lesson-section" id="html2-rules" data-od-id="html2-rules-section">
+          <h2>把规则说清楚</h2>
+          <ul class="bullet-list">
+            <li><strong>Frame = 标签</strong>。一个 Frame 对应一个容器标签，最常见的就是 <code>&lt;div&gt;</code>。</li>
+            <li><strong>缩进 = 嵌套</strong>。图层面板里缩进几格，HTML 里就嵌套几层。同级图层是兄弟，下层是子级。</li>
+            <li><strong>文字图层 = 文字标签</strong>。带 T 的图层，对应 <code>&lt;h1&gt;~&lt;h6&gt;</code>（标题）或 <code>&lt;p&gt;</code>（正文）。</li>
+            <li><strong>按钮 = <code>&lt;button&gt;</code></strong>。不要用 <code>&lt;div&gt;</code> 当按钮——能点和不点是两件事。</li>
+            <li><strong>图层名 = class 名（大致）</strong>。设计师起的名往往就是你给标签起的 class，差不到哪去。</li>
+          </ul>
+        </section>
+
+        <section class="lesson-section" id="html2-dom" data-od-id="html2-dom-section">
+          <h2>这棵树在浏览器里叫 DOM</h2>
+          <p>Figma 叫它图层树，浏览器叫它 <strong>DOM</strong>（Document Object Model）。名字不同，结构一样：根节点套子节点，子节点再套孙节点，一路展开。</p>
+          <p>为什么前端总提 DOM？因为后续所有事——改样式（CSS）、加交互（JS）、取数据填进去——都是在「找准某个节点，对它动手」。你会读图层树，就会读 DOM；会拆 Frame，就会拆标签。</p>
+          <div class="hint-strip">
+      <span class="hint-tag">提示</span>写 prompt 时与其说「这里加个块」，不如说「在 Card 这层下、Header 旁边加一个新 <code>&lt;div&gt;</code>」。给 AI 的也是一棵树的位置，AI 才不会插错地方。
+    </div>
+        </section>
+
+        <section class="lesson-section" id="html2-summary" data-od-id="html2-summary-section">
+          <h2>小结</h2>
+          <ul class="bullet-list">
+            <li>Figma 图层面板和 HTML 是同一棵树，只是名字不同。</li>
+            <li>Frame → <code>&lt;div&gt;</code>，文字图层 → <code>&lt;h1&gt;/&lt;p&gt;</code>，按钮 → <code>&lt;button&gt;</code>。</li>
+            <li>缩进就是嵌套，同级就是兄弟。</li>
+            <li>浏览器里这棵树叫 DOM，所有前端活都在它上面做。</li>
+          </ul>
+          <a class="row-link" href="/lesson-css.html">接下来学 CSS，给这棵树穿上样式 →</a>
+        </section>
+
+      </article>
+
+      <aside class="lesson-aside" data-od-id="html2-sidebar">
+        <span class="micro-label">章节目录</span>
+        <ul class="toc-list">
+          <li><a href="#html2-why">一句话核心</a></li>
+          <li><a href="#html-figma">一张卡片，两种描述</a></li>
+          <li><a href="#html2-rules">把规则说清楚</a></li>
+          <li><a href="#html2-dom">这棵树在浏览器里叫 DOM</a></li>
+          <li><a href="#html2-summary">小结</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script type="module" src="/src/app.js"></script>

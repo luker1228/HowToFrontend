@@ -28,6 +28,120 @@ export function PageFrame({ title, children }) {
   return children;
 }
 
+const COURSES = [
+  {
+    label: "HTML",
+    href: "/lesson-html.html",
+    perspectives: [
+      { text: "Markdown 对比", href: "/lesson-html.html" },
+      { text: "Figma 对比", href: "/lesson-html-2.html" },
+    ],
+  },
+  {
+    label: "CSS",
+    href: "/lesson-css.html",
+    perspectives: [
+      { text: "CSS 基础", href: "/lesson-css.html" },
+      { text: "Figma 对比", href: "/lesson-css-2.html" },
+    ],
+  },
+  { label: "JavaScript", href: "/lesson-js.html" },
+  {
+    label: "组件",
+    href: "/components.html",
+    perspectives: [
+      { text: "先认词", href: "/lesson-react.html" },
+      { text: "组件词典", href: "/components.html" },
+    ],
+  },
+];
+
+function NavDropdown({ course, currentPath }) {
+  const [open, setOpen] = useState(false);
+  const ref = React.useRef(null);
+
+  useEffect(() => {
+    const onDocClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    const onEsc = (e) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("click", onDocClick);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("click", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, []);
+
+  return (
+    <div className={`nav-dropdown${open ? " is-open" : ""}`} ref={ref}>
+      <button
+        type="button"
+        className="nav-dropdown-trigger"
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((v) => !v);
+        }}
+      >
+        {course.label}
+      </button>
+      <div className="nav-dropdown-menu">
+        {course.perspectives.map((p) => (
+          <a
+            key={p.href}
+            href={p.href}
+            className={currentPath === p.href ? "is-current" : ""}
+            onClick={() => setOpen(false)}
+          >
+            {p.text}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function SiteNav({ currentPath = "" }) {
+  return (
+    <nav className="nav-links">
+      {COURSES.map((course) =>
+        course.perspectives ? (
+          <NavDropdown key={course.label} course={course} currentPath={currentPath} />
+        ) : (
+          <a key={course.label} href={course.href}>
+            {course.label}
+          </a>
+        )
+      )}
+    </nav>
+  );
+}
+
+export function StepNav({ prev, next }) {
+  return (
+    <div className="step-nav">
+      {prev ? (
+        <a className="step-nav-btn" href={prev.href} title={prev.title}>
+          ← 上一节
+        </a>
+      ) : (
+        <a className="step-nav-btn" aria-disabled="true">
+          ← 上一节
+        </a>
+      )}
+      {next ? (
+        <a className="step-nav-btn is-next" href={next.href} title={next.title}>
+          下一节 →
+        </a>
+      ) : (
+        <a className="step-nav-btn is-next" aria-disabled="true">
+          下一节 →
+        </a>
+      )}
+    </div>
+  );
+}
+
 export function CycleText({ items, interval = 1800 }) {
   const [index, setIndex] = useState(0);
 
