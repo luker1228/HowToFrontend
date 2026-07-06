@@ -1,0 +1,551 @@
+<header class="site-header" data-od-id="layout2-header">
+  <div class="lesson-shell site-header-inner">
+    <a class="brand-mark" href="/index.html" data-od-id="layout2-brand-link"><span>后端前端中心</span><span class="brand-pill">手册</span></a>
+    <nav class="nav-links" data-od-id="layout2-nav">
+      <a href="/lesson-html.html" data-perspectives='[{"text":"Markdown 对比","href":"/lesson-html.html"},{"text":"Figma 对比","href":"/lesson-html-2.html"}]'>HTML</a>
+      <a href="/lesson-css.html" data-perspectives='[{"text":"CSS 基础","href":"/lesson-css.html"},{"text":"Figma 对比","href":"/lesson-css-2.html"}]'>CSS</a>
+      <a href="/lesson-js.html">JavaScript</a>
+      <a href="/lesson-react.html">组件</a>
+      <a href="/lesson-layout-2.html" data-perspectives='[{"text":"布局第一课：骨架","href":"/lesson-layout.html"},{"text":"布局第二课：排列","href":"/lesson-layout-2.html","current":true}]'>布局</a>
+    </nav>
+    <div class="step-nav">
+      <a class="step-nav-btn" href="/lesson-layout.html" title="布局第一课">← 上一节</a>
+      <a class="step-nav-btn is-next" href="/prompts.html" title="提示词库">下一节 →</a>
+    </div>
+  </div>
+</header>
+<header class="html2-hero html-reading-hero" data-od-id="layout2-hero">
+  <div class="lesson-shell">
+    <div class="html2-hero-meta">
+      <span class="html2-pill html2-pill-fill">动手练习 · PRACTICE</span>
+      <span class="html2-pill">布局第二课 · 排列操练</span>
+      <span class="html2-label">阅读时长 ≈ 12 分钟</span>
+    </div>
+    <div class="html2-hero-grid">
+      <div class="html2-hero-copy">
+        <h1 class="page-title html2-page-title" data-od-id="layout2-title">
+          <span class="html2-title-line">这一课只讲一件事：</span><br>
+          <span class="html2-title-line">怎么把元素排起来</span>
+        </h1>
+        <p class="lede html2-lede">先看最常见的排列方式：一行、一列、卡片网格、两段式分布，再看一个层级更深的复杂例子。先学会排列，再回头看属性名。</p>
+      </div>
+      <div class="html2-hero-side">
+        <div class="html2-hero-row"><span class="html2-hero-k">本页讲什么</span><span class="html2-hero-v">元素怎么排列</span></div>
+        <div class="html2-hero-row"><span class="html2-hero-k">内容形式</span><span class="html2-hero-v">5 个排列练习</span></div>
+        <div class="html2-hero-row"><span class="html2-hero-k">适合谁</span><span class="html2-hero-v">刚学前端的人</span></div>
+        <div class="html2-hero-row"><span class="html2-hero-k">目标</span><span class="html2-hero-v">知道怎么排成想要的样子</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="html-reading-page" data-od-id="layout2-main">
+  <aside class="lesson-aside lesson-floating-toc" data-od-id="layout2-floating-toc">
+    <button type="button" class="toc-toggle" data-toc-toggle aria-expanded="true">目录</button>
+    <div class="toc-body" data-toc-body>
+      <span class="micro-label">章节目录</span>
+      <ul class="toc-list">
+        <li><a href="#layout2-core">01 核心</a></li>
+        <li><a href="#layout-display">02 一行排列</a></li>
+        <li><a href="#layout-column">03 一列排列</a></li>
+        <li><a href="#layout-flex-3x3">04 3x3 卡片</a></li>
+        <li><a href="#layout-flex-span">05 先三列，再一行</a></li>
+        <li><a href="#layout-grid-intro">06 引入 grid</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="html2-body-section" id="layout2-core" data-od-id="layout2-core-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>01</strong> / 核心</div>
+          <h2 class="section-title">先记住一句话<br>布局就是把块排成你要的样子</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">核心</span>
+        <p>这一课只看排列本身：横着排、竖着排、排成网格、让某一块占满整行。你先会“怎么摆”，再去记“用什么属性摆”。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-display" data-od-id="layout-display-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>02</strong> / 一行排列</div>
+          <h2 class="section-title">先把元素排成一行<br>这是最基础的横向排列</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">方式</span>
+        <p>把容器设成 <code>flex</code>，子元素就会沿着主轴排成一行。这个例子里只看“横着排”，别先管别的细节。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-display-item">
+        <h4 class="item-title">这是<span class="item-title-accent">控制横排</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  max-width: 560px;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</pre>
+              <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="2"></textarea>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  max-width: 560px;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</script>
+            <script type="text/plain" data-playground-css>.layout-demo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}</script>
+            <script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box">模块 A</div>
+  <div class="layout-box">模块 B</div>
+  <div class="layout-box">模块 C</div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout display preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-column" data-od-id="layout-column-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>03</strong> / 一列排列</div>
+          <h2 class="section-title">把元素排成一列<br>就是从上到下堆起来</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">方式</span>
+        <p>把主轴改成纵向，元素就会从上到下排。这是很多表单、步骤条、详情区最常见的排列方式。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-column-item">
+        <h4 class="item-title">这是<span class="item-title-accent">控制一列</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: flex;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</pre>
+              <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="2"></textarea>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: flex;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</script>
+            <script type="text/plain" data-playground-css>.layout-demo {
+  flex-direction: column;
+  gap: 8px;
+}</script>
+            <script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box">模块 A</div>
+  <div class="layout-box">模块 B</div>
+  <div class="layout-box">模块 C</div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout column preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-flex-3x3" data-od-id="layout-flex-3x3-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>04</strong> / 3x3 卡片</div>
+          <h2 class="section-title">先把卡片排成 3 列<br>每列再堆 3 张</h2>
+          <p class="section-sub">这里可以把它理解成二维数组：外层是 3 个列，列里面各自再放 3 张卡片。这个写法的前提是，你已经预先知道有几列、每列放哪些卡片。</p>
+          <pre class="code-block section-array-block">const cards = [
+  [card1, card2, card3],
+  [card4, card5, card6],
+  [card7, card8, card9],
+]</pre>
+        </div>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-flex-3x3-item">
+        <h4 class="item-title">这是<span class="item-title-accent">3x3 卡片</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card-list {
+  display: flex;
+  gap: 12px;
+}
+.card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.card {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  box-sizing: border-box;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}</pre>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.card-list {
+  display: flex;
+  gap: 12px;
+}
+.card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.card {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  box-sizing: border-box;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}</script>
+            <script type="text/plain" data-playground-css>.card-column {
+  flex: 1;
+}</script>
+            <script type="text/plain" data-playground-html><div class="card-list">
+  <div class="card-column">
+    <div class="card">卡片 1</div>
+    <div class="card">卡片 2</div>
+    <div class="card">卡片 3</div>
+  </div>
+  <div class="card-column">
+    <div class="card">卡片 4</div>
+    <div class="card">卡片 5</div>
+    <div class="card">卡片 6</div>
+  </div>
+  <div class="card-column">
+    <div class="card">卡片 7</div>
+    <div class="card">卡片 8</div>
+    <div class="card">卡片 9</div>
+  </div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout card columns preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-flex-span" data-od-id="layout-flex-span-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>05</strong> / 先三列，再一行</div>
+          <h2 class="section-title">还是用 flex<br>先三列，再让最后一块独占一行</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">方式</span>
+        <p>这里继续只用 <code>flex</code> 和 <code>block</code>。前面三块并排，最后一块改成独占整行，就能做出常见的“三列后接说明块”。但这种排法也还是建立在“你提前知道有哪几块”的前提上。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-flex-span-item">
+        <h4 class="item-title">这是<span class="item-title-accent">三列后再占满一行</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+  flex: 0 0 calc((100% - 24px) / 3);
+}</pre>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  box-sizing: border-box;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 calc((100% - 24px) / 3);
+}</script>
+            <script type="text/plain" data-playground-css>.layout-box.full {
+  flex-basis: 100%;
+  width: 100%;
+}</script>
+            <script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box">模块 A</div>
+  <div class="layout-box">模块 B</div>
+  <div class="layout-box">模块 C</div>
+  <div class="layout-box full">模块 D：整行说明</div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout flex span preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-grid-intro" data-od-id="layout-grid-intro-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>06</strong> / 引入 grid</div>
+          <h2 class="section-title">卡片一旦变成动态的<br>就该让 grid 接手了</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">方式</span>
+        <p>前面的列式写法更像是你先把卡片分好组，再一列一列渲染出来。但真实项目里，卡片数量经常是动态的，接口回来几张并不确定。这时候继续手动分成二维数组就很别扭，<code>grid</code> 更适合接管这种“动态卡片自动排版”的场景。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-nested-item">
+        <h4 class="item-title">这是<span class="item-title-accent">引入 grid 的后台嵌套</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</pre>
+              <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="2"></textarea>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-areas:
+    "header header"
+    "aside main";
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff;
+}</script>
+            <script type="text/plain" data-playground-css>.layout-demo {
+  align-items: start;
+}
+.layout-header {
+  grid-area: header;
+}
+.layout-aside {
+  display: grid;
+  gap: 12px;
+  grid-area: aside;
+}
+.layout-main {
+  display: grid;
+  gap: 12px;
+  grid-area: main;
+}
+.layout-outer-aside {
+  display: grid;
+  gap: 12px;
+  grid-area: aside;
+}
+.layout-main-shell {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-areas:
+    "inner-header inner-header"
+    "inner-aside inner-main";
+  align-items: start;
+}
+.layout-main-inner-header {
+  grid-area: inner-header;
+}
+.layout-main-inner-aside {
+  display: grid;
+  gap: 12px;
+  grid-area: inner-aside;
+}
+.layout-main-inner-main {
+  display: grid;
+  gap: 12px;
+  grid-area: inner-main;
+}
+.layout-main-inner-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}</script>
+<script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box layout-header">外层 topbar：系统顶部栏</div>
+  <div class="layout-outer-aside">
+    <div class="layout-box">外层 aside：左侧菜单</div>
+    <div class="layout-box">外层 aside：筛选条件</div>
+  </div>
+  <div class="layout-main">
+    <div class="layout-box">外层 main：主内容区</div>
+    <div class="layout-main-shell">
+      <div class="layout-box layout-main-inner-header">内层 topbar：子系统顶部栏</div>
+      <div class="layout-main-inner-aside">
+        <div class="layout-box">内层 aside：子系统菜单</div>
+        <div class="layout-box">内层 aside：子系统筛选</div>
+      </div>
+      <div class="layout-main-inner-main">
+        <div class="layout-box">内层 main：子系统内容区</div>
+        <div class="layout-main-inner-grid">
+          <div class="layout-box">卡片 A</div>
+          <div class="layout-box">卡片 B</div>
+          <div class="layout-box">卡片 C</div>
+          <div class="layout-box">卡片 D</div>
+        </div>
+        <div class="layout-box">表格 / 列表 / 说明</div>
+      </div>
+    </div>
+  </div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout nested preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

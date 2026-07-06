@@ -212,7 +212,8 @@ export function IndexPage() {
               <a href="/lesson-css.html">样式课</a>
               <a href="/lesson-js.html">交互课</a>
               <a href="/lesson-react.html">先认词</a>
-              <a href="/lesson-layout.html">布局课</a>
+              <a href="/lesson-layout.html">布局第一课</a>
+              <a href="/lesson-layout-2.html">布局第二课</a>
             </div>
             <div className="footer-col">
               <span className="footer-caption">资料库</span>

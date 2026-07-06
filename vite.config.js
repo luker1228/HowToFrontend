@@ -18,6 +18,7 @@ export default defineConfig({
         "lesson-css": resolve(__dirname, "lesson-css.html"),
         "lesson-css-2": resolve(__dirname, "lesson-css-2.html"),
         "lesson-layout": resolve(__dirname, "lesson-layout.html"),
+        "lesson-layout-2": resolve(__dirname, "lesson-layout-2.html"),
         "lesson-js": resolve(__dirname, "lesson-js.html"),
         "lesson-react": resolve(__dirname, "lesson-react.html"),
         prompts: resolve(__dirname, "prompts.html"),

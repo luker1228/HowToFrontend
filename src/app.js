@@ -1,3 +1,5 @@
+import { mountLayoutRecipePreviews } from "./layout-recipe-components.jsx";
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-cycle]").forEach((container) => {
     const items = Array.from(container.querySelectorAll(".cycle-item"));
@@ -221,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cssTemplate = root.querySelector("[data-playground-css]");
     const jsTemplate = root.querySelector("[data-playground-js]");
     const htmlTemplate = root.querySelector("[data-playground-html]");
-    if (!source || !preview || !htmlTemplate || (!cssTemplate && !jsTemplate)) return;
+    if (!preview || !htmlTemplate || (!cssTemplate && !jsTemplate)) return;
 
     const sourceTemplate = cssTemplate || jsTemplate;
     const defaultSource = sourceTemplate.textContent.trim();
@@ -231,26 +233,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseBeforeJs = root.querySelector("[data-playground-base-before-js]")?.textContent.trim();
     const baseAfterJs = root.querySelector("[data-playground-base-after-js]")?.textContent.trim();
     const html = htmlTemplate.textContent.trim();
-    source.value = defaultSource;
+    if (source) {
+      source.value = defaultSource;
+    }
 
     function render() {
-      const css = [baseBeforeCss || baseCss, cssTemplate ? source.value : null, baseAfterCss].filter(Boolean).join("\n");
-      const js = [baseBeforeJs, jsTemplate ? source.value : null, baseAfterJs].filter(Boolean).join("\n");
-      const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${css ? `<style>${css}</style>` : ""}${html}${js ? `<script>${js}<\/script>` : ""}`;
+      const currentSource = source ? source.value : defaultSource;
+      const css = [baseBeforeCss || baseCss, cssTemplate ? currentSource : null, baseAfterCss].filter(Boolean).join("\n");
+      const js = [baseBeforeJs, jsTemplate ? currentSource : null, baseAfterJs].filter(Boolean).join("\n");
+      const doc = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${css ? `<style>${css}</style>` : ""}</head><body>${html}${js ? `<script>${js}<\/script>` : ""}</body></html>`;
       preview.srcdoc = doc;
     }
 
     let timer;
-    source.addEventListener("input", () => {
-      clearTimeout(timer);
-      timer = setTimeout(render, 150);
-    });
+    if (source) {
+      source.addEventListener("input", () => {
+        clearTimeout(timer);
+        timer = setTimeout(render, 150);
+      });
+    }
 
-    resetBtn?.addEventListener("click", () => {
-      source.value = defaultSource;
-      render();
-    });
+    if (resetBtn && source) {
+      resetBtn.addEventListener("click", () => {
+        source.value = defaultSource;
+        render();
+      });
+    }
 
     render();
   });
+
+  mountLayoutRecipePreviews(document);
 });

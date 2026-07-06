@@ -237,6 +237,12 @@ export function initLegacyEnhancements(root = document) {
     });
   });
 
+  if (root.querySelector("[data-layout-recipe-preview='dashboard']")) {
+    import("./layout-recipe-components.jsx").then(({ mountLayoutRecipePreviews }) => {
+      mountLayoutRecipePreviews(root);
+    });
+  }
+
   return () => {
     cleanups.forEach((cleanup) => cleanup());
   };
