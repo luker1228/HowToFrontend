@@ -46,7 +46,7 @@
           <div class="atlas-stack" data-atlas-demo>
             <div class="atlas-switch" role="tablist"><button class="atlas-switch-btn is-active" type="button" data-atlas-tab="preview">预览</button><button class="atlas-switch-btn" type="button" data-atlas-tab="prompt">提示词</button></div>
             <div class="atlas-view is-active" data-atlas-view="preview"><div class="atlas-demo"><div class="atlas-surface"><div class="atlas-navbar-demo"><strong class="atlas-navbar-brand">Acme Admin</strong><nav class="atlas-navbar-links"><span>控制台</span><span>用户</span><span>订单</span></nav><button class="atlas-btn" type="button">登录</button></div></div></div></div>
-            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-navbar">页面顶部放一个 Navbar，左侧是 Logo，中间是主导航，右侧是搜索或登录入口。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-navbar">Copy Prompt</button></div></div>
+            <div class="atlas-view" data-atlas-view="prompt"><div class="atlas-prompt-row"><div class="atlas-prompt" id="atlas-prompt-navbar">页面顶部放一个 Navbar，左侧是 Logo，中间是导航，右侧是搜索和用户头像。</div><button class="copy-button" type="button" data-copy-target="atlas-prompt-navbar">Copy Prompt</button></div></div>
           </div>
           <h3 class="atlas-name">Navbar</h3>
           <p class="atlas-copy"><strong>这是啥？</strong> 顶部导航栏。通常横着放在页面最上面。</p>
@@ -65,7 +65,7 @@
           <p class="atlas-copy"><strong>这是啥？</strong> 侧边栏。通常竖着放在页面左边，用来切换主功能区。</p>
           <p class="atlas-copy"><strong>前端术语：</strong> 侧边导航、菜单组、当前高亮项、折叠态。</p>
           <p class="atlas-copy"><strong>常用来干嘛：</strong> 管理后台导航、工作台入口、系统菜单切换。</p>
-          <div class="atlas-note"><strong>提示词写法：</strong> 左侧放一个 Sidebar，支持当前菜单高亮，适合后台系统。</div>
+          <div class="atlas-note"><strong>提示词写法：</strong> 页面左侧放一个 Sidebar，包含分组标题、当前高亮菜单和折叠态。</div>
         </section>
         <section class="lesson-section atlas-item" id="atlas-button" data-od-id="atlas-button">
           <span class="micro-label">Action</span>
@@ -78,7 +78,7 @@
           <p class="atlas-copy"><strong>这是啥？</strong> 按钮。页面里最常见的动作触发器。</p>
           <p class="atlas-copy"><strong>前端术语：</strong> 主按钮、次按钮、危险按钮。</p>
           <p class="atlas-copy"><strong>常用来干嘛：</strong> 提交表单、保存修改、删除数据、打开弹窗。</p>
-          <div class="atlas-note"><strong>提示词写法：</strong> 右上角放一个主按钮“新建用户”，旁边放次按钮“导出”。</div>
+          <div class="atlas-note"><strong>提示词写法：</strong> 右上角放一个主按钮“新建用户”，旁边放次按钮“导出”，危险按钮用来删除。</div>
         </section>
         <section class="lesson-section atlas-item" id="atlas-input" data-od-id="atlas-input">
           <span class="micro-label">Input</span>
@@ -91,7 +91,7 @@
           <p class="atlas-copy"><strong>这是啥？</strong> 输入框。用户往里面填文字。</p>
           <p class="atlas-copy"><strong>前端术语：</strong> 输入框、占位文案、错误态、禁用态。</p>
           <p class="atlas-copy"><strong>常用来干嘛：</strong> 搜索、录入名称、输入邮箱、填写参数。</p>
-          <div class="atlas-note"><strong>提示词写法：</strong> 顶部放一个搜索输入框，placeholder 是“搜索用户名 / 手机号”。</div>
+          <div class="atlas-note"><strong>提示词写法：</strong> 顶部放一个搜索输入框，placeholder 是“搜索用户名 / 手机号”，输入时实时过滤列表。</div>
         </section>
         <section class="lesson-section atlas-item" id="atlas-select" data-od-id="atlas-select">
           <span class="micro-label">Select</span>
@@ -104,7 +104,7 @@
           <p class="atlas-copy"><strong>这是啥？</strong> 选择器。点一下展开选项，再选一个值。</p>
           <p class="atlas-copy"><strong>前端术语：</strong> 下拉选择器、单选、多选、默认项。</p>
           <p class="atlas-copy"><strong>常用来干嘛：</strong> 筛选角色、切换状态、选时间范围、选部门。</p>
-          <div class="atlas-note"><strong>提示词写法：</strong> 表格上方放一个角色 Select，可选“全部 / 管理员 / 普通用户”。</div>
+          <div class="atlas-note"><strong>提示词写法：</strong> 表格上方放一个角色 Select，可选“全部 / 管理员 / 普通用户 / 访客”。</div>
         </section>
         <section class="lesson-section atlas-item" id="atlas-tabs" data-od-id="atlas-tabs">
           <span class="micro-label">Navigation</span>

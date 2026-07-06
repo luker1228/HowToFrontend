@@ -24,6 +24,22 @@
   --toc-breakpoint: 1320px;
   --header-offset: 96px;
   --section-space: 72px;
+  --text-xs: 11px;
+  --text-tiny: 12px;
+  --text-sm: 13px;
+  --text-body-sm: 14px;
+  --text-body-md: 16px;
+  --text-base: 17px;
+  --text-lg: 18px;
+  --text-title: 20px;
+  --text-heading: 22px;
+  --text-heading-lg: 30px;
+  --text-hero: clamp(56px, 8vw, 104px);
+  --text-hero-subtitle: clamp(20px, 2.4vw, 30px);
+  --text-page-title: clamp(34px, 5vw, 66px);
+  --text-section-title: clamp(32px, 4vw, 56px);
+  --text-stat: clamp(32px, 3vw, 52px);
+  --text-hero-path: clamp(26px, 3vw, 38px);
 }
 
 *,
@@ -115,7 +131,7 @@ textarea {
   border-radius: 999px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 700;
 }
 
@@ -130,7 +146,7 @@ textarea {
 }
 
 .nav-links a {
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -196,7 +212,7 @@ textarea {
   border: 1.5px solid var(--fg);
   background: var(--surface);
   color: var(--fg);
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -230,7 +246,7 @@ textarea {
   gap: 4px;
   color: var(--fg);
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--text-body-sm);
   text-decoration: none;
   cursor: pointer;
   background: transparent;
@@ -240,7 +256,7 @@ textarea {
 
 .nav-dropdown-trigger::after {
   content: "▾";
-  font-size: 10px;
+  font-size: var(--text-micro);
   color: var(--muted);
   transition: transform 0.15s;
 }
@@ -272,7 +288,7 @@ textarea {
   padding: 8px 12px;
   border-radius: 6px;
   color: var(--fg);
-  font-size: 14px;
+  font-size: var(--text-body-sm);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -295,7 +311,7 @@ textarea {
 
 .small-button {
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: var(--text-sm);
   background: var(--surface);
 }
 
@@ -342,7 +358,7 @@ textarea {
 
 .hero h1 {
   margin: 22px 0 18px;
-  font-size: clamp(56px, 8vw, 104px);
+  font-size: var(--text-hero);
   max-width: 16ch;
 }
 
@@ -352,7 +368,7 @@ textarea {
 
 .hero-subtitle-structured {
   max-width: 34ch;
-  font-size: clamp(20px, 2.4vw, 30px);
+  font-size: var(--text-hero-subtitle);
   line-height: 1.28;
   letter-spacing: -0.01em;
   color: var(--muted);
@@ -394,7 +410,7 @@ textarea {
 .lesson-prose p,
 .faq-item p {
   max-width: 65ch;
-  font-size: 17px;
+  font-size: var(--text-base);
   color: var(--muted);
 }
 
@@ -450,7 +466,7 @@ textarea {
   border: 1.5px solid var(--fg);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -466,7 +482,7 @@ textarea {
 .hero-note-copy {
   margin: 10px 0 0;
   max-width: 50ch;
-  font-size: 18px;
+  font-size: var(--text-lg);
   color: var(--muted);
 }
 
@@ -476,7 +492,7 @@ textarea {
 .prompt-card h3,
 .faq-item h3 {
   margin: 0 0 10px;
-  font-size: 22px;
+  font-size: var(--text-heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -497,13 +513,13 @@ textarea {
 
 .section-title {
   margin: 0;
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: var(--text-section-title);
 }
 
 .section-kicker,
 .micro-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-strong);
@@ -529,7 +545,7 @@ textarea {
 
 .stat-number {
   font-family: var(--font-display);
-  font-size: clamp(32px, 3vw, 52px);
+  font-size: var(--text-stat);
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -537,7 +553,7 @@ textarea {
 .stat-label {
   margin-top: 8px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -569,7 +585,7 @@ textarea {
   display: inline-block;
   margin-bottom: 10px;
   color: var(--accent);
-  font-size: 16px;
+  font-size: var(--text-body-md);
   line-height: 1;
 }
 
@@ -579,7 +595,7 @@ textarea {
 
 .path-item h3 {
   margin: 10px 0 10px;
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: var(--text-hero-path);
   line-height: 1.08;
   letter-spacing: -0.025em;
 }
@@ -598,7 +614,7 @@ textarea {
 
 .path-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -648,7 +664,7 @@ textarea {
   border: 1px solid var(--border);
   border-radius: var(--radius-pill, 999px);
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: var(--text-body-sm);
   color: var(--fg);
 }
 
@@ -659,7 +675,7 @@ textarea {
 
 .path-sub-num {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -761,7 +777,7 @@ textarea {
 
 .footer-caption {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -777,7 +793,7 @@ textarea {
   flex-wrap: wrap;
   margin-bottom: 18px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -803,7 +819,7 @@ textarea {
 
 .page-title {
   margin: 0 0 14px;
-  font-size: clamp(34px, 5vw, 66px);
+  font-size: var(--text-page-title);
   max-width: 100%;
 }
 
@@ -818,7 +834,7 @@ textarea {
   border: 1.5px solid var(--fg);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
 }
 
@@ -844,7 +860,7 @@ textarea {
   border: 1.5px solid var(--fg);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -891,7 +907,7 @@ textarea {
 .html2-lede {
   margin: 0;
   max-width: 40ch;
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.72;
 }
 
@@ -922,14 +938,14 @@ textarea {
   flex: 0 0 auto;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .html2-hero-v {
   text-align: right;
-  font-size: 16px;
+  font-size: var(--text-body-md);
   font-weight: 700;
   line-height: 1.4;
 }
@@ -959,7 +975,7 @@ textarea {
 .section-num {
   margin-bottom: 10px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -972,7 +988,7 @@ textarea {
 .section-sub {
   margin: 0;
   max-width: 42ch;
-  font-size: 17px;
+  font-size: var(--text-base);
   line-height: 1.72;
   color: var(--muted);
 }
@@ -996,7 +1012,7 @@ textarea {
   flex: 0 0 auto;
   color: var(--accent-strong);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1004,7 +1020,7 @@ textarea {
 
 .html2-inline-note p {
   margin: 0;
-  font-size: 17px;
+  font-size: var(--text-base);
   line-height: 1.7;
   color: var(--fg);
 }
@@ -1051,7 +1067,7 @@ textarea {
 
 .lesson-prose p {
   max-width: none;
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.78;
 }
 
@@ -1060,7 +1076,7 @@ textarea {
   padding: 4px 0 0 14px;
   background: transparent;
   border: 0;
-  border-left: 1px solid #e5e7eb;
+  border-left: 1px solid var(--border);
   border-radius: 0;
 }
 
@@ -1069,7 +1085,7 @@ textarea {
   position: sticky;
   top: var(--header-offset);
   padding: 2px 18px 0 0;
-  border-right: 1px solid #e5e7eb;
+  border-right: 1px solid var(--border);
 }
 
 .lesson-sidebar .toc-list {
@@ -1079,27 +1095,27 @@ textarea {
 .lesson-sidebar .toc-list a {
   display: block;
   padding: 6px 0;
-  color: #6b7280;
-  font-size: 13px;
+  color: var(--muted);
+  font-size: var(--text-sm);
   font-weight: 500;
   line-height: 1.45;
   transition: color 160ms ease;
 }
 
 .lesson-sidebar .toc-list a:hover {
-  color: #111827;
+  color: var(--fg);
 }
 
 .lesson-sidebar .toc-list a.is-active {
-  color: #111827;
+  color: var(--fg);
   font-weight: 600;
 }
 
 .lesson-sidebar .micro-label {
   display: block;
   margin-bottom: 10px;
-  color: #9ca3af;
-  font-size: 11px;
+  color: var(--muted);
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1114,20 +1130,20 @@ textarea {
   margin-left: -15px;
   padding: 6px 0 6px 14px;
   border-left: 1px solid transparent;
-  color: #6b7280;
-  font-size: 12px;
+  color: var(--muted);
+  font-size: var(--text-tiny);
   font-weight: 500;
   line-height: 1.45;
   transition: color 160ms ease, border-color 160ms ease;
 }
 
 .lesson-aside .toc-list a:hover {
-  color: #111827;
+  color: var(--fg);
 }
 
 .lesson-aside .toc-list a.is-active {
-  color: #111827;
-  border-left-color: #111827;
+  color: var(--fg);
+  border-left-color: var(--fg);
   font-weight: 600;
 }
 
@@ -1136,24 +1152,24 @@ textarea {
   gap: 2px;
   margin: 2px 0 6px 14px;
   padding-left: 10px;
-  border-left: 1px solid #e5e7eb;
+  border-left: 1px solid var(--border);
 }
 
 .lesson-aside .toc-sub a {
   margin-left: 0;
   padding: 4px 0 4px 8px;
   border-left: 0;
-  color: #9ca3af;
-  font-size: 11px;
+  color: var(--muted);
+  font-size: var(--text-xs);
   font-weight: 500;
 }
 
 .lesson-aside .toc-sub a:hover {
-  color: #111827;
+  color: var(--fg);
 }
 
 .lesson-aside .toc-sub a.is-active {
-  color: #111827;
+  color: var(--fg);
   border-left: 0;
   font-weight: 600;
 }
@@ -1161,8 +1177,8 @@ textarea {
 .lesson-aside .micro-label {
   display: block;
   margin-bottom: 10px;
-  color: #9ca3af;
-  font-size: 11px;
+  color: var(--muted);
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1195,7 +1211,7 @@ textarea {
   background: transparent;
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1205,7 +1221,7 @@ textarea {
 .lesson-floating-toc .toc-toggle::after {
   content: "−";
   margin-left: 8px;
-  font-size: 14px;
+  font-size: var(--text-body-sm);
   line-height: 1;
 }
 
@@ -1242,7 +1258,7 @@ textarea {
   padding: 6px 0;
   border-left: 0;
   color: color-mix(in oklab, var(--muted) 88%, white);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 500;
   line-height: 1.4;
   transition: color 160ms ease, transform 160ms ease;
@@ -1279,7 +1295,7 @@ textarea {
     overflow-y: auto;
     background: transparent;
     border: 0;
-    border-left: 1px solid #e5e7eb;
+    border-left: 1px solid var(--border);
     border-radius: 0;
     padding: 0 0 0 14px;
     z-index: 15;
@@ -1309,14 +1325,14 @@ textarea {
 
 .lesson-section h2 {
   margin: 0;
-  font-size: 30px;
+  font-size: var(--text-heading-lg);
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
 .lesson-section h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--text-heading);
 }
 
 .interaction-hint {
@@ -1327,7 +1343,7 @@ textarea {
   border-left: 2px solid var(--accent);
   background: color-mix(in oklab, var(--surface) 85%, var(--warn));
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.5;
   color: var(--fg);
   letter-spacing: 0.01em;
@@ -1349,7 +1365,7 @@ textarea {
   border-radius: 0;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: var(--text-body-sm);
   line-height: 1.6;
   color: var(--fg);
 }
@@ -1381,7 +1397,7 @@ textarea {
   background: var(--fg);
   color: white;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1395,7 +1411,7 @@ textarea {
 
 .item-title {
   margin: 0;
-  font-size: 20px;
+  font-size: var(--text-title);
   line-height: 1.3;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -1420,7 +1436,7 @@ textarea {
   border-radius: var(--radius-sm);
   background: var(--surface);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--fg);
@@ -1435,6 +1451,7 @@ textarea {
 .tag-item .lesson-prose p,
 .tag-item > p {
   margin: 0;
+  font-size: var(--text-lg);
 }
 
 .comparison-card {
@@ -1474,7 +1491,7 @@ textarea {
   gap: 8px;
   align-items: center;
   padding-bottom: 14px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
 }
 
 .atlas-switch-btn {
@@ -1482,15 +1499,15 @@ textarea {
   border: 0;
   border-radius: 6px;
   background: transparent;
-  color: #6b7280;
-  font-size: 13px;
+  color: var(--muted);
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
 }
 
 .atlas-switch-btn.is-active {
-  background: #f3f4f6;
-  color: #111827;
+  background: var(--surface-2);
+  color: var(--fg);
 }
 
 .atlas-view {
@@ -1503,37 +1520,38 @@ textarea {
 }
 
 .atlas-surface {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: white;
+  background: var(--surface);
   padding: 18px;
 }
 
 .atlas-name {
   margin: 0;
-  font-size: 26px;
+  font-size: var(--text-hero-path);
   line-height: 1.15;
   font-family: var(--font-mono);
 }
 
 .atlas-copy {
   margin: 0;
-  color: #4b5563;
+  font-size: var(--text-lg);
+  color: var(--muted);
 }
 
 .atlas-copy strong,
 .atlas-note strong {
-  color: #111827;
+  color: var(--fg);
 }
 
 .atlas-note {
   margin: 4px 0 0;
   width: min(100%, 760px);
   padding: 14px 18px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #fafafa;
-  color: #4b5563;
+  background: var(--surface);
+  color: var(--muted);
 }
 
 .atlas-prompt {
@@ -1541,23 +1559,23 @@ textarea {
   display: grid;
   gap: 14px;
   padding: 16px 18px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #fafafa;
-  color: #111827;
+  background: var(--surface);
+  color: var(--fg);
 }
 
 .atlas-prompt-text {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.65;
   white-space: pre-wrap;
 }
 
 .atlas-feedback {
   margin: 14px 0 0;
-  color: #6b7280;
-  font-size: 13px;
+  color: var(--muted);
+  font-size: var(--text-sm);
 }
 
 .atlas-button-row,
@@ -1578,7 +1596,7 @@ textarea {
 
 .atlas-navbar-brand,
 .atlas-sidebar-title {
-  font-size: 14px;
+  font-size: var(--text-body-sm);
 }
 
 .atlas-navbar-links,
@@ -1592,11 +1610,11 @@ textarea {
 .atlas-navbar-search {
   width: min(180px, 100%);
   padding: 8px 10px;
-  border: 1px solid #cfd6df;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #fff;
-  color: #9ca3af;
-  font-size: 13px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: var(--text-sm);
 }
 
 .atlas-sidebar-demo {
@@ -1610,27 +1628,27 @@ textarea {
   border: 0;
   border-radius: 8px;
   background: transparent;
-  color: #4b5563;
+  color: var(--muted);
   text-align: left;
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
 }
 
 .atlas-sidebar-item.is-active {
-  background: #f3f4f6;
-  color: #111827;
+  background: var(--surface-2);
+  color: var(--fg);
 }
 
 .atlas-btn,
 .atlas-select,
 .atlas-page,
 .atlas-tab {
-  border: 1px solid #cfd6df;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: white;
-  color: #1f2937;
-  font-size: 13px;
+  background: var(--surface);
+  color: var(--fg);
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
@@ -1654,9 +1672,9 @@ textarea {
 .atlas-field {
   display: grid;
   gap: 8px;
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-weight: 600;
-  color: #4b5563;
+  color: var(--muted);
 }
 
 .atlas-input,
@@ -1676,9 +1694,9 @@ textarea {
   left: 0;
   width: 100%;
   padding: 6px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: white;
+  background: var(--surface);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
   display: grid;
   gap: 4px;
@@ -1689,14 +1707,14 @@ textarea {
   border: 0;
   border-radius: 6px;
   background: transparent;
-  color: #111827;
+  color: var(--fg);
   text-align: left;
-  font-size: 13px;
+  font-size: var(--text-sm);
   cursor: pointer;
 }
 
 .atlas-menu-item:hover {
-  background: #f3f4f6;
+  background: var(--surface-2);
 }
 
 .atlas-tabs {
@@ -1716,27 +1734,27 @@ textarea {
 .atlas-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: var(--text-sm);
 }
 
 .atlas-table th,
 .atlas-table td {
   padding: 8px 10px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
   text-align: left;
 }
 
 .atlas-table tbody tr:hover td {
-  background: #fafafa;
+  background: var(--surface);
 }
 
 .atlas-table th {
-  color: #6b7280;
+  color: var(--muted);
   font-weight: 600;
 }
 
 .atlas-overlay-demo {
-  background: #f7f9fc;
+  background: var(--surface);
   min-height: 180px;
   position: relative;
 }
@@ -1745,9 +1763,9 @@ textarea {
   width: min(280px, 100%);
   margin: 0 auto;
   padding: 14px;
-  border: 1px solid #d7dce4;
+  border: 1px solid var(--border);
   border-radius: 10px;
-  background: white;
+  background: var(--surface);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   display: grid;
   gap: 10px;
@@ -1761,8 +1779,8 @@ textarea {
   width: min(220px, 100%);
   margin-left: auto;
   padding: 14px;
-  border-left: 1px solid #e5e7eb;
-  background: white;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
   display: grid;
   gap: 10px;
 }
@@ -1774,7 +1792,7 @@ textarea {
 .atlas-line {
   height: 10px;
   border-radius: 999px;
-  background: #e5e7eb;
+  background: var(--border);
 }
 
 .atlas-line.short {
@@ -1799,7 +1817,7 @@ textarea {
   border-radius: 12px;
   background: color-mix(in oklab, var(--surface) 65%, white);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   white-space: pre-wrap;
 }
@@ -1836,7 +1854,7 @@ textarea {
   border: 1.5px solid var(--fg);
   border-radius: 999px;
   background: var(--surface);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2050,7 +2068,7 @@ textarea {
 
 .preview-section .preview-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -2059,7 +2077,7 @@ textarea {
 }
 
 .preview-section .preview-content {
-  background: white;
+  background: var(--surface);
   padding: 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
@@ -2096,7 +2114,7 @@ textarea {
 
 .demo-divider + .demo-divider {
   padding-top: 24px;
-  border-top: 1px solid #d6d6d6;
+  border-top: 1px solid var(--border);
 }
 
 .preview-content ul,
@@ -2179,7 +2197,7 @@ textarea {
 
 .preview-content label {
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--text-body-sm);
 }
 
 .preview-content input,
@@ -2225,7 +2243,7 @@ textarea {
   border: none;
   background: transparent;
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--text-tiny);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
@@ -2264,7 +2282,7 @@ textarea {
   background: var(--surface);
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   resize: vertical;
   outline: none;
@@ -2275,7 +2293,7 @@ textarea {
   min-height: 320px;
   border: none;
   border-left: 1.5px solid var(--fg);
-  background: white;
+  background: var(--surface);
 }
 
 @media (max-width: 820px) {
@@ -2333,7 +2351,7 @@ textarea {
   background: color-mix(in oklab, var(--surface) 65%, white);
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   white-space: pre;
   tab-size: 2;
@@ -2402,7 +2420,7 @@ textarea {
   border-radius: 16px;
   background: color-mix(in oklab, var(--surface-2) 80%, white);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -2415,7 +2433,7 @@ textarea {
   min-height: 52px;
   border: 1.5px solid var(--fg);
   border-radius: 12px;
-  background: white;
+  background: var(--surface);
 }
 
 .layout-wireframe-simple .wire-bar {
@@ -2488,10 +2506,10 @@ textarea {
   overflow: auto;
   border: 1.5px solid var(--fg);
   border-radius: 12px;
-  background: #fff;
+  background: var(--surface);
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   line-height: 1.8;
   white-space: pre;
 }
@@ -2529,14 +2547,14 @@ textarea {
 }
 
 .layout-prompt-label {
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .layout-recipe-tip code {
-  font-size: 12px;
+  font-size: var(--text-tiny);
 }
 
 @media (max-width: 820px) {
@@ -2587,7 +2605,7 @@ textarea {
 .guided-css-line {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   white-space: pre;
   tab-size: 2;
@@ -2622,7 +2640,7 @@ textarea {
   height: 100%;
   border: 1.5px solid var(--fg);
   border-radius: 12px;
-  background: white;
+  background: var(--surface);
 }
 
 .playground-toolbar {
@@ -2639,7 +2657,7 @@ textarea {
   border-radius: 0;
   background: transparent;
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   font-weight: 700;
   box-shadow: none;
 }
@@ -2652,7 +2670,7 @@ textarea {
 
 .playground-hint {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--text-body-sm);
   color: var(--muted);
 }
 
@@ -2699,7 +2717,7 @@ textarea {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: var(--text-lg);
   color: var(--muted);
 }
 
@@ -2716,7 +2734,7 @@ textarea {
 
 .figma-mock .fm-title {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -2729,7 +2747,7 @@ textarea {
   gap: 6px;
   padding: 2px 8px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   cursor: default;
   transition: background 0.12s;
@@ -2749,14 +2767,14 @@ textarea {
 }
 
 .fm-ic {
-  font-size: 12px;
+  font-size: var(--text-tiny);
   color: var(--muted);
   width: 14px;
   text-align: center;
 }
 
 .fm-ic-box {
-  font-size: 13px;
+  font-size: var(--text-sm);
 }
 
 .fm-ic-text {
@@ -2783,7 +2801,7 @@ textarea {
 
 .code-fname {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.04em;
   color: var(--muted);
 }
@@ -2791,7 +2809,7 @@ textarea {
 .code-mock pre {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   color: var(--fg);
   overflow-x: auto;
@@ -2824,7 +2842,7 @@ textarea {
 }
 
 .pair-caption {
-  font-size: 15px;
+  font-size: var(--text-body-sm);
   line-height: 1.55;
   color: var(--muted);
 }
@@ -2851,7 +2869,7 @@ textarea {
 
 .props-mock .pm-section-title {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -2864,7 +2882,7 @@ textarea {
   gap: 8px;
   padding: 5px 6px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: var(--text-sm);
   cursor: default;
   transition: background 0.12s;
 }
@@ -2881,7 +2899,7 @@ textarea {
   width: 16px;
   height: 16px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   color: var(--muted);
   flex-shrink: 0;
 }
@@ -2893,7 +2911,7 @@ textarea {
   background: var(--surface);
   padding: 2px 4px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   color: var(--fg);
 }
 
@@ -2907,13 +2925,13 @@ textarea {
 
 .props-mock .pm-color-input {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--text-tiny);
   color: var(--fg);
 }
 
 .props-mock .pm-hint {
   margin-left: auto;
-  font-size: 11px;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -2938,7 +2956,7 @@ textarea {
 
 .cap-k {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-strong);

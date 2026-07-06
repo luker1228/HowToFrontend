@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewHtml = htmlTemplate.textContent.trim();
 
     const rules = [
-      { selector: "body", props: { "font-family": "system-ui, sans-serif", "margin": "24px", "background": "#f5f4ee", "color": "#1a1a1a" } },
+      { selector: "body", props: { "font-family": "\"Instrument Sans\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif", "margin": "24px", "background": "#f5f4ee", "color": "#1a1a1a" } },
       { selector: ".card-grid", props: { "display": "grid", "gap": "16px", "grid-template-columns": "repeat(2, 1fr)" } },
       { selector: ".card", props: { "padding": "16px", "border": "1.5px solid #1a1a1a", "border-radius": "12px", "background": "#fff" } },
       { selector: ".card-title", props: { "font-size": "20px", "margin": "0 0 8px" } },
@@ -73,15 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
       { selector: ".card-actions", props: { "display": "flex", "gap": "10px", "flex-direction": "row" } },
       { selector: ".card-button", props: { "padding": "8px 14px", "border": "1.5px solid #1a1a1a", "border-radius": "8px", "background": "#fff", "cursor": "pointer" } },
       { selector: ".card-button:hover", props: { "background": "#fff" } },
-      { selector: "@media (max-width: 480px)", nested: [{ selector: ".card-grid", props: { "grid-template-columns": "1fr" } }] },
     ];
 
     const tasks = [
       { id: "t1", no: "01", title: "拧字号，看层级", desc: "改 <code>.card-title</code> 的 <code>font-size</code>，标题会变得醒目。", selector: ".card-title", prop: "font-size", control: { type: "range", min: 12, max: 48, step: 1, unit: "px", value: 20 } },
       { id: "t2", no: "02", title: "调内边距，看留白", desc: "改 <code>.card</code> 的 <code>padding</code>，卡片内部留白变松。", selector: ".card", prop: "padding", control: { type: "range", min: 4, max: 48, step: 1, unit: "px", value: 16 } },
-      { id: "t3", no: "03", title: "换方向，按钮竖排", desc: "把 <code>.card-actions</code> 的 <code>flex-direction</code> 改成 <code>column</code>。", selector: ".card-actions", prop: "flex-direction", control: { type: "select", options: ["row", "column"], value: "row" } },
-      { id: "t4", no: "04", title: "加 hover，看反馈", desc: "给 <code>.card-button:hover</code> 设置 <code>background</code>，鼠标移上去看反馈。", selector: ".card-button:hover", prop: "background", control: { type: "color", value: "#1a1a1a" } },
-      { id: "t5", no: "05", title: "窄屏单列布局", desc: "在 <code>@media (max-width: 480px)</code> 让 <code>.card-grid</code> 单列。预览已切到窄屏。", selector: ".card-grid", prop: "grid-template-columns", media: "@media (max-width: 480px)", control: { type: "select", options: ["1fr", "repeat(2, 1fr)"], labels: ["单列", "双列"], value: "1fr" }, previewMobile: true },
+      { id: "t3", no: "03", title: "加 hover，看反馈", desc: "给 <code>.card-button:hover</code> 设置 <code>background</code>，鼠标移上去看反馈。", selector: ".card-button:hover", prop: "background", control: { type: "color", value: "#1a1a1a" } },
     ];
 
     function buildCss(overrides) {
@@ -197,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ov[task.selector + "|" + task.prop] = currentVal();
         }
         const css = buildCss(ov);
-        const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>${css}</style>${previewHtml}`;
+        const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><style>${css}</style>${previewHtml}`;
         iframe.srcdoc = doc;
       }
 
