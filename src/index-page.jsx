@@ -3,7 +3,7 @@ import { CycleText, PageFrame, SiteNav, withBase } from "./site-components.jsx";
 
 const guides = [
   {
-    label: "HTML",
+    icon: "decor/icon-html.svg",
     title: "HTML：负责结构。",
     perspectives: [
       { text: "HTML vs Markdown", href: "lesson-html.html" },
@@ -11,7 +11,7 @@ const guides = [
     ],
   },
   {
-    label: "CSS",
+    icon: "decor/icon-css.svg",
     title: "CSS：负责样式。",
     perspectives: [
       { text: "CSS 基础", href: "lesson-css.html" },
@@ -19,22 +19,19 @@ const guides = [
     ],
   },
   {
-    label: "JavaScript",
+    icon: "decor/icon-js.svg",
     title: "JavaScript：负责交互。",
     href: "lesson-js.html",
-    cta: "进入 JavaScript 课 →",
   },
   {
-    label: "组件",
+    icon: "decor/icon-component.svg",
     title: "组件：负责复用。",
     href: "lesson-react.html",
-    cta: "进入组件课 →",
   },
   {
-    label: "布局",
+    icon: "decor/icon-layout.svg",
     title: "布局：负责排列。",
     href: "lesson-layout.html",
-    cta: "进入布局课 →",
   },
 ];
 
@@ -95,7 +92,17 @@ export function IndexPage() {
           <section className="hero">
             <div className="hero-grid">
               <div className="hero-copy-block">
-                <h1 className="hero-title-structured">非前端人的<span className="accent-text">前端战术手册</span></h1>
+                <div className="hero-title-wrap">
+                  <h1 className="hero-title-structured">
+                    <span className="hero-title-row1">
+                      非前端人的
+                      <img aria-hidden="true" className="hero-decor hero-decor-heart" src={withBase("decor/heart.svg")} alt="" />
+                      <img aria-hidden="true" className="hero-decor hero-decor-compas" src={withBase("decor/compas.svg")} alt="" />
+                      <img aria-hidden="true" className="hero-decor hero-decor-pen" src={withBase("decor/pen_design.svg")} alt="" />
+                    </span>
+                    <span className="accent-text">前端战术手册</span>
+                  </h1>
+                </div>
                 <p className="hero-subtitle-structured">
                   默认你已经有一点互联网基础。从 HTML、CSS、JavaScript、组件到布局，用 AI 写出看得见的页面，适合
                   <CycleText items={["设计师", "产品", "运营", "后端"]} />
@@ -126,28 +133,37 @@ export function IndexPage() {
               </div>
             </div>
             <div className="path-list">
-              {guides.map((guide) => (
-                <article key={guide.title} className="path-item">
-                  <span className="path-icon" aria-hidden="true">◆</span>
-                  <div className="path-head">
-                    <span className="path-label">{guide.label}</span>
-                    <h3>{guide.title}</h3>
-                  </div>
-                  {guide.copy && <p>{guide.copy}</p>}
-                  {guide.perspectives && (
-                    <ul className="path-sub path-perspectives">
-                      {guide.perspectives.map((p) => (
-                        <li key={p.text}>
-                          <a href={withBase(p.href)}>
-                            <span>{p.text}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {guide.cta && <a className="row-link" href={withBase(guide.href)}>{guide.cta}</a>}
-                </article>
-              ))}
+              {guides.map((guide) => {
+                const inner = (
+                  <>
+                    <img className="path-icon" src={withBase(guide.icon)} alt="" aria-hidden="true" />
+                    <div className="path-head">
+                      <h3>{guide.title}</h3>
+                    </div>
+                    {guide.copy && <p>{guide.copy}</p>}
+                    {guide.perspectives && (
+                      <ul className="path-sub path-perspectives">
+                        {guide.perspectives.map((p) => (
+                          <li key={p.text}>
+                            <a href={withBase(p.href)}>
+                              <span>{p.text}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                );
+                return guide.href && !guide.perspectives ? (
+                  <a key={guide.title} className="path-item path-item-link" href={withBase(guide.href)}>
+                    {inner}
+                  </a>
+                ) : (
+                  <article key={guide.title} className="path-item">
+                    {inner}
+                  </article>
+                );
+              })}
             </div>
           </section>
 
