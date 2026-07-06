@@ -38,6 +38,29 @@
     </div>
   </header>
   <main data-od-id="js-main">
+    <aside class="lesson-aside lesson-floating-toc" data-od-id="js-floating-toc">
+      <button type="button" class="toc-toggle" data-toc-toggle aria-expanded="true">目录</button>
+      <div class="toc-body" data-toc-body>
+        <span class="micro-label">章节目录</span>
+        <ul class="toc-list">
+          <li>
+            <a href="#js-idea">01 核心</a>
+          </li>
+          <li>
+            <a href="#js-click">02 控制点击</a>
+          </li>
+          <li>
+            <a href="#js-input">03 控制输入</a>
+          </li>
+          <li>
+            <a href="#js-add">04 控制添加</a>
+          </li>
+          <li>
+            <a href="#js-delete">05 控制删除和空状态</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
     <section class="html2-body-section" id="js-idea" data-od-id="js-idea">
       <div class="wrap">
         <div class="section-head">
@@ -58,7 +81,7 @@
         <div class="section-head">
           <div>
             <div class="section-num"><strong>02</strong> / 练习</div>
-            <h2 class="section-title">动手练最常见的四种交互<br>从点击开始</h2>
+            <h2 class="section-title">先看最常见的四种交互<br>从点击开始</h2>
           </div>
         </div>
         <div class="html2-inline-note">
@@ -67,7 +90,7 @@
         </div>
 
         <section class="lesson-section playground-section" id="js-click" data-od-id="js-click">
-          <h2>动手 1：控制点击</h2>
+          <h2>这是<span class="item-title-accent">控制点击</span>。</h2>
           <p>点“更新状态”后改成“已处理”，点“取消”后改回“待处理”。这里练的是最基本的点击事件。</p>
           <div class="playground" data-playground>
             <div class="playground-editor">
@@ -142,7 +165,7 @@ cancelButton.addEventListener("click", () => {
         </section>
 
         <section class="lesson-section playground-section" id="js-input" data-od-id="js-input">
-          <h2>动手 2：控制输入</h2>
+          <h2>这是<span class="item-title-accent">控制输入</span>。</h2>
           <p>在输入框里打字，让下面的预览文字同步变化。这里练的是输入事件。</p>
           <div class="playground" data-playground>
             <div class="playground-editor">
@@ -198,7 +221,7 @@ input.addEventListener("input", () => {
         </section>
 
         <section class="lesson-section playground-section" id="js-add" data-od-id="js-add">
-          <h2>动手 3：控制添加</h2>
+          <h2>这是<span class="item-title-accent">控制添加</span>。</h2>
           <p>输入任务，点按钮后追加到列表里。这里练的是读取输入值，然后把新节点插进页面。</p>
           <div class="playground" data-playground>
             <div class="playground-editor">
@@ -280,7 +303,7 @@ button.addEventListener("click", () => {
         </section>
 
         <section class="lesson-section playground-section" id="js-delete" data-od-id="js-delete">
-          <h2>动手 4：控制删除和空状态</h2>
+          <h2>这是<span class="item-title-accent">控制删除和空状态</span>。</h2>
           <p>删掉任务以后，如果列表空了，就显示“暂无任务”。这里练的是删除动作和条件判断。</p>
           <div class="playground" data-playground>
             <div class="playground-editor">

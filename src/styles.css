@@ -23,6 +23,7 @@
   --toc-rail-width: 200px;
   --toc-breakpoint: 1320px;
   --header-offset: 96px;
+  --section-space: 72px;
 }
 
 *,
@@ -934,11 +935,11 @@ textarea {
 }
 
 .html2-body-section {
-  padding: 56px 0;
+  padding-block: var(--section-space);
 }
 
 .html2-body-section + .html2-body-section {
-  border-top: 1px solid color-mix(in oklab, var(--fg) 10%, white);
+  @apply border-t border-[color:var(--border)];
 }
 
 .wrap {
@@ -1025,9 +1026,13 @@ textarea {
   margin: 0 auto;
 }
 
+.lesson-main {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
 .lesson-layout {
-  display: grid;
-  gap: 44px;
+  @apply grid gap-11;
 }
 
 .atlas-docs-layout {
@@ -1036,9 +1041,7 @@ textarea {
 }
 
 .lesson-prose {
-  display: grid;
-  gap: 40px;
-  min-width: 0;
+  @apply grid gap-14 min-w-0;
 }
 
 .lesson-section h2,
@@ -1283,27 +1286,25 @@ textarea {
   }
 }
 
-.lesson-prose > .lesson-section + .lesson-section {
+.lesson-section + .lesson-section {
   position: relative;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
+  margin-top: var(--section-space);
+  padding-top: var(--section-space);
 }
 
-.lesson-prose > .lesson-section + .lesson-section::before {
+.lesson-section + .lesson-section::before {
   content: "";
   position: absolute;
-  top: -1px;
+  top: 0;
   left: 50%;
   width: 100vw;
-  height: 1px;
-  background: var(--border);
+  border-top: 1px solid var(--border);
   transform: translateX(-50%);
   pointer-events: none;
 }
 
 .lesson-section {
-  display: grid;
-  gap: 18px;
+  @apply grid gap-[18px];
 }
 
 .lesson-section h2 {
@@ -1450,19 +1451,16 @@ textarea {
 }
 
 .atlas-item {
-  gap: 16px;
-  padding: 0 0 28px;
-  border-bottom: 1px solid var(--border);
+  @apply gap-4;
 }
 
 .atlas-item:last-of-type {
-  border-bottom: 0;
-  padding-bottom: 0;
+  @apply pb-0;
 }
 
 .atlas-demo {
   width: min(100%, 760px);
-  padding: 24px 0;
+  padding: 0 0 24px;
 }
 
 .atlas-stack {
@@ -1497,6 +1495,7 @@ textarea {
 
 .atlas-view {
   display: none;
+  padding-top: 24px;
 }
 
 .atlas-view.is-active {
@@ -1537,21 +1536,22 @@ textarea {
   color: #4b5563;
 }
 
-.atlas-prompt-row {
+.atlas-prompt {
+  width: min(100%, 760px);
   display: grid;
   gap: 14px;
-  padding: 22px 0 0;
-}
-
-.atlas-prompt {
   padding: 16px 18px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #fafafa;
   color: #111827;
+}
+
+.atlas-prompt-text {
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.65;
+  white-space: pre-wrap;
 }
 
 .atlas-feedback {
@@ -2290,31 +2290,11 @@ textarea {
 }
 
 .playground-section {
-  gap: 18px;
+  @apply gap-[18px];
 }
 
 .playground-section.tag-item {
-  gap: 26px;
-  padding-top: 8px;
-}
-
-.playground-section.tag-item + .playground-section.tag-item {
-  position: relative;
-  margin-top: 24px;
-  padding-top: 42px;
-  border-top: 1px solid color-mix(in oklab, var(--fg) 10%, white);
-}
-
-.playground-section.tag-item + .playground-section.tag-item::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  width: 100vw;
-  height: 1px;
-  background: color-mix(in oklab, var(--fg) 10%, white);
-  transform: translateX(-50%);
-  pointer-events: none;
+  @apply gap-[26px];
 }
 
 .color-chip {
@@ -2522,7 +2502,7 @@ textarea {
 
 .html2-inline-note + .layout-recipe-card,
 .html2-inline-note + .lesson-section.playground-section {
-  margin-top: 24px;
+  margin-top: var(--section-space);
 }
 
 .layout-recipe-card-spacious {
@@ -2590,14 +2570,17 @@ textarea {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   min-height: 100%;
-  padding: 14px;
-  padding-top: 42px;
-  border: 1.5px solid var(--fg);
-  border-radius: 12px;
-  background: color-mix(in oklab, var(--surface) 65%, white);
+  padding: 12px;
+  padding-top: 40px;
+  border: 1px solid color-mix(in oklab, var(--fg) 24%, white);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 78%, white), color-mix(in oklab, var(--surface) 68%, white)),
+    var(--surface);
   overflow: auto;
+  box-shadow: 0 10px 24px color-mix(in oklab, var(--fg) 7%, transparent);
 }
 
 .guided-css-muted,
@@ -2618,17 +2601,19 @@ textarea {
   display: block;
   width: 100%;
   min-height: calc(13px * 1.6 + 10px);
-  padding: 4px 6px;
-  border: 0;
-  border-radius: 6px;
-  background: white;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in oklab, var(--fg) 14%, white);
+  border-radius: 8px;
+  background: color-mix(in oklab, white 92%, var(--surface));
   color: var(--fg);
   resize: none;
   overflow: auto;
 }
 
 .guided-css-line:focus {
-  box-shadow: inset 0 0 0 1.5px var(--accent), 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 18%, transparent);
 }
 
 .playground-iframe {
@@ -2642,8 +2627,8 @@ textarea {
 
 .playground-toolbar {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 8px;
+  right: 10px;
   display: flex;
   justify-content: flex-end;
 }

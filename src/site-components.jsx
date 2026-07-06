@@ -8,21 +8,21 @@ export function withBase(path = "") {
   return `${normalizedBase}${normalizedPath}`;
 }
 
-export function CopyButton({ text }) {
-  const [label, setLabel] = useState("Copy Prompt");
+export function CopyButton({ text, className = "" }) {
+  const [label, setLabel] = useState("复制");
 
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(text);
-      setLabel("Copied");
-      window.setTimeout(() => setLabel("Copy Prompt"), 1200);
+      setLabel("已复制");
+      window.setTimeout(() => setLabel("复制"), 1200);
     } catch {
-      setLabel("Copy failed");
+      setLabel("失败");
     }
   }
 
   return (
-    <button className="copy-button" type="button" onClick={handleCopy}>
+    <button className={`copy-button${className ? ` ${className}` : ""}`} type="button" onClick={handleCopy}>
       {label}
     </button>
   );

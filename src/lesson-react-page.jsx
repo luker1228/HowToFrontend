@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ConfigProvider, Layout, Menu, Button, Input, Select, Tabs, Table, Modal, Drawer, Pagination, Space, Tag, Avatar } from "antd";
 import { UserOutlined, ShoppingCartOutlined, SearchOutlined, DashboardOutlined, TeamOutlined, SettingOutlined } from "@ant-design/icons";
-import { SiteNav, StepNav, withBase } from "./site-components.jsx";
+import { CopyButton, SiteNav, StepNav, withBase } from "./site-components.jsx";
 
 const { Header, Sider, Content } = Layout;
 
 const tocItems = [
   { id: "atlas-why", label: "这章讲什么" },
-  { id: "atlas-gallery", label: "组件长相" },
   { id: "atlas-navbar", label: "Navbar" },
   { id: "atlas-sidebar-comp", label: "Sidebar" },
   { id: "atlas-button", label: "Button" },
@@ -20,26 +19,6 @@ const tocItems = [
   { id: "atlas-pagination", label: "Pagination" },
   { id: "atlas-writing", label: "提示词怎么写" },
 ];
-
-function CopyButton({ text }) {
-  const [label, setLabel] = useState("Copy Prompt");
-
-  async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(text);
-      setLabel("Copied");
-      window.setTimeout(() => setLabel("Copy Prompt"), 1200);
-    } catch {
-      setLabel("Copy failed");
-    }
-  }
-
-  return (
-    <button className="copy-button" type="button" onClick={handleCopy}>
-      {label}
-    </button>
-  );
-}
 
 function PreviewTabs({ prompt, children }) {
   const [view, setView] = useState("preview");
@@ -56,9 +35,9 @@ function PreviewTabs({ prompt, children }) {
       </div>
       <div className={`atlas-view${view === "preview" ? " is-active" : ""}`}>{children}</div>
       <div className={`atlas-view${view === "prompt" ? " is-active" : ""}`}>
-        <div className="atlas-prompt-row">
-          <div className="atlas-prompt">{prompt}</div>
-          <CopyButton text={prompt} />
+        <div className="atlas-prompt">
+          <CopyButton text={prompt} className="atlas-copy-button" />
+          <div className="atlas-prompt-text">{prompt}</div>
         </div>
       </div>
     </div>
@@ -74,7 +53,6 @@ function ComponentSection({ id, category, name, what, terms, uses, prompt, child
       <p className="atlas-copy"><strong>这是啥？</strong> {what}</p>
       <p className="atlas-copy"><strong>前端术语：</strong> {terms}</p>
       <p className="atlas-copy"><strong>常用来干嘛：</strong> {uses}</p>
-      <div className="atlas-note"><strong>提示词写法：</strong> {prompt}</div>
     </section>
   );
 }
@@ -357,31 +335,37 @@ export function LessonReactApp() {
             <StepNav prev={{ href: "lesson-js.html", title: "JavaScript" }} next={{ href: "lesson-layout.html", title: "布局" }} />
           </div>
         </header>
-        <main className="lesson-shell">
-          <section className="page-hero">
-            <h1 className="page-title html2-page-title">
-              先认<span className="html2-title-em">组件</span>，<br />
-              再会写提示词。
-            </h1>
-            <p className="lede">这章不讲框架，也不讲实现细节。目标只有一个：让后端程序员看到一个界面块时，知道它叫什么、常用来干嘛、写提示词时该怎么叫它。</p>
-            <div className="meta-row">
-              <span className="meta-chip">分类：组件认知</span>
-              <span className="meta-chip">难度：Beginner</span>
-              <span className="meta-chip">预计阅读：10 min</span>
-              <span className="meta-chip">产物：组件词汇表</span>
+        <header className="html2-hero html-reading-hero">
+          <div className="lesson-shell">
+            <div className="html2-hero-meta">
+              <span className="html2-pill html2-pill-fill">先认词 · COMPONENTS</span>
+              <span className="html2-pill">组件课 · 词汇认知</span>
+              <span className="html2-label">阅读时长 ≈ 10 分钟</span>
             </div>
-          </section>
+            <div className="html2-hero-grid">
+              <div className="html2-hero-copy">
+                <h1 className="page-title html2-page-title">
+                  <span className="html2-title-line">先认<span className="html2-title-em">组件</span></span>
+                  <span className="html2-title-line">再会写提示词</span>
+                </h1>
+              </div>
+              <div className="html2-hero-side">
+                <div className="html2-hero-row"><span className="html2-hero-k">本页讲什么</span><span className="html2-hero-v">组件词汇表</span></div>
+                <div className="html2-hero-row"><span className="html2-hero-k">内容形式</span><span className="html2-hero-v">真实组件 + 提示词</span></div>
+                <div className="html2-hero-row"><span className="html2-hero-k">适合谁</span><span className="html2-hero-v">后端 / 新手 / 非前端</span></div>
+                <div className="html2-hero-row"><span className="html2-hero-k">目标</span><span className="html2-hero-v">看到块就知道怎么叫</span></div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="lesson-shell lesson-main">
 
           <section className="lesson-layout">
             <article className="lesson-prose">
               <section className="lesson-section" id="atlas-why">
                 <h2>这章讲什么</h2>
-                <p>很多后端同学不是不会提需求，而是不知道前端那个东西叫什么。你说“右边滑出来那层”，前端叫 <code>Drawer</code>；你说“中间弹出来确认那层”，前端叫 <code>Modal</code>；你说“上面能切换几个页签”，前端叫 <code>Tabs</code>。把这些词补上，提示词质量会立刻提高。</p>
-              </section>
-
-              <section className="lesson-section" id="atlas-gallery">
-                <h2>组件长相</h2>
-                <p>这一页的读法很简单：先看长相，再记名字，最后记住它一般在什么场景下出现。你以后写提示词，直接用这些词。</p>
+                <p>这章只做两件事：认识常见组件，学会用正确的前端词写提示词。先看长相，再记名字，写提示词时直接用这些词。</p>
               </section>
 
               <ComponentSection

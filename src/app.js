@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         await navigator.clipboard.writeText(target.textContent.trim());
         const original = button.textContent;
-        button.textContent = "Copied";
+        button.textContent = "已复制";
         setTimeout(() => {
           button.textContent = original;
         }, 1200);
       } catch (_) {
-        button.textContent = "Copy failed";
+        button.textContent = "失败";
       }
     });
   });

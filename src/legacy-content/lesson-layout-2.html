@@ -25,7 +25,7 @@
       <div class="html2-hero-copy">
         <h1 class="page-title html2-page-title" data-od-id="layout2-title">
           <span class="html2-title-line">这一课只讲一件事：</span>
-          <span class="html2-title-line">怎么把元素 <span class="html2-title-em">排起来</span></span>
+          <span class="html2-title-line">怎么把元素<span class="html2-title-em">排起来</span></span>
         </h1>
         <p class="lede html2-lede">先看最常见的排列方式：一行、一列、卡片网格、两段式分布，再看一个层级更深的复杂例子。先学会排列，再回头看属性名。</p>
       </div>
@@ -83,7 +83,7 @@
         <span class="html2-inline-note-tag">方式</span>
         <p>把容器设成 <code>flex</code>，子元素就会沿着主轴排成一行。这个例子里只看“横着排”，别先管别的细节。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-display-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-display-item">
         <h4 class="item-title">这是<span class="item-title-accent">控制横排</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -140,7 +140,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout display preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -156,7 +156,7 @@
         <span class="html2-inline-note-tag">方式</span>
         <p>把主轴改成纵向，元素就会从上到下排。这是很多表单、步骤条、详情区最常见的排列方式。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-column-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-column-item">
         <h4 class="item-title">这是<span class="item-title-accent">控制一列</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -212,7 +212,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout column preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -230,7 +230,7 @@
 ]</pre>
         </div>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-flex-3x3-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-flex-3x3-item">
         <h4 class="item-title">这是<span class="item-title-accent">3x3 卡片</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -319,7 +319,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout card columns preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -335,7 +335,7 @@
         <span class="html2-inline-note-tag">方式</span>
         <p>这里继续只用 <code>flex</code> 和 <code>block</code>。前面三块并排，最后一块改成独占整行，就能做出常见的“三列后接说明块”。但这种排法也还是建立在“你提前知道有哪几块”的前提上。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-flex-span-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-flex-span-item">
         <h4 class="item-title">这是<span class="item-title-accent">三列后再占满一行</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -400,7 +400,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout flex span preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -416,7 +416,7 @@
         <span class="html2-inline-note-tag">方式</span>
         <p>前面的列式写法更像是你先把卡片分好组，再一列一列渲染出来。但真实项目里，卡片数量经常是动态的，接口回来几张并不确定。这时候继续手动分成二维数组就很别扭，<code>grid</code> 更适合接管这种“动态卡片自动排版”的场景。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-nested-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-nested-item">
         <h4 class="item-title">这是<span class="item-title-accent">引入 grid 的动态卡片</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -489,7 +489,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout nested preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -505,7 +505,7 @@
         <span class="html2-inline-note-tag">方式</span>
         <p><code>grid</code> 也能反过来用：你先固定行数，比如固定 2 行；至于最后会长出几列，不用手算，卡片数量到了就会自动往右补列。这里你可以直接改 <code>rows</code>、<code>columns</code> 和 <code>auto-flow</code>，自己切换“固定行”和“固定列”。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-cols-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-cols-item">
         <h4 class="item-title">这是<span class="item-title-accent">固定 2 行，列数自动增长</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -583,7 +583,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout grid fixed columns preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -599,7 +599,7 @@
         <span class="html2-inline-note-tag">结果</span>
         <p>这一节不让你改参数，只看最终结果。关键点是：你先定死 2 行，后面再加卡片时，`grid` 会继续往右长出新列，而不是往下堆新行。</p>
       </div>
-      <div class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-rows-demo-item">
+      <section class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-rows-demo-item">
         <h4 class="item-title">这是<span class="item-title-accent">固定 2 行的最终效果</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
@@ -673,7 +673,7 @@
             <iframe data-playground-preview class="playground-iframe" title="layout grid fixed rows preview"></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 </main>
