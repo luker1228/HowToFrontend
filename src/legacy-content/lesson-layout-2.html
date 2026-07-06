@@ -50,6 +50,8 @@
         <li><a href="#layout-flex-3x3">04 3x3 卡片</a></li>
         <li><a href="#layout-flex-span">05 先三列，再一行</a></li>
         <li><a href="#layout-grid-intro">06 引入 grid</a></li>
+        <li><a href="#layout-grid-fixed-cols">07 固定行，列不定</a></li>
+        <li><a href="#layout-grid-fixed-rows-demo">08 固定行，列自动变</a></li>
       </ul>
     </div>
   </aside>
@@ -415,7 +417,7 @@
         <p>前面的列式写法更像是你先把卡片分好组，再一列一列渲染出来。但真实项目里，卡片数量经常是动态的，接口回来几张并不确定。这时候继续手动分成二维数组就很别扭，<code>grid</code> 更适合接管这种“动态卡片自动排版”的场景。</p>
       </div>
       <div class="lesson-section playground-section tag-item" data-od-id="layout-nested-item">
-        <h4 class="item-title">这是<span class="item-title-accent">引入 grid 的后台嵌套</span>。</h4>
+        <h4 class="item-title">这是<span class="item-title-accent">引入 grid 的动态卡片</span>。</h4>
         <div class="playground" data-playground>
           <div class="playground-editor">
             <span class="micro-label">CSS</span>
@@ -429,13 +431,17 @@
 .layout-demo {
   display: grid;
   gap: 12px;
-  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .layout-box {
   padding: 18px;
   border: 1.5px solid #1a1a1a;
   border-radius: 12px;
-  background: #fff;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }</pre>
               <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="2"></textarea>
               <div class="playground-toolbar">
@@ -451,96 +457,220 @@
 .layout-demo {
   display: grid;
   gap: 12px;
-  grid-template-columns: 260px minmax(0, 1fr);
-  grid-template-areas:
-    "header header"
-    "aside main";
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .layout-box {
   padding: 18px;
   border: 1.5px solid #1a1a1a;
   border-radius: 12px;
-  background: #fff;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }</script>
             <script type="text/plain" data-playground-css>.layout-demo {
-  align-items: start;
-}
-.layout-header {
-  grid-area: header;
-}
-.layout-aside {
-  display: grid;
-  gap: 12px;
-  grid-area: aside;
-}
-.layout-main {
-  display: grid;
-  gap: 12px;
-  grid-area: main;
-}
-.layout-outer-aside {
-  display: grid;
-  gap: 12px;
-  grid-area: aside;
-}
-.layout-main-shell {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: 220px minmax(0, 1fr);
-  grid-template-areas:
-    "inner-header inner-header"
-    "inner-aside inner-main";
-  align-items: start;
-}
-.layout-main-inner-header {
-  grid-area: inner-header;
-}
-.layout-main-inner-aside {
-  display: grid;
-  gap: 12px;
-  grid-area: inner-aside;
-}
-.layout-main-inner-main {
-  display: grid;
-  gap: 12px;
-  grid-area: inner-main;
-}
-.layout-main-inner-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }</script>
 <script type="text/plain" data-playground-html><div class="layout-demo">
-  <div class="layout-box layout-header">外层 topbar：系统顶部栏</div>
-  <div class="layout-outer-aside">
-    <div class="layout-box">外层 aside：左侧菜单</div>
-    <div class="layout-box">外层 aside：筛选条件</div>
-  </div>
-  <div class="layout-main">
-    <div class="layout-box">外层 main：主内容区</div>
-    <div class="layout-main-shell">
-      <div class="layout-box layout-main-inner-header">内层 topbar：子系统顶部栏</div>
-      <div class="layout-main-inner-aside">
-        <div class="layout-box">内层 aside：子系统菜单</div>
-        <div class="layout-box">内层 aside：子系统筛选</div>
-      </div>
-      <div class="layout-main-inner-main">
-        <div class="layout-box">内层 main：子系统内容区</div>
-        <div class="layout-main-inner-grid">
-          <div class="layout-box">卡片 A</div>
-          <div class="layout-box">卡片 B</div>
-          <div class="layout-box">卡片 C</div>
-          <div class="layout-box">卡片 D</div>
-        </div>
-        <div class="layout-box">表格 / 列表 / 说明</div>
-      </div>
-    </div>
-  </div>
+  <div class="layout-box">卡片 1</div>
+  <div class="layout-box">卡片 2</div>
+  <div class="layout-box">卡片 3</div>
+  <div class="layout-box">卡片 4</div>
+  <div class="layout-box">卡片 5</div>
+  <div class="layout-box">卡片 6</div>
+  <div class="layout-box">卡片 7</div>
+  <div class="layout-box">卡片 8</div>
+  <div class="layout-box">卡片 9</div>
 </div></script>
           </div>
           <div class="playground-preview">
             <span class="micro-label">Preview</span>
             <iframe data-playground-preview class="playground-iframe" title="layout nested preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-grid-fixed-cols" data-od-id="layout-grid-fixed-cols-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>07</strong> / 固定行，列不定</div>
+          <h2 class="section-title">行数可以先定死<br>列数交给内容自己往右长</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">方式</span>
+        <p><code>grid</code> 也能反过来用：你先固定行数，比如固定 2 行；至于最后会长出几列，不用手算，卡片数量到了就会自动往右补列。这里你可以直接改 <code>rows</code>、<code>columns</code> 和 <code>auto-flow</code>，自己切换“固定行”和“固定列”。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-cols-item">
+        <h4 class="item-title">这是<span class="item-title-accent">固定 2 行，列数自动增长</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</pre>
+              <textarea data-playground-source class="playground-textarea guided-css-line" spellcheck="false" rows="6"></textarea>
+              <div class="playground-toolbar">
+                <button type="button" class="small-button" data-playground-reset>重置</button>
+              </div>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</script>
+            <script type="text/plain" data-playground-css>.layout-demo {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}</script>
+<script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box">卡片 1</div>
+  <div class="layout-box">卡片 2</div>
+  <div class="layout-box">卡片 3</div>
+  <div class="layout-box">卡片 4</div>
+  <div class="layout-box">卡片 5</div>
+  <div class="layout-box">卡片 6</div>
+  <div class="layout-box">卡片 7</div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout grid fixed columns preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="html2-body-section" id="layout-grid-fixed-rows-demo" data-od-id="layout-grid-fixed-rows-demo-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num"><strong>08</strong> / 固定行，列自动变</div>
+          <h2 class="section-title">把效果单独看一遍<br>固定 2 行，列自动往右长</h2>
+        </div>
+      </div>
+      <div class="html2-inline-note">
+        <span class="html2-inline-note-tag">结果</span>
+        <p>这一节不让你改参数，只看最终结果。关键点是：你先定死 2 行，后面再加卡片时，`grid` 会继续往右长出新列，而不是往下堆新行。</p>
+      </div>
+      <div class="lesson-section playground-section tag-item" data-od-id="layout-grid-fixed-rows-demo-item">
+        <h4 class="item-title">这是<span class="item-title-accent">固定 2 行的最终效果</span>。</h4>
+        <div class="playground" data-playground>
+          <div class="playground-editor">
+            <span class="micro-label">CSS</span>
+            <div class="guided-css-editor">
+              <pre class="guided-css-muted">body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</pre>
+            </div>
+            <script type="text/plain" data-playground-base-before-css>body {
+  font-family: system-ui, sans-serif;
+  margin: 24px;
+  background: #f5f4ee;
+  color: #1a1a1a;
+}
+.layout-demo {
+  display: grid;
+  gap: 12px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}
+.layout-box {
+  padding: 18px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 12px;
+  background: #fff7e8;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</script>
+            <script type="text/plain" data-playground-css>.layout-demo {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+}</script>
+<script type="text/plain" data-playground-html><div class="layout-demo">
+  <div class="layout-box">卡片 1</div>
+  <div class="layout-box">卡片 2</div>
+  <div class="layout-box">卡片 3</div>
+  <div class="layout-box">卡片 4</div>
+  <div class="layout-box">卡片 5</div>
+  <div class="layout-box">卡片 6</div>
+  <div class="layout-box">卡片 7</div>
+  <div class="layout-box">卡片 8</div>
+</div></script>
+          </div>
+          <div class="playground-preview">
+            <span class="micro-label">Preview</span>
+            <iframe data-playground-preview class="playground-iframe" title="layout grid fixed rows preview"></iframe>
           </div>
         </div>
       </div>

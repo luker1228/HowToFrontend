@@ -1,3 +1,5 @@
+import { initPlaygrounds } from "./init-playgrounds.js";
+
 export function initLegacyEnhancements(root = document) {
   const cleanups = [];
 
@@ -166,51 +168,7 @@ export function initLegacyEnhancements(root = document) {
     cleanups.push(() => observer.disconnect());
   }
 
-  root.querySelectorAll("[data-playground]").forEach((playgroundRoot) => {
-    const source = playgroundRoot.querySelector("[data-playground-source]");
-    const preview = playgroundRoot.querySelector("[data-playground-preview]");
-    const resetBtn = playgroundRoot.querySelector("[data-playground-reset]");
-    const cssTemplate = playgroundRoot.querySelector("[data-playground-css]");
-    const jsTemplate = playgroundRoot.querySelector("[data-playground-js]");
-    const htmlTemplate = playgroundRoot.querySelector("[data-playground-html]");
-    if (!source || !preview || !htmlTemplate || (!cssTemplate && !jsTemplate)) return;
-
-    const sourceTemplate = cssTemplate || jsTemplate;
-    const defaultSource = sourceTemplate.textContent.trim();
-    const baseCss = playgroundRoot.querySelector("[data-playground-base-css]")?.textContent.trim();
-    const baseBeforeCss = playgroundRoot.querySelector("[data-playground-base-before-css]")?.textContent.trim();
-    const baseAfterCss = playgroundRoot.querySelector("[data-playground-base-after-css]")?.textContent.trim();
-    const baseBeforeJs = playgroundRoot.querySelector("[data-playground-base-before-js]")?.textContent.trim();
-    const baseAfterJs = playgroundRoot.querySelector("[data-playground-base-after-js]")?.textContent.trim();
-    const html = htmlTemplate.textContent.trim();
-    source.value = defaultSource;
-
-    function render() {
-      const css = [baseBeforeCss || baseCss, cssTemplate ? source.value : null, baseAfterCss].filter(Boolean).join("\n");
-      const js = [baseBeforeJs, jsTemplate ? source.value : null, baseAfterJs].filter(Boolean).join("\n");
-      const doc = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${css ? `<style>${css}</style>` : ""}${html}${js ? `<script>${js}<\/script>` : ""}`;
-      preview.srcdoc = doc;
-    }
-
-    let timer;
-    const inputHandler = () => {
-      window.clearTimeout(timer);
-      timer = window.setTimeout(render, 150);
-    };
-    source.addEventListener("input", inputHandler);
-    cleanups.push(() => source.removeEventListener("input", inputHandler));
-
-    if (resetBtn) {
-      const resetHandler = () => {
-        source.value = defaultSource;
-        render();
-      };
-      resetBtn.addEventListener("click", resetHandler);
-      cleanups.push(() => resetBtn.removeEventListener("click", resetHandler));
-    }
-
-    render();
-  });
+  cleanups.push(initPlaygrounds(root));
 
   root.querySelectorAll(".layer-card").forEach((card) => {
     const items = Array.from(card.querySelectorAll("[data-key]"));

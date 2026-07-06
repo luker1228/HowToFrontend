@@ -1,4 +1,5 @@
 import { mountLayoutRecipePreviews } from "./layout-recipe-components.jsx";
+import { initPlaygrounds } from "./init-playgrounds.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-cycle]").forEach((container) => {
@@ -216,52 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll("[data-playground]").forEach((root) => {
-    const source = root.querySelector("[data-playground-source]");
-    const preview = root.querySelector("[data-playground-preview]");
-    const resetBtn = root.querySelector("[data-playground-reset]");
-    const cssTemplate = root.querySelector("[data-playground-css]");
-    const jsTemplate = root.querySelector("[data-playground-js]");
-    const htmlTemplate = root.querySelector("[data-playground-html]");
-    if (!preview || !htmlTemplate || (!cssTemplate && !jsTemplate)) return;
-
-    const sourceTemplate = cssTemplate || jsTemplate;
-    const defaultSource = sourceTemplate.textContent.trim();
-    const baseCss = root.querySelector("[data-playground-base-css]")?.textContent.trim();
-    const baseBeforeCss = root.querySelector("[data-playground-base-before-css]")?.textContent.trim();
-    const baseAfterCss = root.querySelector("[data-playground-base-after-css]")?.textContent.trim();
-    const baseBeforeJs = root.querySelector("[data-playground-base-before-js]")?.textContent.trim();
-    const baseAfterJs = root.querySelector("[data-playground-base-after-js]")?.textContent.trim();
-    const html = htmlTemplate.textContent.trim();
-    if (source) {
-      source.value = defaultSource;
-    }
-
-    function render() {
-      const currentSource = source ? source.value : defaultSource;
-      const css = [baseBeforeCss || baseCss, cssTemplate ? currentSource : null, baseAfterCss].filter(Boolean).join("\n");
-      const js = [baseBeforeJs, jsTemplate ? currentSource : null, baseAfterJs].filter(Boolean).join("\n");
-      const doc = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${css ? `<style>${css}</style>` : ""}</head><body>${html}${js ? `<script>${js}<\/script>` : ""}</body></html>`;
-      preview.srcdoc = doc;
-    }
-
-    let timer;
-    if (source) {
-      source.addEventListener("input", () => {
-        clearTimeout(timer);
-        timer = setTimeout(render, 150);
-      });
-    }
-
-    if (resetBtn && source) {
-      resetBtn.addEventListener("click", () => {
-        source.value = defaultSource;
-        render();
-      });
-    }
-
-    render();
-  });
+  initPlaygrounds(document);
 
   mountLayoutRecipePreviews(document);
 });
