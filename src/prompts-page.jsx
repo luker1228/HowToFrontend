@@ -1,5 +1,5 @@
 import React from "react";
-import { PageFrame, PromptLibrary, SiteNav, StepNav } from "./site-components.jsx";
+import { PageFrame, PromptLibrary, SiteNav, StepNav, withBase } from "./site-components.jsx";
 
 const filters = [
   { value: "all", label: "All" },
@@ -173,9 +173,9 @@ export function PromptsPage() {
       <>
         <header className="site-header">
           <div className="container site-header-inner">
-            <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
+            <a className="brand-mark" href={withBase("index.html")}><span>后端前端中心</span><span className="brand-pill">手册</span></a>
             <SiteNav />
-            <StepNav prev={{ href: "/lesson-layout.html", title: "布局" }} />
+            <StepNav prev={{ href: "lesson-layout.html", title: "布局" }} />
           </div>
         </header>
         <main className="container">

@@ -1,39 +1,39 @@
 import React from "react";
-import { CycleText, PageFrame, SiteNav } from "./site-components.jsx";
+import { CycleText, PageFrame, SiteNav, withBase } from "./site-components.jsx";
 
 const guides = [
   {
     label: "HTML",
     title: "HTML：负责结构。",
     perspectives: [
-      { text: "HTML vs Markdown", href: "/lesson-html.html" },
-      { text: "HTML vs Figma：图层树就是标签树", href: "/lesson-html-2.html" },
+      { text: "HTML vs Markdown", href: "lesson-html.html" },
+      { text: "HTML vs Figma：图层树就是标签树", href: "lesson-html-2.html" },
     ],
   },
   {
     label: "CSS",
     title: "CSS：负责样式。",
     perspectives: [
-      { text: "CSS 基础", href: "/lesson-css.html" },
-      { text: "CSS vs Figma：属性面板就是 CSS", href: "/lesson-css-2.html" },
+      { text: "CSS 基础", href: "lesson-css.html" },
+      { text: "CSS vs Figma：属性面板就是 CSS", href: "lesson-css-2.html" },
     ],
   },
   {
     label: "JavaScript",
     title: "JavaScript：负责交互。",
-    href: "/lesson-js.html",
+    href: "lesson-js.html",
     cta: "进入 JavaScript 课 →",
   },
   {
     label: "组件",
     title: "组件：负责复用。",
-    href: "/lesson-react.html",
+    href: "lesson-react.html",
     cta: "进入组件课 →",
   },
   {
     label: "布局",
     title: "布局：负责排列。",
-    href: "/lesson-layout.html",
+    href: "lesson-layout.html",
     cta: "进入布局课 →",
   },
 ];
@@ -43,14 +43,14 @@ const resources = [
     label: "模板意识",
     title: "页面模板入口",
     copy: "把登录页、后台页、文章页理解成固定构成块，而不是每次从空白页开始想。",
-    href: "/lesson-html.html",
+    href: "lesson-html.html",
     cta: "从课程里拆模板 →",
   },
   {
     label: "提示词库",
     title: "智能助手提示词库",
     copy: "页面生成、页面修改、组件拆分、接口对接四类提示词，够你开始真实协作。",
-    href: "/prompts.html",
+    href: "prompts.html",
     cta: "打开提示词库 →",
   },
 ];
@@ -77,7 +77,7 @@ export function IndexPage() {
       <div className="site-shell">
         <header className="site-header">
           <div className="container site-header-inner">
-            <a className="brand-mark" href="/index.html">
+            <a className="brand-mark" href={withBase("index.html")}>
               <span>后端前端中心</span>
               <span className="brand-pill">手册</span>
             </a>
@@ -86,7 +86,7 @@ export function IndexPage() {
               <div className="header-search">
                 <input className="search-input" type="search" placeholder="搜索前端战术手册..." aria-label="搜索前端战术手册" />
               </div>
-              <a className="button" href="/lesson-html.html">开始学习 →</a>
+              <a className="button" href={withBase("lesson-html.html")}>开始学习 →</a>
             </div>
           </div>
         </header>
@@ -102,7 +102,7 @@ export function IndexPage() {
                   同学一起看。
                 </p>
                 <div className="hero-actions">
-                  <a className="button" href="/lesson-html.html">开始学习 →</a>
+                  <a className="button" href={withBase("lesson-html.html")}>开始学习 →</a>
                 </div>
                 <div className="hero-search-card bare">
                   <div className="hero-tags">
@@ -138,14 +138,14 @@ export function IndexPage() {
                     <ul className="path-sub path-perspectives">
                       {guide.perspectives.map((p) => (
                         <li key={p.text}>
-                          <a href={p.href}>
+                          <a href={withBase(p.href)}>
                             <span>{p.text}</span>
                           </a>
                         </li>
                       ))}
                     </ul>
                   )}
-                  {guide.cta && <a className="row-link" href={guide.href}>{guide.cta}</a>}
+                  {guide.cta && <a className="row-link" href={withBase(guide.href)}>{guide.cta}</a>}
                 </article>
               ))}
             </div>
@@ -164,7 +164,7 @@ export function IndexPage() {
                   <span className="micro-label">{resource.label}</span>
                   <h3>{resource.title}</h3>
                   <p>{resource.copy}</p>
-                  <a className="row-link" href={resource.href}>{resource.cta}</a>
+                  <a className="row-link" href={withBase(resource.href)}>{resource.cta}</a>
                 </article>
               ))}
             </div>
@@ -193,14 +193,14 @@ export function IndexPage() {
               <h2 className="cta-title">先学会描述页面，再让智能助手帮你把页面写出来。</h2>
               <p>从结构第一课开始，再一路推进到组件词汇和提示词库。</p>
             </div>
-            <a className="button" href="/lesson-html.html">开始学习 →</a>
+            <a className="button" href={withBase("lesson-html.html")}>开始学习 →</a>
           </section>
         </main>
 
         <footer className="footer">
           <div className="container footer-grid">
             <div className="footer-col">
-              <a className="brand-mark" href="/index.html">
+              <a className="brand-mark" href={withBase("index.html")}>
                 <span>后端前端中心</span>
                 <span className="brand-pill">手册</span>
               </a>
@@ -208,17 +208,17 @@ export function IndexPage() {
             </div>
             <div className="footer-col">
               <span className="footer-caption">课程</span>
-              <a href="/lesson-html.html">结构课</a>
-              <a href="/lesson-css.html">样式课</a>
-              <a href="/lesson-js.html">交互课</a>
-              <a href="/lesson-react.html">先认词</a>
-              <a href="/lesson-layout.html">布局第一课</a>
-              <a href="/lesson-layout-2.html">布局第二课</a>
+              <a href={withBase("lesson-html.html")}>结构课</a>
+              <a href={withBase("lesson-css.html")}>样式课</a>
+              <a href={withBase("lesson-js.html")}>交互课</a>
+              <a href={withBase("lesson-react.html")}>先认词</a>
+              <a href={withBase("lesson-layout.html")}>布局第一课</a>
+              <a href={withBase("lesson-layout-2.html")}>布局第二课</a>
             </div>
             <div className="footer-col">
               <span className="footer-caption">资料库</span>
-              <a href="/lesson-react.html">组件课</a>
-              <a href="/prompts.html">提示词页</a>
+              <a href={withBase("lesson-react.html")}>组件课</a>
+              <a href={withBase("prompts.html")}>提示词页</a>
             </div>
             <div className="footer-col">
               <span className="footer-caption">目录</span>

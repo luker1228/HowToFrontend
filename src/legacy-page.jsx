@@ -2,6 +2,13 @@ import React, { useEffect, useRef } from "react";
 import "./styles.css";
 import { initLegacyEnhancements } from "./legacy-enhancements.js";
 
+function rewriteLegacyHtmlForBase(html) {
+  return html
+    .replace(/href="\/(?!\/)/g, 'href="./')
+    .replace(/src="\/(?!\/)/g, 'src="./')
+    .replace(/"href":"\/(?!\/)/g, '"href":"./');
+}
+
 export function LegacyPage({ title, html }) {
   const rootRef = useRef(null);
 
@@ -14,5 +21,5 @@ export function LegacyPage({ title, html }) {
     return initLegacyEnhancements(rootRef.current);
   }, [html]);
 
-  return <div ref={rootRef} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div ref={rootRef} dangerouslySetInnerHTML={{ __html: rewriteLegacyHtmlForBase(html) }} />;
 }

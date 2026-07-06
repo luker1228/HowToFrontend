@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ConfigProvider, Layout, Menu, Button, Input, Select, Tabs, Table, Modal, Drawer, Pagination, Space, Tag, Avatar } from "antd";
 import { UserOutlined, ShoppingCartOutlined, SearchOutlined, DashboardOutlined, TeamOutlined, SettingOutlined } from "@ant-design/icons";
-import { SiteNav, StepNav } from "./site-components.jsx";
+import { SiteNav, StepNav, withBase } from "./site-components.jsx";
 
 const { Header, Sider, Content } = Layout;
 
@@ -345,9 +345,9 @@ export function LessonReactApp() {
       <>
         <header className="site-header">
           <div className="lesson-shell site-header-inner">
-            <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
-            <SiteNav currentPath="/lesson-react.html" />
-            <StepNav prev={{ href: "/lesson-js.html", title: "JavaScript" }} next={{ href: "/lesson-layout.html", title: "布局" }} />
+            <a className="brand-mark" href={withBase("index.html")}><span>后端前端中心</span><span className="brand-pill">手册</span></a>
+            <SiteNav currentPath="lesson-react.html" />
+            <StepNav prev={{ href: "lesson-js.html", title: "JavaScript" }} next={{ href: "lesson-layout.html", title: "布局" }} />
           </div>
         </header>
         <main className="lesson-shell">

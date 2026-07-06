@@ -1,5 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 
+export function withBase(path = "") {
+  if (!path || path.startsWith("#") || /^[a-z]+:/i.test(path)) return path;
+  const base = import.meta.env.BASE_URL || "/";
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${normalizedBase}${normalizedPath}`;
+}
+
 export function CopyButton({ text }) {
   const [label, setLabel] = useState("Copy Prompt");
 
@@ -31,27 +39,27 @@ export function PageFrame({ title, children }) {
 const COURSES = [
   {
     label: "HTML",
-    href: "/lesson-html.html",
+    href: "lesson-html.html",
     perspectives: [
-      { text: "Markdown 对比", href: "/lesson-html.html" },
-      { text: "Figma 对比", href: "/lesson-html-2.html" },
+      { text: "Markdown 对比", href: "lesson-html.html" },
+      { text: "Figma 对比", href: "lesson-html-2.html" },
     ],
   },
   {
     label: "CSS",
-    href: "/lesson-css.html",
+    href: "lesson-css.html",
     perspectives: [
-      { text: "CSS 基础", href: "/lesson-css.html" },
-      { text: "Figma 对比", href: "/lesson-css-2.html" },
+      { text: "CSS 基础", href: "lesson-css.html" },
+      { text: "Figma 对比", href: "lesson-css-2.html" },
     ],
   },
-  { label: "JavaScript", href: "/lesson-js.html" },
-  { label: "组件", href: "/lesson-react.html" },
+  { label: "JavaScript", href: "lesson-js.html" },
+  { label: "组件", href: "lesson-react.html" },
   {
     label: "布局",
     perspectives: [
-      { text: "布局第一课：骨架", href: "/lesson-layout.html" },
-      { text: "布局第二课：排列", href: "/lesson-layout-2.html" },
+      { text: "布局第一课：骨架", href: "lesson-layout.html" },
+      { text: "布局第二课：排列", href: "lesson-layout-2.html" },
     ],
   },
 ];
@@ -89,7 +97,7 @@ function NavDropdown({ course, currentPath }) {
         {course.perspectives.map((p) => (
           <a
             key={p.href}
-            href={p.href}
+            href={withBase(p.href)}
             className={currentPath === p.href ? "is-current" : ""}
             onClick={() => setOpen(false)}
           >
@@ -108,7 +116,7 @@ export function SiteNav({ currentPath = "" }) {
         course.perspectives ? (
           <NavDropdown key={course.label} course={course} currentPath={currentPath} />
         ) : (
-          <a key={course.label} href={course.href}>
+          <a key={course.label} href={withBase(course.href)}>
             {course.label}
           </a>
         )
@@ -121,7 +129,7 @@ export function StepNav({ prev, next }) {
   return (
     <div className="step-nav">
       {prev ? (
-        <a className="step-nav-btn" href={prev.href} title={prev.title}>
+        <a className="step-nav-btn" href={withBase(prev.href)} title={prev.title}>
           ← 上一节
         </a>
       ) : (
@@ -130,7 +138,7 @@ export function StepNav({ prev, next }) {
         </a>
       )}
       {next ? (
-        <a className="step-nav-btn is-next" href={next.href} title={next.title}>
+        <a className="step-nav-btn is-next" href={withBase(next.href)} title={next.title}>
           下一节 →
         </a>
       ) : (

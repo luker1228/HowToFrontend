@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   root: ".",
+  base: "./",
   publicDir: "public",
   plugins: [react(), tailwindcss()],
   build: {

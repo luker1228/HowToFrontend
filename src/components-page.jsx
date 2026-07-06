@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ConfigProvider, Layout, Menu, Button, Input, Select, Tabs, Table, Modal, Drawer, Pagination, Space, Tag, Avatar, Form, Spin, Empty, Badge } from "antd";
 import { SearchOutlined, DashboardOutlined, TeamOutlined, SettingOutlined, BellOutlined } from "@ant-design/icons";
-import { CopyButton, PageFrame, SiteNav, StepNav } from "./site-components.jsx";
+import { CopyButton, PageFrame, SiteNav, StepNav, withBase } from "./site-components.jsx";
 
 const { Header, Sider, Content } = Layout;
 
@@ -99,11 +99,11 @@ const components = [
     copy: "像可编辑字段，常常伴随 placeholder、错误态、帮助文本和焦点态。",
     prompt: "请生成一个带 label、placeholder、错误提示和帮助文案的输入框组件。",
     render: () => (
-      <Form layout="vertical" style={{ maxWidth: 320 }}>
-        <Form.Item label="用户名" name="username" help="不超过 20 字符" validateStatus="error" help="用户名已存在">
-          <Input placeholder="输入用户名" />
-        </Form.Item>
-      </Form>
+        <Form layout="vertical" style={{ maxWidth: 320 }}>
+          <Form.Item label="用户名" name="username" validateStatus="error" help="用户名已存在，不超过 20 字符">
+            <Input placeholder="输入用户名" />
+          </Form.Item>
+        </Form>
     ),
   },
   {
@@ -209,9 +209,9 @@ export function ComponentsPage() {
       <ConfigProvider theme={{ token: { colorPrimary: "#ef7627", borderRadius: 8, fontFamily: "inherit" } }}>
         <header className="site-header">
           <div className="container site-header-inner">
-            <a className="brand-mark" href="/index.html"><span>后端前端中心</span><span className="brand-pill">手册</span></a>
-            <SiteNav currentPath="/components.html" />
-            <StepNav prev={{ href: "/lesson-react.html", title: "组件：先认词" }} next={{ href: "/prompts.html", title: "提示词库" }} />
+            <a className="brand-mark" href={withBase("index.html")}><span>后端前端中心</span><span className="brand-pill">手册</span></a>
+            <SiteNav currentPath="components.html" />
+            <StepNav prev={{ href: "lesson-react.html", title: "组件：先认词" }} next={{ href: "prompts.html", title: "提示词库" }} />
           </div>
         </header>
         <main className="container">
