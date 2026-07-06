@@ -285,18 +285,25 @@ function PaginationPreview() {
 }
 
 function Toc({ activeId }) {
+  const [open, setOpen] = useState(true);
+
   return (
-    <aside className="lesson-aside">
-      <span className="micro-label">章节目录</span>
-      <ul className="toc-list">
-        {tocItems.map((item) => (
-          <li key={item.id}>
-            <a href={`#${item.id}`} className={activeId === item.id ? "is-active" : ""}>
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <aside className={`lesson-aside lesson-floating-toc${open ? "" : " is-collapsed"}`}>
+      <button type="button" className="toc-toggle" onClick={() => setOpen((value) => !value)} aria-expanded={open}>
+        目录
+      </button>
+      <div className="toc-body">
+        <span className="micro-label">章节目录</span>
+        <ul className="toc-list">
+          {tocItems.map((item) => (
+            <li key={item.id}>
+              <a href={`#${item.id}`} className={activeId === item.id ? "is-active" : ""}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </aside>
   );
 }
@@ -352,7 +359,10 @@ export function LessonReactApp() {
         </header>
         <main className="lesson-shell">
           <section className="page-hero">
-            <h1 className="page-title">先认组件，再会写提示词。</h1>
+            <h1 className="page-title html2-page-title">
+              先认<span className="html2-title-em">组件</span>，<br />
+              再会写提示词。
+            </h1>
             <p className="lede">这章不讲框架，也不讲实现细节。目标只有一个：让后端程序员看到一个界面块时，知道它叫什么、常用来干嘛、写提示词时该怎么叫它。</p>
             <div className="meta-row">
               <span className="meta-chip">分类：组件认知</span>
