@@ -344,7 +344,7 @@ export function LessonReactApp() {
             </div>
             <div className="html2-hero-grid">
               <div className="html2-hero-copy">
-                <h1 className="page-title html2-page-title">
+                <h1 className="page-title">
                   <span className="html2-title-line">先认<span className="html2-title-em">组件</span></span>
                   <span className="html2-title-line">再会写提示词</span>
                 </h1>
