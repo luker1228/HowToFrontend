@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ConfigProvider, Layout, Menu, Button, Input, Select, Tabs, Table, Modal, Drawer, Pagination, Space, Tag, Avatar } from "antd";
+import { ConfigProvider, Layout, Menu, Button, Input, Select, Tabs, Table, Modal, Drawer, Pagination, Space, Tag, Avatar, Card, Form, Checkbox, Radio, Switch, Dropdown, Empty, message } from "antd";
 import { UserOutlined, ShoppingCartOutlined, SearchOutlined, DashboardOutlined, TeamOutlined, SettingOutlined } from "@ant-design/icons";
 import { CopyButton, SiteNav, StepNav, withBase } from "./site-components.jsx";
 
@@ -7,16 +7,27 @@ const { Header, Sider, Content } = Layout;
 
 const tocItems = [
   { id: "atlas-why", label: "这章讲什么" },
-  { id: "atlas-navbar", label: "Navbar" },
-  { id: "atlas-sidebar-comp", label: "Sidebar" },
-  { id: "atlas-button", label: "Button" },
-  { id: "atlas-input", label: "Input" },
-  { id: "atlas-select", label: "Select" },
-  { id: "atlas-tabs", label: "Tabs" },
-  { id: "atlas-table", label: "Table" },
-  { id: "atlas-modal", label: "Modal" },
-  { id: "atlas-drawer", label: "Drawer" },
-  { id: "atlas-pagination", label: "Pagination" },
+  { id: "atlas-hero", label: "首屏 Hero" },
+  { id: "atlas-navbar", label: "导航栏 Navbar" },
+  { id: "atlas-sidebar-comp", label: "侧边栏 Sidebar" },
+  { id: "atlas-card", label: "卡片 Card" },
+  { id: "atlas-button", label: "按钮 Button" },
+  { id: "atlas-cta", label: "CTA" },
+  { id: "atlas-input", label: "输入框 Input" },
+  { id: "atlas-textarea", label: "多行输入框 Textarea" },
+  { id: "atlas-form", label: "表单 Form" },
+  { id: "atlas-checkbox", label: "复选框 Checkbox" },
+  { id: "atlas-radio", label: "单选框 Radio" },
+  { id: "atlas-switch", label: "开关 Switch" },
+  { id: "atlas-select", label: "选择器 Select" },
+  { id: "atlas-dropdown", label: "下拉菜单 Dropdown" },
+  { id: "atlas-tabs", label: "标签页 Tabs" },
+  { id: "atlas-table", label: "表格 Table" },
+  { id: "atlas-empty", label: "空状态 Empty State" },
+  { id: "atlas-modal", label: "弹窗 Modal" },
+  { id: "atlas-drawer", label: "抽屉 Drawer" },
+  { id: "atlas-pagination", label: "分页 Pagination" },
+  { id: "atlas-toast", label: "轻提示 Toast" },
   { id: "atlas-writing", label: "提示词怎么写" },
 ];
 
@@ -50,9 +61,9 @@ function ComponentSection({ id, category, name, what, terms, uses, prompt, child
       <span className="micro-label">{category}</span>
       <PreviewTabs prompt={prompt}>{children}</PreviewTabs>
       <h3 className="atlas-name">{name}</h3>
-      <p className="atlas-copy"><strong>这是啥？</strong> {what}</p>
-      <p className="atlas-copy"><strong>前端术语：</strong> {terms}</p>
-      <p className="atlas-copy"><strong>常用来干嘛：</strong> {uses}</p>
+      <p className="atlas-copy">这是啥？ {what}</p>
+      <p className="atlas-copy">前端术语： {terms}</p>
+      <p className="atlas-copy">常用来干嘛： {uses}</p>
     </section>
   );
 }
@@ -83,6 +94,44 @@ function NavbarPreview() {
   );
 }
 
+function HeroPreview() {
+  return (
+    <div className="atlas-demo">
+      <div
+        className="atlas-surface"
+        style={{
+          padding: 0,
+          overflow: "hidden",
+          background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
+          color: "#fff",
+        }}
+      >
+        <div style={{ padding: "28px 28px 32px", display: "grid", gap: 16 }}>
+          <Tag color="orange" style={{ width: "fit-content", margin: 0 }}>Landing Hero</Tag>
+          <div style={{ display: "grid", gap: 12, maxWidth: 520 }}>
+            <h4 style={{ margin: 0, fontSize: 30, lineHeight: 1.15, color: "#fff" }}>
+              把数据后台的操作路径，整理成一块能立即理解的首屏。
+            </h4>
+            <p style={{ margin: 0, color: "rgba(255,255,255,0.74)", lineHeight: 1.7 }}>
+              Hero 通常由 headline、supporting copy、primary CTA 和辅助信息组成。用户一进页面，先看这里。
+            </p>
+          </div>
+          <Space wrap>
+            <Button type="primary" size="large">开始试用</Button>
+            <Button size="large">查看 Demo</Button>
+          </Space>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", color: "rgba(255,255,255,0.64)", fontSize: 12 }}>
+            <span>headline</span>
+            <span>supporting copy</span>
+            <span>primary CTA</span>
+            <span>social proof</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SidebarPreview() {
   return (
     <div className="atlas-demo">
@@ -104,6 +153,24 @@ function SidebarPreview() {
           <Content style={{ padding: 24, color: "#999", background: "#fafafa" }}>主内容区</Content>
         </Layout>
       </div>
+    </div>
+  );
+}
+
+function CardPreview() {
+  return (
+    <div className="atlas-demo">
+      <Card
+        style={{ maxWidth: 360, width: "100%" }}
+        title="专业版套餐"
+        extra={<Tag color="orange">推荐</Tag>}
+      >
+        <div style={{ display: "grid", gap: 12 }}>
+          <p style={{ margin: 0, color: "#666" }}>适合需要多人协作和权限管理的团队。</p>
+          <div style={{ fontSize: 28, fontWeight: 700 }}>¥199<span style={{ fontSize: 14, fontWeight: 400, color: "#777" }}>/月</span></div>
+          <Button type="primary">立即开通</Button>
+        </div>
+      </Card>
     </div>
   );
 }
@@ -131,6 +198,33 @@ function ButtonPreview() {
   );
 }
 
+function CtaPreview() {
+  return (
+    <div className="atlas-demo">
+      <div
+        className="atlas-surface"
+        style={{
+          display: "grid",
+          gap: 16,
+          background: "#fff7ed",
+          borderColor: "#fdba74",
+        }}
+      >
+        <div style={{ display: "grid", gap: 8 }}>
+          <h4 style={{ margin: 0, fontSize: 22, lineHeight: 1.2 }}>把试用用户转成正式开通</h4>
+          <p style={{ margin: 0, color: "#7c5a42", lineHeight: 1.7 }}>
+            CTA 是 call to action，核心是明确告诉用户下一步做什么。
+          </p>
+        </div>
+        <Space wrap>
+          <Button type="primary">立即开通</Button>
+          <Button>联系销售</Button>
+        </Space>
+      </div>
+    </div>
+  );
+}
+
 function InputPreview() {
   const [value, setValue] = useState("zhangsan@example.com");
 
@@ -140,6 +234,110 @@ function InputPreview() {
         <label style={{ display: "block", marginBottom: 6, fontSize: 13, color: "#666" }}>用户名</label>
         <Input value={value} onChange={(e) => setValue(e.target.value)} />
         <p className="atlas-feedback">当前输入：<span>{value || "(空)"}</span></p>
+      </div>
+    </div>
+  );
+}
+
+function TextareaPreview() {
+  const [value, setValue] = useState("请把首页 hero 改成双列布局，左边文案，右边插画，下方保留主 CTA。");
+
+  return (
+    <div className="atlas-demo">
+      <div style={{ maxWidth: 520, width: "100%" }}>
+        <label style={{ display: "block", marginBottom: 6, fontSize: 13, color: "#666" }}>需求描述</label>
+        <Input.TextArea rows={5} value={value} onChange={(e) => setValue(e.target.value)} placeholder="输入多行文案或说明" />
+        <p className="atlas-feedback">适合放较长内容、备注、评论、Prompt 草稿。</p>
+      </div>
+    </div>
+  );
+}
+
+function FormPreview() {
+  const [form] = Form.useForm();
+
+  return (
+    <div className="atlas-demo">
+      <div className="atlas-surface" style={{ maxWidth: 460, width: "100%" }}>
+        <Form form={form} layout="vertical" initialValues={{ name: "张三", role: "admin" }}>
+          <Form.Item label="姓名" name="name">
+            <Input />
+          </Form.Item>
+          <Form.Item label="角色" name="role">
+            <Select
+              options={[
+                { value: "admin", label: "管理员" },
+                { value: "editor", label: "编辑" },
+                { value: "guest", label: "访客" },
+              ]}
+            />
+          </Form.Item>
+          <Space>
+            <Button type="primary">保存表单</Button>
+            <Button>重置</Button>
+          </Space>
+        </Form>
+      </div>
+    </div>
+  );
+}
+
+function CheckboxPreview() {
+  const [value, setValue] = useState(["email"]);
+
+  return (
+    <div className="atlas-demo">
+      <div className="atlas-surface" style={{ maxWidth: 420, width: "100%" }}>
+        <div style={{ marginBottom: 12, fontWeight: 600 }}>通知方式</div>
+        <Checkbox.Group
+          value={value}
+          onChange={setValue}
+          options={[
+            { label: "邮件通知", value: "email" },
+            { label: "短信通知", value: "sms" },
+            { label: "站内消息", value: "site" },
+          ]}
+        />
+        <p className="atlas-feedback">已选：<span>{value.join(" / ") || "(空)"}</span></p>
+      </div>
+    </div>
+  );
+}
+
+function RadioPreview() {
+  const [value, setValue] = useState("public");
+
+  return (
+    <div className="atlas-demo">
+      <div className="atlas-surface" style={{ maxWidth: 420, width: "100%" }}>
+        <div style={{ marginBottom: 12, fontWeight: 600 }}>可见范围</div>
+        <Radio.Group value={value} onChange={(e) => setValue(e.target.value)}>
+          <Space direction="vertical">
+            <Radio value="public">公开</Radio>
+            <Radio value="team">仅团队可见</Radio>
+            <Radio value="private">仅自己可见</Radio>
+          </Space>
+        </Radio.Group>
+        <p className="atlas-feedback">当前选择：<span>{value}</span></p>
+      </div>
+    </div>
+  );
+}
+
+function SwitchPreview() {
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <div className="atlas-demo">
+      <div className="atlas-surface" style={{ maxWidth: 420, width: "100%" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+          <div>
+            <div style={{ fontWeight: 600, marginBottom: 4 }}>允许公开访问</div>
+            <div style={{ color: "#666", fontSize: 13 }}>关闭后，未登录用户将无法查看此页面。</div>
+          </div>
+          <Switch checked={checked} onChange={setChecked} />
+        </div>
+        <p className="atlas-feedback">当前状态：<span>{checked ? "开启" : "关闭"}</span></p>
       </div>
     </div>
   );
@@ -164,6 +362,27 @@ function SelectPreview() {
         />
         <p className="atlas-feedback">当前选择：<span>{value}</span></p>
       </div>
+    </div>
+  );
+}
+
+function DropdownPreview() {
+  return (
+    <div className="atlas-demo">
+      <Space>
+        <Dropdown
+          menu={{
+            items: [
+              { key: "edit", label: "编辑" },
+              { key: "duplicate", label: "复制" },
+              { key: "archive", label: "归档" },
+            ],
+          }}
+        >
+          <Button>更多操作</Button>
+        </Dropdown>
+        <p className="atlas-feedback" style={{ margin: 0 }}>点按钮后弹出一组补充操作。</p>
+      </Space>
     </div>
   );
 }
@@ -258,6 +477,36 @@ function PaginationPreview() {
     <div className="atlas-demo">
       <Pagination current={page} pageSize={5} total={30} onChange={setPage} />
       <p className="atlas-feedback">当前页：<span>{page}</span></p>
+    </div>
+  );
+}
+
+function EmptyPreview() {
+  return (
+    <div className="atlas-demo">
+      <div className="atlas-surface" style={{ width: "100%" }}>
+        <Empty
+          description="当前还没有筛选结果"
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+        >
+          <Button type="primary">清空筛选</Button>
+        </Empty>
+      </div>
+    </div>
+  );
+}
+
+function ToastPreview() {
+  const [messageApi, contextHolder] = message.useMessage();
+
+  return (
+    <div className="atlas-demo">
+      {contextHolder}
+      <Space>
+        <Button type="primary" onClick={() => messageApi.success("保存成功")}>成功提示</Button>
+        <Button onClick={() => messageApi.warning("网络有点慢，正在重试")}>警告提示</Button>
+      </Space>
+      <p className="atlas-feedback">Toast / Message 是短暂浮现的轻提示，不会打断页面流程。</p>
     </div>
   );
 }
@@ -369,13 +618,25 @@ export function LessonReactApp() {
               </section>
 
               <ComponentSection
+                id="atlas-hero"
+                category="Marketing"
+                name="首屏 Hero"
+                what="页面首屏最醒目的那一大块。通常在首页最上方，用来先讲价值，再给动作。"
+                terms="hero、headline、CTA。"
+                uses="官网首页首屏、活动页开头、产品介绍页、功能发布页。"
+                prompt="页面顶部做一个 Hero，左侧是 headline 和 supporting copy，下面放主 CTA“开始试用”和次 CTA“查看 Demo”。"
+              >
+                <HeroPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-navbar"
                 category="Navigation"
-                name="Navbar"
-                what="顶部导航栏。通常横着放在页面最上面。"
-                terms="顶部导航、主导航、品牌区、右侧操作区。"
+                name="顶部栏 Topbar / 导航栏 Navbar"
+                what="页面最上面那一条常被叫 Topbar；如果这条顶部区域主要负责导航，也会叫 Navbar。"
+                terms="topbar、navbar、nav。"
                 uses="放 Logo、一级菜单、搜索、登录入口、头像菜单。"
-                prompt="页面顶部放一个 Navbar，左侧是 Logo，中间是导航，右侧是搜索和用户头像。"
+                prompt="页面顶部放一个 Topbar / Navbar，左侧是 Logo，中间是导航，右侧是搜索和用户头像。"
               >
                 <NavbarPreview />
               </ComponentSection>
@@ -383,9 +644,9 @@ export function LessonReactApp() {
               <ComponentSection
                 id="atlas-sidebar-comp"
                 category="Navigation"
-                name="Sidebar"
+                name="侧边栏 Sidebar"
                 what="侧边栏。通常竖着放在页面左边，用来切换主功能区。"
-                terms="侧边导航、菜单组、当前高亮项、折叠态。"
+                terms="sidebar、sider、menu。"
                 uses="管理后台导航、工作台入口、系统菜单切换。"
                 prompt="左侧放一个 Sidebar，支持当前菜单高亮，适合后台系统。"
               >
@@ -393,11 +654,23 @@ export function LessonReactApp() {
               </ComponentSection>
 
               <ComponentSection
+                id="atlas-card"
+                category="Content"
+                name="卡片 Card"
+                what="卡片。把一组相关内容包成独立信息块，常见于列表、仪表盘、定价页。"
+                terms="card、cover、actions。"
+                uses="统计卡片、商品卡、套餐卡、文章摘要卡。"
+                prompt="列表区用 Card 展示每个套餐，卡片里包含标题、价格、说明和 CTA。"
+              >
+                <CardPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-button"
                 category="Action"
-                name="Button"
+                name="按钮 Button"
                 what="按钮。页面里最常见的动作触发器。"
-                terms="主按钮、次按钮、危险按钮。"
+                terms="button、primary、danger。"
                 uses="提交表单、保存修改、删除数据、打开弹窗。"
                 prompt="右上角放一个主按钮“新建用户”，旁边放次按钮“导出”。"
               >
@@ -405,11 +678,23 @@ export function LessonReactApp() {
               </ComponentSection>
 
               <ComponentSection
+                id="atlas-cta"
+                category="Action"
+                name="行动按钮 CTA"
+                what="CTA 是 call to action，指引用户采取下一步动作的按钮或动作区。"
+                terms="CTA、primary CTA、secondary CTA。"
+                uses="注册、购买、预约、下载、提交申请、开始试用。"
+                prompt="模块底部加一个 CTA 区域，主按钮写“立即开通”，次按钮写“联系销售”。"
+              >
+                <CtaPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-input"
                 category="Input"
-                name="Input"
+                name="输入框 Input"
                 what="输入框。用户往里面填文字。"
-                terms="输入框、占位文案、错误态、禁用态。"
+                terms="input、placeholder、disabled。"
                 uses="搜索、录入名称、输入邮箱、填写参数。"
                 prompt="顶部放一个搜索输入框，placeholder 是“搜索用户名 / 手机号”。"
               >
@@ -417,11 +702,71 @@ export function LessonReactApp() {
               </ComponentSection>
 
               <ComponentSection
+                id="atlas-textarea"
+                category="Input"
+                name="多行输入框 Textarea"
+                what="多行输入框。和 Input 不同，它是给较长文字准备的。"
+                terms="textarea、rows、maxlength。"
+                uses="意见反馈、需求描述、评论内容、工单说明、Prompt 编辑。"
+                prompt="表单里放一个 Textarea 作为需求描述输入区，支持 5 行高度，显示 placeholder。"
+              >
+                <TextareaPreview />
+              </ComponentSection>
+
+              <ComponentSection
+                id="atlas-form"
+                category="Input"
+                name="表单 Form"
+                what="表单。它不是单个控件，而是一整组输入、校验、提交动作的组合。"
+                terms="form、field、label。"
+                uses="登录、注册、资料编辑、创建记录、设置页。"
+                prompt="右侧放一个编辑 Form，包含姓名 Input、角色 Select 和底部保存按钮。"
+              >
+                <FormPreview />
+              </ComponentSection>
+
+              <ComponentSection
+                id="atlas-checkbox"
+                category="Input"
+                name="复选框 Checkbox"
+                what="复选框。适合多个选项同时成立的场景。"
+                terms="checkbox、checked、indeterminate。"
+                uses="权限选择、筛选条件、通知设置、批量操作。"
+                prompt="表单里放一组 Checkbox，用来配置通知方式，支持多选。"
+              >
+                <CheckboxPreview />
+              </ComponentSection>
+
+              <ComponentSection
+                id="atlas-radio"
+                category="Input"
+                name="单选框 Radio"
+                what="单选框。一组里只能选一个值。"
+                terms="radio、group、checked。"
+                uses="状态切换、可见范围选择、支付方式选择。"
+                prompt="设置区放一个 Radio Group，让用户在公开、团队可见、私有之间单选。"
+              >
+                <RadioPreview />
+              </ComponentSection>
+
+              <ComponentSection
+                id="atlas-switch"
+                category="Input"
+                name="开关 Switch"
+                what="开关。通常表示一个状态的开和关。"
+                terms="switch、toggle、checked。"
+                uses="启用功能、开关配置、是否公开、是否通知。"
+                prompt="设置项右侧放一个 Switch，用来控制该功能是否启用。"
+              >
+                <SwitchPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-select"
                 category="Select"
-                name="Select"
+                name="选择器 Select"
                 what="选择器。点一下展开选项，再选一个值。"
-                terms="下拉选择器、单选、多选、默认项。"
+                terms="select、option、multiple。"
                 uses="筛选角色、切换状态、选时间范围、选部门。"
                 prompt="表格上方放一个角色 Select，可选“全部 / 管理员 / 普通用户 / 访客”。"
               >
@@ -429,11 +774,23 @@ export function LessonReactApp() {
               </ComponentSection>
 
               <ComponentSection
+                id="atlas-dropdown"
+                category="Action"
+                name="下拉菜单 Dropdown"
+                what="下拉菜单。点一个触发点，再弹出一组操作项。"
+                terms="dropdown、trigger、menu。"
+                uses="更多操作、用户头像菜单、列表行操作、快捷入口。"
+                prompt="卡片右上角加一个 Dropdown，包含编辑、复制、归档三个操作。"
+              >
+                <DropdownPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-tabs"
                 category="Navigation"
-                name="Tabs"
+                name="标签页 Tabs"
                 what="标签页。几块内容之间的平级切换。"
-                terms="标签页、当前激活项、切换面板。"
+                terms="tabs、tab、activeKey。"
                 uses="切换分类、切换状态、切换不同内容视图。"
                 prompt="列表上方加 Tabs，支持“全部 / 进行中 / 已完成”切换。"
               >
@@ -443,9 +800,9 @@ export function LessonReactApp() {
               <ComponentSection
                 id="atlas-table"
                 category="Data"
-                name="Table"
+                name="表格 Table"
                 what="表格。后台系统里最常见的数据展示方式。"
-                terms="列、行、操作列、表头、分页、筛选。"
+                terms="table、column、row。"
                 uses="用户列表、订单列表、任务列表、日志列表。"
                 prompt="主内容区放一个用户 Table，列有姓名、角色、状态、创建时间、操作。"
               >
@@ -453,11 +810,23 @@ export function LessonReactApp() {
               </ComponentSection>
 
               <ComponentSection
+                id="atlas-empty"
+                category="Feedback"
+                name="空状态 Empty State"
+                what="空状态。当前没有数据、没有结果、还没开始时显示的占位界面。"
+                terms="empty、empty state、description。"
+                uses="搜索无结果、列表为空、首次进入还没创建内容。"
+                prompt="列表为空时显示 Empty State，包含说明文案和一个“去创建”按钮。"
+              >
+                <EmptyPreview />
+              </ComponentSection>
+
+              <ComponentSection
                 id="atlas-modal"
                 category="Feedback"
-                name="Modal"
+                name="弹窗 Modal"
                 what="弹窗。内容浮在页面中间，通常要先处理它。"
-                terms="弹窗、确认框、遮罩层、关闭按钮。"
+                terms="modal、mask、footer。"
                 uses="删除确认、二次确认、关键设置、补充说明。"
                 prompt="点击删除按钮后弹出确认 Modal，包含标题、说明、取消和确认按钮。"
               >
@@ -467,9 +836,9 @@ export function LessonReactApp() {
               <ComponentSection
                 id="atlas-drawer"
                 category="Overlay"
-                name="Drawer"
+                name="抽屉 Drawer"
                 what="抽屉。从侧边滑出来的一层，常见于右侧。"
-                terms="右侧抽屉、侧滑层、详情面板。"
+                terms="drawer、placement、close。"
                 uses="看详情、改资料、补表单，不想跳页面时很常见。"
                 prompt="点击表格行后，从右侧打开一个 Drawer 展示用户详情。"
               >
@@ -479,24 +848,36 @@ export function LessonReactApp() {
               <ComponentSection
                 id="atlas-pagination"
                 category="Paging"
-                name="Pagination"
+                name="分页 Pagination"
                 what="分页器。数据太多时，用它切到下一页。"
-                terms="分页器、当前页、上一页、下一页、总条数。"
+                terms="pagination、current、total。"
                 uses="表格翻页、文章列表翻页、搜索结果翻页。"
                 prompt="表格底部加 Pagination，显示当前页、总条数和上一页下一页。"
               >
                 <PaginationPreview />
               </ComponentSection>
 
+              <ComponentSection
+                id="atlas-toast"
+                category="Feedback"
+                name="轻提示 Toast"
+                what="短暂出现又自动消失的轻提示，也常叫 message 或 toast。"
+                terms="toast、message、success。"
+                uses="保存成功、复制成功、网络警告、操作完成反馈。"
+                prompt="点击保存后弹一个 Toast，文案是“保存成功”，2 秒后自动消失。"
+              >
+                <ToastPreview />
+              </ComponentSection>
+
               <section className="lesson-section" id="atlas-writing">
                 <h2>提示词怎么写</h2>
                 <div className="callout-card">
                   <strong>错误写法：</strong>
-                  <p>右边出来一个东西，中间弹一个框，上面再放几个切换按钮。</p>
+                  <p>搞几个卡片，再来一组选项，没数据的时候给个提示，保存完弹一下。</p>
                 </div>
                 <div className="callout-card analogy">
                   <strong>更好的写法：</strong>
-                  <p>右侧打开一个 <code>Drawer</code> 展示详情；删除时弹出 <code>Modal</code> 确认；列表上方放 <code>Tabs</code> 切换状态；主内容区用 <code>Table</code> 展示数据，底部带 <code>Pagination</code>。</p>
+                  <p>页面顶部做一个 <code>Hero</code>；内容区用 <code>Card</code> 展示套餐；右侧放一个编辑 <code>Form</code>，里面包含 <code>Input</code>、<code>Textarea</code>、<code>Checkbox</code>、<code>Radio</code>、<code>Switch</code>；操作菜单用 <code>Dropdown</code>；列表为空时显示 <code>Empty State</code>；保存成功后弹一个 <code>Toast</code>。</p>
                 </div>
                 <p>当你能把这些词写出来，AI 生成页面的命中率会高很多，因为你和它说的是前端常用词，而不是模糊描述。</p>
               </section>

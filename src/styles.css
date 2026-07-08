@@ -1490,7 +1490,12 @@ textarea {
 }
 
 .item-title-accent {
-  color: var(--accent-strong);
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--accent);
+  color: var(--ink);
+  padding: 4px 10px;
+  font-weight: 700;
 }
 
 .tag-item-head {
@@ -1600,15 +1605,18 @@ textarea {
 
 .atlas-name {
   margin: 0;
-  font-size: var(--text-hero-path);
-  line-height: 1.15;
-  font-family: var(--font-mono);
+  font-size: var(--text-heading);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-family: var(--font-body);
 }
 
 .atlas-copy {
   margin: 0;
   font-size: var(--text-lg);
+  line-height: 1.78;
   color: var(--muted);
+  font-family: var(--font-body);
 }
 
 .atlas-copy strong,
@@ -1638,9 +1646,9 @@ textarea {
 }
 
 .atlas-prompt-text {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  line-height: 1.65;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 1.78;
   white-space: pre-wrap;
 }
 
@@ -2657,7 +2665,7 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 100%;
+  min-height: 300px;
   padding: 12px;
   padding-top: 40px;
   border: 1px solid color-mix(in oklab, var(--fg) 24%, white);
@@ -2681,6 +2689,29 @@ textarea {
 
 .guided-css-muted {
   color: color-mix(in oklab, var(--muted) 70%, white);
+}
+
+.guided-css-fold {
+  border: 1px solid color-mix(in oklab, var(--fg) 12%, white);
+  background: color-mix(in oklab, white 72%, var(--surface));
+}
+
+.guided-css-fold summary {
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--muted) 72%, black);
+  cursor: pointer;
+  user-select: none;
+}
+
+.guided-css-fold[open] summary {
+  border-bottom: 1px solid color-mix(in oklab, var(--fg) 12%, white);
+}
+
+.guided-css-fold .guided-css-muted {
+  padding: 10px;
 }
 
 .guided-css-line {
@@ -2709,6 +2740,19 @@ textarea {
   border: 1.5px solid var(--fg);
   border-radius: 0;
   background: var(--surface);
+}
+
+.playground.playground-roomy .playground-editor,
+.playground.playground-roomy .playground-preview {
+  min-height: 620px;
+}
+
+.playground.playground-roomy .playground-textarea {
+  min-height: 460px;
+}
+
+.playground.playground-roomy .guided-css-editor {
+  min-height: 460px;
 }
 
 .playground-toolbar {
