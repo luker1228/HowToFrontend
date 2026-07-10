@@ -1,5 +1,5 @@
 ---
-name: "非前端人的前端战术手册"
+name: "howToEverything"
 description: "A practical frontend handbook for non-frontend teammates, written as a calm, readable brand surface."
 colors:
   paper-warm: "oklch(96.8% 0.007 84)"
@@ -90,7 +90,7 @@ components:
     padding: "0px"
 ---
 
-# Design System: 非前端人的前端战术手册
+# Design System: howToEverything
 
 ## 1. Overview
 

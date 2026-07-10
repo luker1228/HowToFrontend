@@ -4,9 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-这是一个**前端可视化教学平台**，用于教别人学习前端开发。核心理念：学习者通过网页界面直接修改 HTML、CSS 或 React 代码，实时看到渲染结果，以此理解前端技术。
+这是 **howToEverything** —— 一个多轨可视化教学平台。当前已上线前端轨（HowToFrontend），后续会加入 HowToK8s 等更多轨。核心理念：学习者通过网页界面直接修改代码、实时看到渲染结果，以此理解对应技术。
 
-目标受众是前端初学者，教学内容应循序渐进，示例简洁明了。
+目标受众是初学者，教学内容应循序渐进，示例简洁明了。
+
+## 工程结构（多轨）
+
+- `src/shared/` — 跨轨共享：`ui/`（站点外壳 SiteNav/StepNav/...）、`editor/`（代码编辑器 + iframe 实时预览引擎）、`styles/`（设计令牌）。
+- `src/tracks/` — 每条学习轨一个目录：`registry.js` 是全站唯一轨清单，`frontend/`（含 `manifest.jsx` + `lessons/` + `content/`）、`k8s/`（占位）。
+- 根目录每个 `.html` 是一个 Vite MPA 入口；新增一条轨 = 在 `src/tracks/<id>/` 放 manifest + 页面，并在 `registry.js` 注册。
 
 ## Technology Stack
 

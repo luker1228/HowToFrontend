@@ -1,5 +1,5 @@
-import { mountLayoutRecipePreviews } from "./layout-recipe-components.jsx";
-import { initPlaygrounds } from "./init-playgrounds.js";
+import { mountLayoutRecipePreviews } from "@/shared/editor/layout-recipe-components.jsx";
+import { initPlaygrounds } from "@/shared/editor/init-playgrounds.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-cycle]").forEach((container) => {

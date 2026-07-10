@@ -12,7 +12,7 @@ brand
 
 ## Product Purpose
 
-这是一个面向非前端人的前端战术手册，帮助用户把 HTML、CSS、JavaScript、React 和常见组件词汇串起来，用更准确的语言描述页面，并借助 AI 写出看得见、改得对的页面。
+这是 howToEverything 平台的**前端轨（HowToFrontend）**——面向非前端人，帮助用户把 HTML、CSS、JavaScript、React 和常见组件词汇串起来，用更准确的语言描述页面，并借助 AI 写出看得见、改得对的页面。
 
 成功标准不是“讲完了所有前端知识”，而是用户能更快说清楚页面要什么、组件叫什么、状态怎么变。
 
