@@ -12,28 +12,28 @@ import React from "react";
 export const frontendTrack = {
   id: "frontend",
   name: "HowToFrontend",
-  href: "lesson-html.html",
+  href: "front.html",
   status: "live",
   accent: "var(--accent)",
   icon: "decor/icon-component.svg",
   tagline: "HTML · CSS · JS · 组件 · 布局",
   blurb: "从结构、样式、交互到组件与布局，用 AI 写出看得见的页面。",
   nav: [
-    { text: "HTML · 01 结构与标签", href: "lesson-html.html" },
-    { text: "HTML · 02 Figma 对比", href: "lesson-html-2.html" },
-    { text: "CSS · 01 属性清单", href: "lesson-css.html" },
-    { text: "CSS · 02 Figma 对比", href: "lesson-css-2.html" },
-    { text: "JavaScript · 交互", href: "lesson-js.html" },
-    { text: "组件 · 复用", href: "lesson-react.html" },
-    { text: "布局 · 01 骨架", href: "lesson-layout.html" },
-    { text: "布局 · 02 排列", href: "lesson-layout-2.html" },
+    { text: "HTML · 01 结构与标签", href: "front/html.html" },
+    { text: "HTML · 02 Figma 对比", href: "front/html-2.html" },
+    { text: "CSS · 01 属性清单", href: "front/css.html" },
+    { text: "CSS · 02 Figma 对比", href: "front/css-2.html" },
+    { text: "JavaScript · 交互", href: "front/js.html" },
+    { text: "组件 · 复用", href: "front/component.html" },
+    { text: "布局 · 01 骨架", href: "front/layout.html" },
+    { text: "布局 · 02 排列", href: "front/layout-2.html" },
   ],
   lessons: [
     {
       label: "HTML · 01",
       title: "HTML vs Markdown",
       copy: "标签就是给内容套一层含义，和 Markdown 的逻辑完全一样。",
-      href: "lesson-html.html",
+      href: "front/html.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="20" y="30" width="120" height="114" fill="#EFE7D6" stroke="#000" strokeWidth="2"/>
@@ -59,7 +59,7 @@ export const frontendTrack = {
       label: "HTML · 02",
       title: "HTML vs Figma",
       copy: "图层树就是标签树，每一层 div 对应 Figma 里的一个 Frame。",
-      href: "lesson-html-2.html",
+      href: "front/html-2.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="30" y="20" width="110" height="134" fill="#EFE7D6" stroke="#000" strokeWidth="2"/>
@@ -88,7 +88,7 @@ export const frontendTrack = {
       label: "CSS · 01",
       title: "CSS 属性清单",
       copy: "字号、颜色、间距、方向——四类属性覆盖 80% 的日常样式需求。",
-      href: "lesson-css.html",
+      href: "front/css.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="30" y="24" width="258" height="126" fill="#EFE7D6" stroke="#000" strokeWidth="2"/>
@@ -114,7 +114,7 @@ export const frontendTrack = {
       label: "CSS · 02",
       title: "CSS vs Figma",
       copy: "属性面板就是 CSS，Figma 的 Inspector 和写样式说的是同一件事。",
-      href: "lesson-css-2.html",
+      href: "front/css-2.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* Figma inspector panel */}
@@ -145,7 +145,7 @@ export const frontendTrack = {
       label: "JavaScript",
       title: "JavaScript：负责交互。",
       copy: "点击、输入、提交——状态变化就是事件驱动，先认识这个循环。",
-      href: "lesson-js.html",
+      href: "front/js.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* button */}
@@ -173,7 +173,7 @@ export const frontendTrack = {
       label: "组件",
       title: "组件：负责复用。",
       copy: "一段 UI 写一次，到处使用——理解 props 和 children，组件就清楚了。",
-      href: "lesson-react.html",
+      href: "front/component.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* master component */}
@@ -201,7 +201,7 @@ export const frontendTrack = {
       label: "布局 · 01",
       title: "布局第一课",
       copy: "Flex 和 Grid 是两把尺子，搞懂主轴方向，排列就不再靠猜。",
-      href: "lesson-layout.html",
+      href: "front/layout.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* flex row demo */}
@@ -226,7 +226,7 @@ export const frontendTrack = {
       label: "布局 · 02",
       title: "布局第二课",
       copy: "常见页面骨架拆解：顶栏、侧边栏、内容区的排列逻辑。",
-      href: "lesson-layout-2.html",
+      href: "front/layout-2.html",
       preview: (
         <svg viewBox="0 0 318 174" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           {/* full page skeleton */}

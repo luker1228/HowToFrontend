@@ -1,207 +1,387 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-05T00:00:00+08:00",
-  "title": "Design System: howToEverything",
+  "generatedAt": "2026-07-11T00:00:00+08:00",
+  "title": "Design System: HowToEverything",
   "extensions": {
-    "northStar": "The Warm Workshop Manual",
-    "voice": [
-      "calm",
-      "direct",
-      "practical"
-    ],
     "colorMeta": {
-      "paper-warm": {
-        "role": "neutral",
-        "displayName": "Warm Paper",
-        "canonical": "oklch(96.8% 0.007 84)",
+      "accent": {
+        "role": "primary",
+        "displayName": "Highlighter Yellow",
+        "canonical": "#FFDC58",
         "tonalRamp": [
-          "oklch(94% 0.008 84)",
-          "oklch(96.8% 0.007 84)",
-          "oklch(98.3% 0.005 84)"
+          "oklch(38% 0.14 95)",
+          "oklch(48% 0.16 95)",
+          "oklch(58% 0.17 95)",
+          "oklch(68% 0.17 95)",
+          "oklch(75% 0.17 95)",
+          "oklch(80% 0.17 95)",
+          "oklch(85% 0.16 95)",
+          "oklch(92% 0.10 95)"
         ]
       },
-      "surface": {
-        "role": "neutral",
-        "displayName": "Soft Surface",
-        "canonical": "oklch(99.2% 0.003 85)",
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Pressed Yellow",
+        "canonical": "#FFD12E",
         "tonalRamp": [
-          "oklch(97.5% 0.004 85)",
-          "oklch(99.2% 0.003 85)",
-          "oklch(100% 0.002 85)"
-        ]
-      },
-      "surface-raised": {
-        "role": "neutral",
-        "displayName": "Raised Surface",
-        "canonical": "oklch(97.6% 0.004 85)",
-        "tonalRamp": [
-          "oklch(95.5% 0.005 85)",
-          "oklch(97.6% 0.004 85)",
-          "oklch(99% 0.003 85)"
+          "oklch(36% 0.15 92)",
+          "oklch(46% 0.17 92)",
+          "oklch(56% 0.18 92)",
+          "oklch(66% 0.18 92)",
+          "oklch(72% 0.18 92)",
+          "oklch(78% 0.18 92)",
+          "oklch(83% 0.17 92)",
+          "oklch(90% 0.10 92)"
         ]
       },
       "ink": {
         "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "oklch(22% 0.03 259)",
+        "displayName": "Pure Ink",
+        "canonical": "#000000",
         "tonalRamp": [
-          "oklch(16% 0.03 259)",
-          "oklch(22% 0.03 259)",
-          "oklch(28% 0.028 259)"
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(85% 0 0)"
         ]
       },
-      "muted-ink": {
+      "bg": {
         "role": "neutral",
-        "displayName": "Muted Ink",
-        "canonical": "oklch(54% 0.016 255)",
+        "displayName": "Cream Paper",
+        "canonical": "#FFF7E8",
         "tonalRamp": [
-          "oklch(46% 0.018 255)",
-          "oklch(54% 0.016 255)",
-          "oklch(64% 0.014 255)"
+          "oklch(80% 0.012 95)",
+          "oklch(85% 0.012 95)",
+          "oklch(89% 0.012 95)",
+          "oklch(92% 0.012 95)",
+          "oklch(95% 0.012 95)",
+          "oklch(97% 0.012 95)",
+          "oklch(98% 0.010 95)",
+          "oklch(99% 0.008 95)"
         ]
       },
-      "border": {
+      "surface": {
         "role": "neutral",
-        "displayName": "Border",
-        "canonical": "oklch(76% 0.015 252)",
+        "displayName": "Soft Paper",
+        "canonical": "#FFFFFF",
         "tonalRamp": [
-          "oklch(68% 0.016 252)",
-          "oklch(76% 0.015 252)",
-          "oklch(84% 0.012 252)"
+          "oklch(86% 0 0)",
+          "oklch(89% 0 0)",
+          "oklch(92% 0 0)",
+          "oklch(94% 0 0)",
+          "oklch(96% 0 0)",
+          "oklch(98% 0 0)",
+          "oklch(99% 0 0)",
+          "oklch(100% 0 0)"
         ]
       },
-      "accent": {
-        "role": "primary",
-        "displayName": "Ember Accent",
-        "canonical": "oklch(66% 0.205 38)",
+      "surface-warm": {
+        "role": "neutral",
+        "displayName": "Warm Beige",
+        "canonical": "#EFE7D6",
         "tonalRamp": [
-          "oklch(58% 0.215 38)",
-          "oklch(66% 0.205 38)",
-          "oklch(74% 0.17 38)"
+          "oklch(78% 0.012 85)",
+          "oklch(82% 0.012 85)",
+          "oklch(86% 0.012 85)",
+          "oklch(89% 0.012 85)",
+          "oklch(92% 0.012 85)",
+          "oklch(94% 0.010 85)",
+          "oklch(96% 0.008 85)",
+          "oklch(98% 0.006 85)"
         ]
       },
-      "accent-strong": {
-        "role": "primary",
-        "displayName": "Ember Strong",
-        "canonical": "oklch(60% 0.22 35)",
+      "nav-dark": {
+        "role": "neutral",
+        "displayName": "Nav Black",
+        "canonical": "#1E1E1B",
         "tonalRamp": [
-          "oklch(52% 0.23 35)",
-          "oklch(60% 0.22 35)",
-          "oklch(68% 0.18 35)"
+          "oklch(8% 0.005 75)",
+          "oklch(12% 0.005 75)",
+          "oklch(18% 0.005 75)",
+          "oklch(25% 0.005 75)",
+          "oklch(32% 0.005 75)",
+          "oklch(40% 0.005 75)",
+          "oklch(48% 0.005 75)",
+          "oklch(56% 0.005 75)"
         ]
       },
-      "warning": {
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Brown",
+        "canonical": "#6B6355",
+        "tonalRamp": [
+          "oklch(30% 0.02 70)",
+          "oklch(38% 0.02 70)",
+          "oklch(46% 0.02 70)",
+          "oklch(54% 0.02 70)",
+          "oklch(62% 0.018 70)",
+          "oklch(70% 0.015 70)",
+          "oklch(78% 0.012 70)",
+          "oklch(86% 0.008 70)"
+        ]
+      },
+      "accent-blue": {
         "role": "secondary",
-        "displayName": "Signal Warmth",
-        "canonical": "oklch(88% 0.18 96)",
+        "displayName": "Electric Blue",
+        "canonical": "#00A8F8",
         "tonalRamp": [
-          "oklch(82% 0.18 96)",
-          "oklch(88% 0.18 96)",
-          "oklch(93% 0.12 96)"
+          "oklch(35% 0.14 230)",
+          "oklch(45% 0.15 230)",
+          "oklch(55% 0.15 230)",
+          "oklch(62% 0.15 230)",
+          "oklch(68% 0.15 230)",
+          "oklch(74% 0.14 230)",
+          "oklch(82% 0.10 230)",
+          "oklch(90% 0.06 230)"
         ]
       },
-      "success": {
-        "role": "semantic",
-        "displayName": "Success",
-        "canonical": "oklch(74% 0.12 150)",
+      "accent-green": {
+        "role": "secondary",
+        "displayName": "Moss Green",
+        "canonical": "#00C870",
         "tonalRamp": [
-          "oklch(67% 0.13 150)",
-          "oklch(74% 0.12 150)",
-          "oklch(81% 0.09 150)"
+          "oklch(35% 0.15 155)",
+          "oklch(45% 0.16 155)",
+          "oklch(55% 0.16 155)",
+          "oklch(63% 0.16 155)",
+          "oklch(70% 0.16 155)",
+          "oklch(76% 0.15 155)",
+          "oklch(83% 0.11 155)",
+          "oklch(90% 0.07 155)"
+        ]
+      },
+      "accent-pink": {
+        "role": "secondary",
+        "displayName": "Magenta",
+        "canonical": "#D030A8",
+        "tonalRamp": [
+          "oklch(30% 0.20 340)",
+          "oklch(38% 0.22 340)",
+          "oklch(45% 0.22 340)",
+          "oklch(52% 0.22 340)",
+          "oklch(58% 0.20 340)",
+          "oklch(64% 0.18 340)",
+          "oklch(72% 0.14 340)",
+          "oklch(80% 0.09 340)"
+        ]
+      },
+      "accent-purple": {
+        "role": "secondary",
+        "displayName": "Lavender",
+        "canonical": "#A088D0",
+        "tonalRamp": [
+          "oklch(35% 0.10 295)",
+          "oklch(42% 0.10 295)",
+          "oklch(50% 0.10 295)",
+          "oklch(57% 0.10 295)",
+          "oklch(63% 0.10 295)",
+          "oklch(69% 0.09 295)",
+          "oklch(76% 0.07 295)",
+          "oklch(84% 0.05 295)"
+        ]
+      },
+      "accent-red": {
+        "role": "secondary",
+        "displayName": "Alert Red",
+        "canonical": "#F85850",
+        "tonalRamp": [
+          "oklch(35% 0.17 25)",
+          "oklch(42% 0.19 25)",
+          "oklch(48% 0.19 25)",
+          "oklch(54% 0.19 25)",
+          "oklch(60% 0.19 25)",
+          "oklch(66% 0.17 25)",
+          "oklch(73% 0.13 25)",
+          "oklch(81% 0.08 25)"
+        ]
+      },
+      "accent-mint": {
+        "role": "secondary",
+        "displayName": "Mint",
+        "canonical": "#60F0D0",
+        "tonalRamp": [
+          "oklch(45% 0.12 170)",
+          "oklch(55% 0.13 170)",
+          "oklch(65% 0.13 170)",
+          "oklch(72% 0.13 170)",
+          "oklch(78% 0.13 170)",
+          "oklch(83% 0.12 170)",
+          "oklch(88% 0.10 170)",
+          "oklch(93% 0.06 170)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Display",
-        "purpose": "Hero headlines and the strongest statements.",
-        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+        "displayName": "Display (Stamp)",
+        "purpose": "Archivo Black, 盖在 section kicker、统计数字、徽章上，不要用于最大的 hero 标题。",
+        "fontFamily": "\"Archivo Black\", \"Helvetica Neue\", sans-serif"
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section titles and major page headings.",
-        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+        "purpose": "hero 主标题与页面最强陈述，Space Grotesk 700 紧字距。",
+        "fontFamily": "\"Space Grotesk\", \"Inter\", -apple-system, sans-serif"
+      },
+      "section-title": {
+        "displayName": "Section Title",
+        "purpose": "章节大标题。",
+        "fontFamily": "\"Space Grotesk\", \"Inter\", sans-serif"
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Component names and subsection titles.",
-        "fontFamily": "Archivo Expanded, Space Grotesk, Helvetica Neue, sans-serif"
+        "purpose": "卡片标题、课节小节标题。",
+        "fontFamily": "\"Space Grotesk\", \"Inter\", sans-serif"
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Readable explanation text and longer teaching blocks.",
-        "fontFamily": "Instrument Sans, Inter, system-ui, sans-serif"
+        "purpose": "解释与阅读段落，行宽约 65ch。",
+        "fontFamily": "\"Space Grotesk\", \"Inter\", -apple-system, sans-serif"
       },
       "label": {
-        "displayName": "Label",
-        "purpose": "Eyebrows, chips, tabs, and structural metadata.",
-        "fontFamily": "IBM Plex Mono, JetBrains Mono, ui-monospace, monospace"
+        "displayName": "Label / Mono",
+        "purpose": "eyebrow、chip、tab、元信息、代码标签，IBM Plex Mono uppercase。",
+        "fontFamily": "\"IBM Plex Mono\", \"JetBrains Mono\", ui-monospace, monospace"
       }
     },
-    "shadowMeta": {
-      "hoverLift": {
-        "value": "0 14px 30px color-mix(in oklab, var(--fg) 10%, transparent)",
-        "purpose": "Used only on hover for interactive controls."
+    "shadows": [
+      {
+        "name": "hard-resting",
+        "value": "4px 4px 0 var(--ink)",
+        "purpose": "默认结构性硬阴影，用于卡片、下拉菜单、徽章。实心纯黑、零模糊、固定偏移。"
       },
-      "noneAtRest": {
-        "value": "none",
-        "purpose": "Resting surfaces stay flat."
+      {
+        "name": "hard-hover",
+        "value": "6px 6px 0 var(--ink)",
+        "purpose": "卡片 hover 时的阴影，配合 translate(-2px,-2px) 形成被拈起一角的物理感。"
       }
-    },
-    "breakpoints": {
-      "mobile": "560px",
-      "tablet": "820px",
-      "desktopSidebar": "1320px"
-    },
-    "motion": {
-      "hover": "160ms ease",
-      "cycle": "220ms ease",
-      "default": "160ms ease"
-    },
-    "layout": {
-      "measure": "1080px",
-      "lessonMeasure": "1100px",
-      "heroMaxWidth": "1100px",
-      "contentRhythm": "Generous separations between sections, tighter grouping within modules."
-    },
-    "componentMeta": {
-      "button": {
-        "shape": "12px radius",
-        "padding": "13px 18px",
-        "defaultRole": "Primary actions use ember accent; secondary actions stay neutral."
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": "160ms ease",
+        "purpose": "按钮、卡片、导航的 hover 颜色/位移/阴影默认过渡。"
       },
-      "card": {
-        "shape": "16px radius",
-        "padding": "26px",
-        "defaultRole": "Distinct content blocks, not generic wrappers."
+      {
+        "name": "cycle",
+        "value": "220ms ease",
+        "purpose": "CycleText 条目的淡入/位移过渡。"
       },
-      "input": {
-        "shape": "12px radius",
-        "padding": "13px 14px",
-        "defaultRole": "Plain, legible form fields with visible focus."
-      },
-      "navigation": {
-        "shape": "Sticky header with thin borders and uppercase labels.",
-        "padding": "12px gaps",
-        "defaultRole": "Support scanning without taking over the page."
+      {
+        "name": "reduced",
+        "value": "0.001ms",
+        "purpose": "prefers-reduced-motion 下所有过渡退化为瞬切。"
       }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "560px" },
+      { "name": "tablet", "value": "820px" },
+      { "name": "grid-collapse", "value": "1024px" },
+      { "name": "desktop-sidebar", "value": "1320px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "高亮黄底主按钮，纯黑字与描边，0 圆角，hover 上浮并落下硬阴影。",
+      "html": "<button class=\"ds-btn-primary\">开始学习 →</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;background:var(--accent,#FFDC58);color:var(--ink,#000);border:1.5px solid var(--ink,#000);border-radius:0;font-family:\"IBM Plex Mono\",ui-monospace,monospace;font-weight:700;font-size:13px;letter-spacing:0.05em;cursor:pointer;transition:transform 160ms ease,box-shadow 160ms ease,background 160ms ease}.ds-btn-primary:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--ink,#000);background:var(--accent-hover,#FFD12E)}.ds-btn-primary:focus-visible{outline:3px solid var(--ink,#000);outline-offset:2px}.ds-btn-primary:active{transform:translateY(0);box-shadow:none}"
     },
-    "narrative": {
-      "creativeNorthStar": "The Warm Workshop Manual",
-      "overviewVoice": "Quiet, direct, and useful. The page should feel like a working surface with enough air to think.",
-      "componentPhilosophy": "Practical and confident, with clear states and very little decorative noise.",
-      "do": [
-        "Keep the page readable at a glance.",
-        "Use accent color for actions and active states only.",
-        "Let examples and interactive surfaces carry the teaching."
-      ],
-      "dont": [
-        "Do not compress everything into a dense document-zip layout.",
-        "Do not build identical card walls everywhere.",
-        "Do not center every section and make the site feel generic.",
-        "Do not use colored border-left or border-right stripes as the main emphasis device.",
-        "Do not drift into classroom tone for front-end engineers."
-      ]
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "纸白底的次级按钮，同样的黑边与 0 圆角，用于低优先级动作。",
+      "html": "<button class=\"ds-btn-ghost\">复制</button>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;background:var(--surface,#fff);color:var(--ink,#000);border:1.5px solid var(--ink,#000);border-radius:0;font-family:\"IBM Plex Mono\",ui-monospace,monospace;font-weight:700;font-size:13px;cursor:pointer;transition:transform 160ms ease,box-shadow 160ms ease}.ds-btn-ghost:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--ink,#000)}.ds-btn-ghost:focus-visible{outline:3px solid var(--ink,#000);outline-offset:2px}"
+    },
+    {
+      "name": "Tag / Pill",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "胶囊形是方块系统里唯一大面积的圆角。is-muted 变体用虚线+透明底表示未上线。",
+      "html": "<span class=\"ds-tag\">已上线</span> <span class=\"ds-tag ds-tag--muted\">即将推出</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;padding:8px 10px;border:1.5px solid var(--ink,#000);border-radius:999px;background:var(--surface,#fff);color:var(--ink,#000);font-family:\"IBM Plex Mono\",ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}.ds-tag--muted{background:transparent;color:var(--muted,#6B6355);border-style:dashed}"
+    },
+    {
+      "name": "Lesson Card",
+      "kind": "card",
+      "refersTo": "lesson-card",
+      "description": "门户页签名组件：2px 黑边 + 硬阴影，hover 向左上抬起；上是固定宽高比预览区，下是 body。",
+      "html": "<a class=\"ds-lesson-card\" href=\"#\"><div class=\"ds-lesson-card__preview\">PREVIEW</div><div class=\"ds-lesson-card__body\"><span class=\"ds-tag\">已上线</span><h3 class=\"ds-lesson-card__title\">HTML vs Markdown</h3><p class=\"ds-lesson-card__copy\">标签就是给内容套一层含义。</p></div></a>",
+      "css": ".ds-lesson-card{display:flex;flex-direction:column;border:2px solid var(--ink,#000);background:var(--surface,#fff);color:var(--ink,#000);text-decoration:none;border-radius:0;box-shadow:4px 4px 0 var(--ink,#000);transition:transform 120ms ease,box-shadow 120ms ease}.ds-lesson-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink,#000)}.ds-lesson-card:focus-visible{outline:3px solid var(--ink,#000);outline-offset:2px}.ds-lesson-card__preview{aspect-ratio:318/174;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--ink,#000);background:var(--bg,#FFF7E8);font-family:\"IBM Plex Mono\",ui-monospace,monospace;font-size:13px;letter-spacing:0.08em;color:var(--muted,#6B6355)}.ds-lesson-card__body{padding:16px 18px 20px}.ds-lesson-card__title{margin:8px 0;font-family:\"Space Grotesk\",sans-serif;font-size:16px;font-weight:600;line-height:1.3}.ds-lesson-card__copy{margin:0;font-size:14px;line-height:1.5;color:var(--muted,#6B6355)}"
+    },
+    {
+      "name": "Highlighter Mark",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "荧光笔效果：纯黑文字 + 高亮黄矩形色块，用于标题里点一个关键词，不要整句涂黄。",
+      "html": "<span class=\"ds-highlight\">Everything</span>",
+      "css": ".ds-highlight{display:inline-block;background:var(--accent,#FFDC58);color:var(--ink,#000);padding:6px 12px}"
+    },
+    {
+      "name": "Section Kicker",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "印章式章节标签：Archivo Black 大字盖在黄底色块上，像贴上去的贴纸。",
+      "html": "<span class=\"ds-kicker\">学习轨 Tracks</span>",
+      "css": ".ds-kicker{display:inline-block;font-family:\"Archivo Black\",\"Helvetica Neue\",sans-serif;font-size:clamp(28px,3.5vw,48px);font-weight:900;letter-spacing:-0.02em;line-height:1.05;color:var(--ink,#000);background:var(--accent,#FFDC58);padding:6px 16px}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "实用的表单控件：0 圆角、1.5px 黑边、纸白底，focus 用 3px 纯黑外框。",
+      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"搜索教程...\" />",
+      "css": ".ds-input{width:100%;padding:13px 14px;border:1.5px solid var(--ink,#000);border-radius:0;background:var(--surface,#fff);color:var(--ink,#000);font-family:\"Space Grotesk\",sans-serif;font-size:14px}.ds-input:focus{outline:none}.ds-input:focus-visible{outline:3px solid var(--ink,#000);outline-offset:2px}"
     }
+  ],
+  "narrative": {
+    "northStar": "荧光笔手册（The Highlighter Handbook）",
+    "overview": "这套系统像一本摊开的实用手册：奶油纸底、粗黑墨水、荧光笔黄色块标出重点，方块感、硬阴影、留白充足。视觉血脉是 RetroUI（Neo-brutalist）：纯黑描边、0 圆角方块、4px 4px 0 硬偏移阴影、加粗几何字、贴纸式徽章与荧光笔高亮块。但只取 RetroUI 的视觉语言，不取它的营销腔：不喊 \"DESIGNED TO SHIP FAST\" 那种空洞口号，语气保持 PRODUCT.md 的清晰、克制、可信。面向有一点点互联网产品基础的设计师、产品、运营和后端工程师，给他们结构清晰、例子醒目、节奏能呼吸的页面。",
+    "keyCharacteristics": [
+      "方块感优先：主体组件 0 圆角，只有 pill 徽章/头像走 999px。",
+      "高亮黄只做重点：动作、激活态、关键词高亮，绝不铺满区块。",
+      "纯黑墨水是承重墙：文字、描边、硬阴影统一用纯黑 #000000。",
+      "硬阴影是结构而非氛围：静止时偏平，交互时才抬起。",
+      "三套字体分工明确：Archivo Black 做印章式标签，Space Grotesk 做正文与标题，IBM Plex Mono 做元信息与代码。",
+      "例子比概念醒目：可交互的演示面承担教学，而不是长段文字。"
+    ],
+    "rules": [
+      { "name": "The One Highlighter Rule", "body": "黄色是信号，不是墙纸。只出现在动作、激活态和需要被一眼看到的关键词上。铺满区块就从重点变成了背景，系统就垮了。", "section": "colors" },
+      { "name": "The Pure Ink Rule", "body": "纯黑 #000000 是 Neo-brutalist 身份的承重部分，不要软化成带色调的近黑。文字、描边、硬阴影统一走纯黑；只有大面积深色面才用稍暖的 --nav-dark。", "section": "colors" },
+      { "name": "The Accent Discipline Rule", "body": "蓝绿粉紫红薄荷只做点缀，单点使用，不铺区块，更不能取代黄色当主强调。", "section": "colors" },
+      { "name": "The Weight-Contrast Rule", "body": "层级靠字号和字重对比建立（相邻档位比例 ≥1.25），不靠装饰性描边或渐变。", "section": "typography" },
+      { "name": "The 65ch Rule", "body": "正文段落最大行宽 65ch 左右，超过这个宽度阅读节奏就散了。", "section": "typography" },
+      { "name": "The Hard-Shadow Rule", "body": "阴影永远是实心、零模糊、固定偏移（4px 或 6px）的纯黑色块。禁止任何带 blur 的柔和投影、多层投影、彩色 glow。", "section": "elevation" },
+      { "name": "The Flat-At-Rest Rule", "body": "静止的面保持平静、贴底。阴影是交互的回应，不是常驻装饰。", "section": "elevation" }
+    ],
+    "dos": [
+      "让例子和可交互演示面承担教学，不要只堆解释段落。",
+      "用高亮黄色块（.accent-text）点标题里的一个关键词，形成矩形色块。",
+      "保持主体组件 0 圆角；圆角只留给 pill 徽章、头像这类装饰圆形。",
+      "用纯黑 #000000 统一文字、描边和硬阴影。",
+      "让章节之间有明显呼吸（section 间距 clamp(72px, 7vw, 96px)），不要所有块一样紧。",
+      "正文行宽控制在 65ch 左右，层级靠字号/字重对比建立。",
+      "给每个可交互元素完整的 hover / focus-visible / active 状态；focus 用 3px 纯黑外框。",
+      "尊重 prefers-reduced-motion：交互动效在用户偏好下退化为瞬切。"
+    ],
+    "donts": [
+      "不要把黄色铺满整个区块当背景（The One Highlighter Rule）。",
+      "不要把纯黑软化为带色调的近黑（The Pure Ink Rule）。",
+      "不要用 border-left / border-right 大于 1px 做彩色侧边条，改用整边描边、底色填充或前导图标。",
+      "不要用渐变文字（background-clip: text + gradient），强调靠字重或字号。",
+      "不要用玻璃拟态（backdrop-filter 模糊卡片）当默认。",
+      "不要把布局压成密不透风的文档压缩包；不要到处套一模一样的卡片网格，更不要卡中卡。",
+      "不要写空洞的营销口号（DESIGNED TO SHIP FAST 之类），那是 PRODUCT.md 点名拒绝的纯营销落地页空洞包装和过度 AI 生成感的模板化卡片墙。",
+      "不要用教前端工程师的课堂腔，语气要面向非前端人，直白、可执行。",
+      "不要给静止的卡片挂常驻阴影（The Flat-At-Rest Rule）。",
+      "不要用带 blur 的柔和投影或彩色 glow（The Hard-Shadow Rule）。"
+    ]
   }
 }

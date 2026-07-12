@@ -169,13 +169,13 @@ POST /api/projects
 
 export function PromptsPage() {
   return (
-    <PageFrame title="Prompt Library · howToEverything">
+    <PageFrame title="Prompt Library · HowToEverything">
       <>
         <header className="site-header">
           <div className="container site-header-inner">
             <a className="brand-mark" href={withBase("index.html")}><span>howTo</span><span className="brand-pill">Everything</span></a>
             <SiteNav />
-            <StepNav prev={{ href: "lesson-layout.html", title: "布局" }} />
+            <StepNav prev={{ href: "front/layout.html", title: "布局" }} />
           </div>
         </header>
         <main className="container">

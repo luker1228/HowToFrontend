@@ -4,21 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-这是 **howToEverything** —— 一个多轨可视化教学平台。当前已上线前端轨（HowToFrontend），后续会加入 HowToK8s 等更多轨。核心理念：学习者通过网页界面直接修改代码、实时看到渲染结果，以此理解对应技术。
+这是 **HowToEverything** —— 一个多轨可视化教学平台。当前已上线前端轨（HowToFrontend），后续会加入 HowToDeploy 等更多轨。核心理念：学习者通过网页界面直接修改代码、实时看到渲染结果，以此理解对应技术。
 
 目标受众是初学者，教学内容应循序渐进，示例简洁明了。
 
 ## 工程结构（多轨）
 
 - `src/shared/` — 跨轨共享：`ui/`（站点外壳 SiteNav/StepNav/...）、`editor/`（代码编辑器 + iframe 实时预览引擎）、`styles/`（设计令牌）。
-- `src/tracks/` — 每条学习轨一个目录：`registry.js` 是全站唯一轨清单，`frontend/`（含 `manifest.jsx` + `lessons/` + `content/`）、`k8s/`（占位）。
-- 根目录每个 `.html` 是一个 Vite MPA 入口；新增一条轨 = 在 `src/tracks/<id>/` 放 manifest + 页面，并在 `registry.js` 注册。
+- `src/tracks/` — 每条学习轨一个目录：`registry.js` 是全站唯一轨清单，`frontend/`（含 `manifest.jsx` + `lessons/` + `content/`）、`deploy/`（占位）。
+- 单入口 SPA（根 `index.html` → `src/main.jsx` → `src/App.jsx` 的 HashRouter 路由）；新增一条轨 = 在 `src/tracks/<id>/` 放 manifest + 页面，在 `App.jsx` 加路由、并在 `registry.js` 注册。
 
 ## Technology Stack
 
 - **前端框架**: React 19 + Vite
-- **样式方案**: Tailwind CSS v4 + 全局 CSS 变量（`src/styles.css` / `templates/styles.css`）
-- **组件库**: RetroUI（Neo-brutalist 风格，通过 shadcn CLI 安装，registry 已配置在 `components.json`）
+- **样式方案**: Tailwind CSS v4 + 全局 CSS 变量（`src/shared/styles/styles.css`）
+- **组件库**: 无第三方组件库。Neo-brutalist 组件全部以手写 CSS 实现（`src/shared/styles/styles.css`），RetroUI 仅作视觉参考（未通过 shadcn 安装）。
 - **代码编辑**: 浏览器内 textarea 实时预览（iframe 渲染）
 - **实时预览**: iframe 独立渲染区域
 
@@ -118,20 +118,6 @@ CSS 定义（两个 styles.css 同步）：
 - 文字：白色
 - 按钮：黄底 `--accent` + 黑边，方形无圆角
 - 高度：`min-height: 72px`
-
-## RetroUI 组件安装
-
-```bash
-# 安装单个组件
-npx shadcn@latest add @retroui/button
-
-# 查看所有可用组件
-npx shadcn@latest list @retroui
-```
-
-`components.json` 已配置好两个 registry：
-- `@retroui` — Radix UI 版本
-- `@retroui-base` — Base UI 版本
 
 ## Architecture Direction
 

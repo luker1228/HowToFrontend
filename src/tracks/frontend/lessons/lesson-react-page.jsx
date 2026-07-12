@@ -580,8 +580,8 @@ export function LessonReactApp() {
         <header className="site-header">
           <div className="lesson-shell site-header-inner">
             <a className="brand-mark" href={withBase("index.html")}><span>howTo</span><span className="brand-pill">Everything</span></a>
-            <SiteNav currentPath="lesson-react.html" />
-            <StepNav prev={{ href: "lesson-js.html", title: "JavaScript" }} next={{ href: "lesson-layout.html", title: "布局" }} />
+            <SiteNav currentPath="front/component.html" />
+            <StepNav prev={{ href: "front/js.html", title: "JavaScript" }} next={{ href: "front/layout.html", title: "布局" }} />
           </div>
         </header>
         <header className="html2-hero html-reading-hero">

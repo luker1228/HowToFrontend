@@ -205,13 +205,13 @@ const components = [
 
 export function ComponentsPage() {
   return (
-    <PageFrame title="组件认知页 · howToEverything">
+    <PageFrame title="组件认知页 · HowToEverything">
       <ConfigProvider theme={{ token: { colorPrimary: "#ef7627", borderRadius: 8, fontFamily: "inherit" } }}>
         <header className="site-header">
           <div className="container site-header-inner">
             <a className="brand-mark" href={withBase("index.html")}><span>howTo</span><span className="brand-pill">Everything</span></a>
             <SiteNav currentPath="components.html" />
-            <StepNav prev={{ href: "lesson-react.html", title: "组件：先认词" }} next={{ href: "prompts.html", title: "提示词库" }} />
+            <StepNav prev={{ href: "front/component.html", title: "组件：先认词" }} next={{ href: "prompts.html", title: "提示词库" }} />
           </div>
         </header>
         <main className="container">

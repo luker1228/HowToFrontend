@@ -56,15 +56,24 @@ function NavDropdown({ track, currentPath }) {
 
   return (
     <div className={`nav-dropdown${open ? " is-open" : ""}`} ref={ref}>
+      <a
+        className={`nav-dropdown-link${currentPath === track.href ? " is-current" : ""}`}
+        href={withBase(track.href)}
+        onClick={() => setOpen(false)}
+      >
+        {track.name}
+      </a>
       <button
         type="button"
-        className="nav-dropdown-trigger"
+        className="nav-dropdown-caret"
+        aria-label={`${track.name} 课程目录`}
+        aria-expanded={open}
         onClick={(e) => {
           e.preventDefault();
           setOpen((v) => !v);
         }}
       >
-        {track.name}
+        ▾
       </button>
       <div className="nav-dropdown-menu">
         {track.nav.map((p) => (
@@ -136,7 +145,11 @@ export function CycleText({ items, interval = 1800 }) {
   return (
     <span className="cycle-container">
       {items.map((item, itemIndex) => (
-        <span key={item} className={`cycle-item${itemIndex === index ? " active" : ""}`}>
+        <span
+          key={item}
+          className={`cycle-item${itemIndex === index ? " active" : ""}`}
+          aria-hidden={itemIndex !== index}
+        >
           {item}
         </span>
       ))}

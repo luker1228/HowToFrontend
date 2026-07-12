@@ -182,7 +182,7 @@ function BlogLayoutPreview() {
       <div style={{ minHeight: 320 }}>
         <Layout style={{ minHeight: 320, borderRadius: 0, overflow: "hidden", border: "1.5px solid #1a1a1a", background: "#fff" }}>
           <Header style={{ display: "flex", alignItems: "center", gap: 16, padding: "0 20px", background: "#fff", borderBottom: "1.5px solid #1a1a1a" }}>
-            <div style={{ fontWeight: 800, letterSpacing: "0.04em", color: "#ef7627", whiteSpace: "nowrap" }}>howToEverything</div>
+            <div style={{ fontWeight: 800, letterSpacing: "0.04em", color: "#ef7627", whiteSpace: "nowrap" }}>HowToEverything</div>
             <Menu
               mode="horizontal"
               defaultSelectedKeys={["posts"]}

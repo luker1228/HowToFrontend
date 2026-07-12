@@ -1,5 +1,5 @@
 import { frontendTrack } from "./frontend/manifest.jsx";
-import { k8sTrack } from "./k8s/manifest.js";
+import { deployTrack } from "./deploy/manifest.js";
 
 /**
  * The single source of truth for every learning track on the platform.
@@ -10,6 +10,6 @@ import { k8sTrack } from "./k8s/manifest.js";
  *
  * To add a track: create `src/tracks/<id>/manifest.{js,jsx}` and add it here.
  */
-export const TRACKS = [frontendTrack, k8sTrack];
+export const TRACKS = [frontendTrack, deployTrack];
 
 export const TRACKS_BY_ID = Object.fromEntries(TRACKS.map((track) => [track.id, track]));

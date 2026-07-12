@@ -1,4 +1,4 @@
-# howToEverything
+# HowToEverything
 
 这是一个基于 `Vite + React` 的多页面静态站点，页面入口分散在仓库根目录的多个 `.html` 文件中，最终由 Vite 打包到 `dist/` 目录。
 
